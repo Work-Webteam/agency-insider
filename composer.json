@@ -114,7 +114,9 @@
         "laminas/laminas-diactoros": "^1.8",
         "laminas/laminas-escaper": "^2.6",
         "laminas/laminas-feed": "^2.12",
-        "laminas/laminas-stdlib": "^3.2"
+        "laminas/laminas-stdlib": "^3.2",
+        "drupal/state_machine": "^1.0@RC",
+        "drupal/recurring_period": "^1.0@alpha"
     },
     "require-dev": {
         "neronmoon/scriptsdev": "^0.1.0",
