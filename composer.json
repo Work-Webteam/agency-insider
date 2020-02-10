@@ -2,7 +2,7 @@
     "name": "optasy/drupal8-boilerplate",
     "description": "optasy template for Drupal 8 projects with composer-based workflow",
     "type": "project",
-    "license": "GPL-2.0+",
+    "license": "GPL-2.0-or-later",
     "authors": [
         {
             "name": "optasy",
@@ -45,7 +45,6 @@
         "cweagans/composer-patches": "^1.5.0",
         "wikimedia/composer-merge-plugin": "^1.4",
         "drupal/core": "8.*",
-        "drupal/recurring_period": "^1.0@alpha",
         "drupal/flags": "^1.0@beta",
         "drupal/flags_ui": "^1.0@beta",
         "drupal/interval": "^1.2",
@@ -55,7 +54,7 @@
         "drupal/adminimal_theme": "^1.5",
         "drupal/addtocalendar": "^3.1",
         "drupal/backup_migrate": "^4.0",
-        "drupal/blazy": "^1.0@RC",
+        "drupal/blazy": "^2.0",
         "drupal/bootstrap_layouts": "^5.1",
         "drupal/calendar": "1.x-dev",
         "drupal/ctools": "^3.2",
@@ -70,7 +69,6 @@
         "drupal/redirect": "^1.4",
         "drupal/rules": "^3.0",
         "drupal/shortcutperrole": "^1.0@RC",
-        "drupal/slick_views": "^1.0",
         "drupal/superfish": "^1.3",
         "drupal/taxonomy_access_fix": "^2.6",
         "drupal/taxonomy_menu": "^3.4",
@@ -80,7 +78,6 @@
         "drupal/views_templates": "^1.0@alpha",
         "drupal/admin_toolbar": "^2.0",
         "dinbror/blazy": "1.8.2",
-        "kenwheeler/slick": "v1.8.1",
         "drupal/adminimal_admin_toolbar": "^1.9",
         "drupal/structure_sync": "^1.16",
         "drupal/poll": "^1.2",
@@ -93,7 +90,6 @@
         "drupal/views_taxonomy_term_name_into_id": "^1.0",
         "drupal/simplenews": "^2.0",
         "drupal/mimemail": "^1.0",
-        "drupal/xmlsitemap": "^1.0",
         "drupal/optional_end_date": "^1.0",
         "drupal/rabbit_hole": "^1.0",
         "drupal/editor_advanced_link": "^1.4",
@@ -110,11 +106,15 @@
         "drupal/postal_code": "1.x-dev",
         "drupal/externalauth": "^1.2",
         "symfony/debug": "3.4.9",
-        "drush/drush": "8.x",
+        "drush/drush": "9.x",
         "symfony/filesystem": "~3.0",
         "symfony/config": "3.4.9",
         "symfony/dom-crawler": "^3.4",
-        "drupal/console": "^1.9"
+        "drupal/console": "^1.9",
+        "laminas/laminas-diactoros": "^1.8",
+        "laminas/laminas-escaper": "^2.6",
+        "laminas/laminas-feed": "^2.12",
+        "laminas/laminas-stdlib": "^3.2"
     },
     "require-dev": {
         "neronmoon/scriptsdev": "^0.1.0",
@@ -146,7 +146,7 @@
         ]
     },
     "config": {
-      "bin-dir": "bin/"
+      "bin-dir": "vendor/bin/"
     },
     "extra": {
         "scripts-dev": {
@@ -167,8 +167,11 @@
             "Calendar date-range fix #2699477": "https://www.drupal.org/files/issues/2018-04-06/calendar-date_range-2699477-71.patch"
           },
           "drupal/core": {
-            "Call to a member function transformDimensions() on null in template_preprocess": "https://www.drupal.org/files/issues/2018-04-04/2957368_0.patch"
-          }
+           "Call to a member function transformDimensions() on null in template_preprocess": "https://www.drupal.org/files/issues/2018-04-04/2957368_0.patch"
+	  },
+	 "drupal/openid_connect": {
+	    "form_state passed as param to authorize method but never used": "https://www.drupal.org/files/issues/2019-12-02/form-state-authorize-method-1.0-beta5.patch"
+	  }
         },
         "enable-patching": true
     }
