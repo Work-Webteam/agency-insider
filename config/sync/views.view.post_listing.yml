@@ -28,7 +28,6 @@ description: ''
 tag: ''
 base_table: node_field_data
 base_field: nid
-core: 8.x
 display:
   default:
     display_plugin: default
@@ -344,6 +343,8 @@ display:
           id: status
           expose:
             operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
           group: 1
         type:
           id: type
@@ -354,6 +355,9 @@ display:
           entity_type: node
           entity_field: type
           plugin_id: bundle
+          expose:
+            operator_limit_selection: false
+            operator_list: {  }
       sorts:
         created:
           id: created
@@ -434,6 +438,8 @@ display:
           id: status
           expose:
             operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
           group: 1
         type:
           id: type
@@ -444,6 +450,9 @@ display:
           entity_type: node
           entity_field: type
           plugin_id: bundle
+          expose:
+            operator_limit_selection: false
+            operator_list: {  }
         field_post_category_target_id:
           id: field_post_category_target_id
           table: node__field_post_category
@@ -469,6 +478,8 @@ display:
             remember_roles:
               authenticated: authenticated
             reduce: false
+            operator_limit_selection: false
+            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -850,6 +861,8 @@ display:
           id: status
           expose:
             operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
           group: 1
         type:
           id: type
@@ -860,6 +873,9 @@ display:
           entity_type: node
           entity_field: type
           plugin_id: bundle
+          expose:
+            operator_limit_selection: false
+            operator_list: {  }
         promote:
           id: promote
           table: node_field_data
@@ -883,6 +899,8 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
+            operator_limit_selection: false
+            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -1236,7 +1254,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"border-0 row\">\r\n        <div class=\"col-12 col-md-4 col-sm-4 col-4\">\r\n          {{ field_media_post_thumbnail }} \r\n        </div>\r\n\r\n        <div class=\"col-12 col-md-8 col-sm-8 col-8\">\r\n          <h3>{{ title }}</h3>\r\n          <div class=\"info\"><span class=\"created\">{{ created }}</span><span class=\"category\">{{ field_post_category_1 }}</span></div>\r\n          <p>{{ field_introduction }}</p>\r\n    </div>\r\n</div>"
+            text: "<div class=\"border-0 row\">\r\n        <div class=\"col-12 col-md-4 col-sm-4 col-4\">\r\n          {{ field_media_post_thumbnail }} \r\n        </div>\r\n\r\n        <div class=\"col-12 col-md-8 col-sm-8 col-8\">\r\n          <h3>{{ title }}</h3>\r\n          <div class=\"info\"><span class=\"created\">{{ created }}</span></div><div><span class=\"category\">{{ field_post_category_1 }}</span></div>\r\n          <p>{{ field_introduction }}</p>\r\n    </div>\r\n</div>"
             make_link: false
             path: ''
             absolute: false

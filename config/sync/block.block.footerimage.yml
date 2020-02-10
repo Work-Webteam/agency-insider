@@ -1,0 +1,25 @@
+uuid: b3b798e8-6d16-4ea8-9fd2-cd862c362253
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:52af76b8-51c2-44d5-89d7-1dd4cdfbba05'
+  module:
+    - block_content
+  theme:
+    - agency_theme
+id: footerimage
+theme: agency_theme
+region: footer
+weight: 0
+provider: null
+plugin: 'block_content:52af76b8-51c2-44d5-89d7-1dd4cdfbba05'
+settings:
+  id: 'block_content:52af76b8-51c2-44d5-89d7-1dd4cdfbba05'
+  label: 'Footer Image'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

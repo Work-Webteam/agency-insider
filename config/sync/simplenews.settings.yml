@@ -2,8 +2,8 @@ hash_expiration: 86400
 newsletter:
   format: html
   priority: 0
-  receipt: true
-  from_address: adrian@optasy.com
+  receipt: false
+  from_address: bcpsa.internal.communications@gov.bc.ca
   from_name: 'BC Public Service Agency'
 subscriber:
   sync_fields: true

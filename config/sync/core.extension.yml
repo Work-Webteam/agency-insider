@@ -4,6 +4,8 @@ module:
   admin_toolbar: 0
   admin_toolbar_tools: 0
   adminimal_admin_toolbar: 0
+  asset_injector: 0
+  atwork_idir_update: 0
   automated_cron: 0
   backup_migrate: 0
   big_pipe: 0
@@ -19,17 +21,6 @@ module:
   ckeditor: 0
   color: 0
   comment: 0
-  commerce: 0
-  commerce_cart: 0
-  commerce_checkout: 0
-  commerce_order: 0
-  commerce_payment: 0
-  commerce_payment_example: 0
-  commerce_price: 0
-  commerce_product: 0
-  commerce_promotion: 0
-  commerce_store: 0
-  commerce_tax: 0
   config: 0
   contact: 0
   contextual: 0
@@ -57,7 +48,6 @@ module:
   flag_bookmark: 0
   flag_follower: 0
   focal_point: 0
-  google_analytics: 0
   hal: 0
   help: 0
   hierarchical_taxonomy_menu: 0
@@ -82,8 +72,9 @@ module:
   page_cache: 0
   paragraphs_type_permissions: 0
   path: 0
+  path_alias: 0
   poll: 0
-  profile: 0
+  postal_code: 0
   psa_updates: 0
   quickedit: 0
   rabbit_hole: 0
@@ -103,9 +94,6 @@ module:
   simple_sitemap_engines: 0
   simplenews: 0
   sitemap: 0
-  slick: 0
-  slick_ui: 0
-  slick_views: 0
   state_machine: 0
   statistics: 0
   structure_sync: 0
@@ -121,6 +109,7 @@ module:
   toolbar: 0
   tour: 0
   typed_data: 0
+  ultimate_cron: 0
   update: 0
   user: 0
   views_bootstrap: 0
@@ -132,6 +121,7 @@ module:
   menu_link_content: 1
   pathauto: 1
   ds_extras: 2
+  externalauth: 10
   views: 10
   paragraphs: 11
   standard: 1000

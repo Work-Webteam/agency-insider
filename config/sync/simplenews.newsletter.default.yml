@@ -8,13 +8,14 @@ name: 'Default newsletter'
 id: default
 description: 'This is an example newsletter. Change it.'
 format: html
-priority: 1
-receipt: true
+priority: 3
+receipt: false
 from_name: 'BC Public Service Agency'
 subject: '[[simplenews-newsletter:name]] [node:title]'
-from_address: adrian@optasy.com
+from_address: bcpsa.internal.communications@gov.bc.ca
 hyperlinks: false
 allowed_handlers:
+  0: '0'
   simplenews_all: '0'
 new_account: none
 opt_inout: double

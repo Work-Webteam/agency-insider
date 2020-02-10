@@ -17,7 +17,6 @@ permissions:
   - 'cancel own vote'
   - 'search content'
   - 'subscribe to newsletters'
-  - 'view commerce_product'
   - 'view media'
   - 'view paragraph content landing_page_sidebar'
   - 'view terms in division'
