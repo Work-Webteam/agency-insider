@@ -11,7 +11,7 @@ _core:
 id: agency_theme_help
 theme: agency_theme
 region: content
-weight: -12
+weight: -11
 provider: null
 plugin: help_block
 settings:
