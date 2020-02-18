@@ -1,0 +1,31 @@
+uuid: 9fc48756-7283-46b9-9ae9-9c31f0f30289
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:1477d7b0-81f4-4b8c-b597-9da0aa4eff1d'
+  module:
+    - block_content
+    - system
+  theme:
+    - agency_theme
+id: wesparticipation2020
+theme: agency_theme
+region: content
+weight: -7
+provider: null
+plugin: 'block_content:1477d7b0-81f4-4b8c-b597-9da0aa4eff1d'
+settings:
+  id: 'block_content:1477d7b0-81f4-4b8c-b597-9da0aa4eff1d'
+  label: 'WES Participation 2020'
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }
