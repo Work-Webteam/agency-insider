@@ -157,7 +157,10 @@ function agency_theme_preprocess_breadcrumb(&$variables) {
   foreach ($variables['links'] as $key => $value) {
     if ($value instanceof Link && $value->getText() === '{{ name }}') {
       $url = $value->getUrl();
-      $name = str_replace("-", " ", end(explode("/", $url->getInternalPath())));
+      $internal_path = $url->getInternalPath();
+      $path_array = explode("/", $internal_path);
+      $name = str_replace("-", " ", end($path_array));
+      //$name = str_replace("-", " ", end(explode("/", $url->getInternalPath())));
       $variables['breadcrumb'][$key]['text'] = ucwords($name);
     }
   }
