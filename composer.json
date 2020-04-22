@@ -116,7 +116,8 @@
         "laminas/laminas-feed": "^2.12",
         "laminas/laminas-stdlib": "^3.2",
         "drupal/state_machine": "^1.0@RC",
-        "drupal/recurring_period": "^1.0@alpha"
+        "drupal/recurring_period": "^1.0@alpha",
+        "drupal/easy_install": "^10.2"
     },
     "require-dev": {
         "neronmoon/scriptsdev": "^0.1.0",
