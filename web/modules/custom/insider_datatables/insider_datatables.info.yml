@@ -1,0 +1,6 @@
+name: 'Insider DataTables'
+type: module
+description: 'Integrating DataTables jQuery library into Drupal 8'
+core: 8.x
+package: 'Custom'
+
