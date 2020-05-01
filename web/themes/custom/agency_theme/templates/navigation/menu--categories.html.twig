@@ -53,7 +53,7 @@
         %}
         {% if item.in_active_trail == true %}
           {# Little change here to remove URL from onsite path #}
-          {# May actually be better to handle this site-wide with CSS? #}
+          {# May actually be better to handle this site-wide wgith CSS? #}
           <span class="current nav-link current-page"><span class="visually-hidden">Current Page: </span> {{ item.title }} </span>
         {% else %}
           {{ link(item.title, item.url, {'class': link_classes}) }}
