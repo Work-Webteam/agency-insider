@@ -20,6 +20,8 @@ settings:
   label: 'User account menu'
   provider: menu_block
   label_display: '0'
+  follow: false
+  follow_parent: child
   level: 1
   depth: 1
   expand: 0

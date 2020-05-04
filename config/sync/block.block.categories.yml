@@ -1,23 +1,23 @@
-uuid: e4f73a8a-8786-451a-8664-dfb2e4d029aa
+uuid: da6cd9db-e24d-40d8-88e0-f15c5fb2ff83
 langcode: en
 status: true
 dependencies:
   config:
-    - system.menu.resources
+    - system.menu.categories
   module:
     - menu_block
     - system
   theme:
     - agency_theme
-id: resources
+id: categories
 theme: agency_theme
-region: sidebar_second
-weight: -11
+region: sidebar_first
+weight: -13
 provider: null
-plugin: 'menu_block:resources'
+plugin: 'menu_block:categories'
 settings:
-  id: 'menu_block:resources'
-  label: Resources
+  id: 'menu_block:categories'
+  label: Categories
   provider: menu_block
   label_display: visible
   follow: false
@@ -25,11 +25,11 @@ settings:
   level: 1
   depth: 0
   expand: 0
-  parent: 'resources:'
-  suggestion: resources
+  parent: 'categories:'
+  suggestion: categories
 visibility:
   request_path:
     id: request_path
-    pages: '/divisions/*'
+    pages: "/posts/news-articles\r\n/posts/employee-announcements\r\n/posts/career-spotlights\r\n/posts/executive-messages"
     negate: false
     context_mapping: {  }

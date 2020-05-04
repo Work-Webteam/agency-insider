@@ -11,8 +11,8 @@ dependencies:
     - agency_theme
 id: views_block__article_categories_article_categories
 theme: agency_theme
-region: sidebar_second
-weight: -13
+region: sidebar_first
+weight: -14
 provider: null
 plugin: 'views_block:article_categories-article_categories'
 settings:
