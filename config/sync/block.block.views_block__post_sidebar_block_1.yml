@@ -1,0 +1,41 @@
+uuid: 1bad9da0-da8f-45a8-bc65-ca8f1a627e99
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.post_sidebar
+  module:
+    - ctools
+    - node
+    - views
+  theme:
+    - agency_theme
+id: views_block__post_sidebar_block_1
+theme: agency_theme
+region: sidebar_second
+weight: 0
+provider: null
+plugin: 'views_block:post_sidebar-block_1'
+settings:
+  id: 'views_block:post_sidebar-block_1'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+  context_mapping: {  }
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      post: post
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+  node_type:
+    id: node_type
+    bundles:
+      post: post
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
