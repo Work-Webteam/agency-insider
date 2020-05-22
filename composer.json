@@ -78,7 +78,7 @@
         "drupal/views_templates": "^1.0@alpha",
         "drupal/admin_toolbar": "^2.0",
         "dinbror/blazy": "1.8.2",
-        "drupal/adminimal_admin_toolbar": "^1.9",
+        "drupal/adminimal_admin_toolbar": "^1.11",
         "drupal/structure_sync": "^1.16",
         "drupal/poll": "^1.2",
         "drupal/scheduler": "^1.1",
