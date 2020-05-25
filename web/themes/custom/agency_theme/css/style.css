@@ -160,7 +160,7 @@ h1.js-quickedit-page-title,
   padding-left: 10px;
 }
 #block-views-block-post-listing-last-post-staff-update .content .category a {
-  color: #007bff;
+  color: #1663b4;
 }
 #block-views-block-post-listing-last-post-staff-update h3 a,
 #block-views-block-events-upcoming-events h3 a {
@@ -240,7 +240,7 @@ h1.js-quickedit-page-title,
   width: fit-content;
 }
 #views-bootstrap-events-upcoming-events .view-calendar {
-  color: #007bff;
+  color: #1663b4;
 }
 .view-display-id-last_post_exec_mess .view-content .views-col,
 .view-display-id-last_post_staff_update .view-content .views-col  {
@@ -560,6 +560,7 @@ header .row-second {
 #block-headernavigation ul.sf-menu > li.sfHover > ul {
   top: 48px;
 }
+
 #superfish-header-navigation > li:last-child a.sf-depth-2,
 #superfish-header-navigation > li:last-child a.sf-depth-3 {
   padding-bottom: 10px;
@@ -584,6 +585,13 @@ header .row-second {
 }
 #superfish-header-navigation-accordion {
   background: #002E5B;
+}
+#superfish-header-navigation-accordion li.sf-clone-parent {
+  display:none;
+}
+#superfish-header-navigation-accordion .sf-depth-2,
+#superfish-header-navigation-accordion .sf-depth-3 {
+  padding-left:35px;
 }
 #navbar-collapse {
   border: none;
