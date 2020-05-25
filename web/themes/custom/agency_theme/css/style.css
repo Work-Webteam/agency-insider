@@ -74,7 +74,7 @@ h1.js-quickedit-page-title,
 #block-agency-theme-page-title h1.title {
   padding: 15px;
   margin: 0;
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: bold;
 }
 .btn-primary-agency {
@@ -537,7 +537,7 @@ header .row-second {
 #block-headernavigation,
 .block-superfish {
   width: -webkit-fit-content !important;
-  width: -moz-fit-content !important;
+  /*width: -moz-fit-content !important;*/
   width: fit-content !important;
   width: 60%;
 }
@@ -690,7 +690,7 @@ ul.sf-menu.sf-navbar.sf-shadow ul ul li {
   display: block;
   padding: 1em 1em;
   font-size: 1.2rem;
-  line-height: 1.2rem;
+  line-height: 1.5rem;
 }
 #page-sidebar-second .block ul:not(.contextual-links) li a {
   padding: 0.75em 1em 0.75em 0;
@@ -698,7 +698,8 @@ ul.sf-menu.sf-navbar.sf-shadow ul ul li {
   margin-left: 5px;
 }
 .path-frontpage #page-sidebar-second .block ul:not(.contextual-links) li a,
-.path-posts #page-sidebar-second .block ul:not(.contextual-links) li a  {
+.path-posts #page-sidebar-second .block ul:not(.contextual-links) li a,
+.path-events #page-sidebar-second .block ul:not(.contextual-links) li a   {
   padding: 0.75em 1em 0.75em 10px;
   color: white;
   margin: 5px;
@@ -706,7 +707,8 @@ ul.sf-menu.sf-navbar.sf-shadow ul ul li {
   background: #2261a4;
 }
 .path-frontpage #page-sidebar-second .block ul:not(.contextual-links) li a:hover,
-.path-posts #page-sidebar-second .block ul:not(.contextual-links) li a:hover {
+.path-posts #page-sidebar-second .block ul:not(.contextual-links) li a:hover,
+.path-events #page-sidebar-second .block ul:not(.contextual-links) li a:hover  {
   color: #333;
   background: white;
   text-decoration: none;
@@ -1966,4 +1968,21 @@ article.comment .comment__content > .card-block > *{
 
 .comment-comment-form .form-control {
   max-width: 100%;
+}
+
+/* Styling adjustments - May 2020 */
+
+/* Correct "Add new comment" size */
+h2.title.comment-form__title { 
+  font-size: 1.5rem;
+  margin-bottom:inherit;
+}
+
+/* Correct the quick links on mobile to always show */
+ul#superfish-quick-links,
+ul#superfish-navigation-footer {
+  display: block!important;
+}
+div.sf-accordion-toggle {
+  display:none;
 }
