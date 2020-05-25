@@ -689,14 +689,16 @@ ul.sf-menu.sf-navbar.sf-shadow ul ul li {
   color: #1663b4;
   margin-left: 5px;
 }
-.path-frontpage #page-sidebar-second .block ul:not(.contextual-links) li a {
+.path-frontpage #page-sidebar-second .block ul:not(.contextual-links) li a,
+.path-posts #page-sidebar-second .block ul:not(.contextual-links) li a  {
   padding: 0.75em 1em 0.75em 10px;
   color: white;
   margin: 5px;
   border: 1px solid #2261a4;
   background: #2261a4;
 }
-.path-frontpage #page-sidebar-second .block ul:not(.contextual-links) li a:hover {
+.path-frontpage #page-sidebar-second .block ul:not(.contextual-links) li a:hover,
+.path-posts #page-sidebar-second .block ul:not(.contextual-links) li a:hover {
   color: #333;
   background: white;
   text-decoration: none;
