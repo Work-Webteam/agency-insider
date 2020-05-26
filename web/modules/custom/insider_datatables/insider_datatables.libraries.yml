@@ -1,0 +1,13 @@
+#insider_datatables.libraries.yml
+datatables:
+  version: 1.x
+  css:
+    theme:
+      css/datatables.css: {}
+  js:
+    js/datatables.js: {}
+    js/insider_datatables.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - core/drupalSettings

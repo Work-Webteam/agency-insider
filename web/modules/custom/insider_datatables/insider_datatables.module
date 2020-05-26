@@ -1,0 +1,39 @@
+<?php
+
+/**
+ * @file
+ * Contains insider_datatables.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function insider_datatables_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the insider_datatables module.
+    case 'help.page.insider_datatables':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Integrating DataTables jQuery library into Drupal 8') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+
+/**
+ * Implements hook_preprocess_node
+ *
+ */
+function insider_datatables_preprocess_node(&$variables) {
+  if(isset($variables['node'])) {
+    //Check content type
+    $this_node = $variables['node'];
+    if($this_node->getType() == 'page') {
+      $variables['#attached']['library'][] = 'insider_datatables/datatables';
+    }
+  }
+}
