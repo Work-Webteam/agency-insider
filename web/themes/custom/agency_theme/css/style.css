@@ -1974,7 +1974,7 @@ article.comment .comment__content > .card-block > *{
 /* Styling adjustments - May 2020 */
 
 /* Correct "Add new comment" size */
-h2.title.comment-form__title { 
+h2.title.comment-form__title {
   font-size: 1.5rem;
   margin-bottom:inherit;
 }
@@ -1986,4 +1986,26 @@ ul#superfish-navigation-footer {
 }
 div.sf-accordion-toggle {
   display:none;
+}
+/* DataTables styling */
+
+div.dataTables_wrapper div.dataTables_length select {
+  margin-left:10px;
+  margin-right:10px;
+}
+div.dataTables_wrapper div.dataTables_info {
+  font-size: .9em;
+  padding-top:4px;
+}
+div.dataTables_wrapper div.dataTables_paginate ul.pagination li {
+  padding:0 5px;
+  margin: 0 2px;
+  border: solid 1px #D7D7D7;
+  font-size: .9em;
+}
+div.dataTables_wrapper div.dataTables_paginate ul.pagination li:hover {
+  background-color: #ECECEC;
+}
+.dataTables_wrapper:last-of-type {
+  margin-bottom: 25px;
 }
