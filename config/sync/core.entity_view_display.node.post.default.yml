@@ -28,7 +28,7 @@ content:
     type: file_default
     weight: 3
     region: content
-    label: hidden
+    label: inline
     settings:
       use_description_as_link_text: true
     third_party_settings: {  }
