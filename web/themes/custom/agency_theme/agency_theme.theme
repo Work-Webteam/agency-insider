@@ -72,27 +72,18 @@ function agency_theme_preprocess_calendar_pager(&$variables) {
   $time_add = '01';
   if (isset($variables['items'])) {
     foreach ($variables['items'] as $key => $value) {
-      $url = reset($value);
+      if (is_array($value)) {
+        $url = reset($value);
 
-      if ($key === 'previous') {
-        if ($url instanceof Url && $url->isRouted()) {
-          $arg = $url->getRouteParameters();
+        if ($key === 'previous' || $key === 'next') {
+          if ($url instanceof Url && $url->isRouted()) {
+            $arg = $url->getRouteParameters();
 
-          if (isset($arg['arg_0'])) {
-            $arg = $arg['arg_0'];
-            $timestamp = strtotime($arg . $time_add);
-            $variables['items'][$key]['title'] = date('F Y', $timestamp);
-          }
-        }
-      }
-      elseif ($key === 'next') {
-        if ($url instanceof Url && $url->isRouted()) {
-          $arg = $url->getRouteParameters();
-
-          if (isset($arg['arg_0'])) {
-            $arg = $arg['arg_0'];
-            $timestamp = strtotime($arg . $time_add);
-            $variables['items'][$key]['title'] = date('F Y', $timestamp);
+            if (isset($arg['arg_0'])) {
+              $arg = $arg['arg_0'];
+              $timestamp = strtotime($arg . $time_add);
+              $variables['items'][$key]['title'] = date('F Y', $timestamp);
+            }
           }
         }
       }
