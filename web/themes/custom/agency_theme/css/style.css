@@ -278,10 +278,11 @@ h1.js-quickedit-page-title,
   display: block;
   width: 100%;
   float: left;
-  padding: 15px;
+  padding: 0 15px;
   border: 1px solid #003366;
   margin-bottom: 10px;
 }
+
 #page-sidebar-second .field--name-field-landing-sidebar .field__label {
   display: none;
 }
@@ -667,6 +668,16 @@ ul.sf-menu.sf-navbar.sf-shadow ul ul li {
   margin: 0px;
   padding: 0 0 15px;
 }
+/* Node landing page sidebar menu */
+.path-node #page-sidebar-second .field--name-field-landing-sidebar ul:not(.contextual-links)  {
+  list-style-type: none;
+  padding:0;
+}
+.path-node #page-sidebar-second .field--name-field-landing-sidebar h5 {
+  font-size:1.35rem;
+  margin: 25px 0 0;
+}
+
 #page-sidebar-second .block ul li,
 #page-sidebar-first .block ul li {
   width:100%;
@@ -684,7 +695,8 @@ ul.sf-menu.sf-navbar.sf-shadow ul ul li {
   filter: alpha(opacity=60);
 }
 #page-sidebar-second .block ul:not(.contextual-links) li a,
-#page-sidebar-first .block ul:not(.contextual-links) li a {
+#page-sidebar-first .block ul:not(.contextual-links) li a,
+.path-node #page-sidebar-second .field--name-field-landing-sidebar ul:not(.contextual-links) li a  {
   opacity: 1;
   width: 100%;
   display: block;
@@ -693,14 +705,11 @@ ul.sf-menu.sf-navbar.sf-shadow ul ul li {
   line-height: 1.5rem;
 }
 
-#page-sidebar-second .block ul:not(.contextual-links) li a {
-  padding: 0.75em 1em 0.75em 0;
-  color: #1663b4;
-  /*margin-left: 5px;*/
-}
+
 .path-frontpage #page-sidebar-second .block ul:not(.contextual-links) li a,
 .path-posts #page-sidebar-second .block ul:not(.contextual-links) li a,
-.path-events #page-sidebar-second .block ul:not(.contextual-links) li a   {
+.path-events #page-sidebar-second .block ul:not(.contextual-links) li a,
+.path-node #page-sidebar-second .field--name-field-landing-sidebar ul:not(.contextual-links) li a   {
   padding: 0.75em 1em 0.25em 5px;
   /*color: white;
   margin: 5px;*/
@@ -709,7 +718,8 @@ ul.sf-menu.sf-navbar.sf-shadow ul ul li {
 }
 .path-frontpage #page-sidebar-second .block ul:not(.contextual-links) li a:hover,
 .path-posts #page-sidebar-second .block ul:not(.contextual-links) li a:hover,
-.path-events #page-sidebar-second .block ul:not(.contextual-links) li a:hover  {
+.path-events #page-sidebar-second .block ul:not(.contextual-links) li a:hover,
+.path-node #page-sidebar-second .field--name-field-landing-sidebar ul:not(.contextual-links) li a:hover  {
   color: white;
   background: #2261a4;
   text-decoration: none;
@@ -721,6 +731,8 @@ ul.sf-menu.sf-navbar.sf-shadow ul ul li {
   font-size: 2rem;
   margin: 0 0 15px;
 }
+
+
 /*Polls*/
 #block-mostrecentpoll form legend{
   display: none;
@@ -2022,4 +2034,17 @@ body.path-search h2 {
 }
 body.path-search ol.node_search-results li {
   margin:10px 30px; 0;
+}
+
+/* Styling fix for attachements shown at the bottom of article content */
+article .node__content .field--name-field-attachments {
+  border: solid 1px #d7d7d7;
+  padding:5px;
+  font-size: .85em;
+}
+article .node__content .field--name-field-attachments .field__items {
+  border-top: solid 1px #d7d7d7;
+}
+article .node__content .field--name-field-attachments .field__items .field__item .file {
+  margin-right:15px;
 }
