@@ -1,0 +1,30 @@
+uuid: 3d8a7f2b-f58c-4e0a-9ba6-a4dba799ea81
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.calendar
+  module:
+    - system
+    - views
+  theme:
+    - agency_theme
+id: views_block__calendar_block_1
+theme: agency_theme
+region: content
+weight: 0
+provider: null
+plugin: 'views_block:calendar-block_1'
+settings:
+  id: 'views_block:calendar-block_1'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }
