@@ -2009,3 +2009,17 @@ div.dataTables_wrapper div.dataTables_paginate ul.pagination li:hover {
 .dataTables_wrapper:last-of-type {
   margin-bottom: 25px;
 }
+
+/* Search results page */
+/* Adjust the margins and spacing */ 
+
+body.path-search form#search-form {
+  margin-left:25px;
+  margin-right:25px;
+}
+body.path-search h2 {
+  margin: 20px 30px 0;
+}
+body.path-search ol.node_search-results li {
+  margin:10px 30px; 0;
+}
