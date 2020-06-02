@@ -135,13 +135,13 @@ h1.js-quickedit-page-title,
   background:transparent;
 }
 #block-views-block-post-listing-last-post-staff-update .block-title,
-#block-views-block-events-upcoming-events .block-title {
+#block-views-block-calendar-block-1 .block-title {
   color: white;
   display: block;
   text-align: center;
   margin-bottom: 40px;
   background: #003466;
-  margin: 0 30px 2.5rem;
+  margin: 0 30px .5rem;
   font-size: 1.75rem;
   line-height: 3.5rem;
   font-weight: bold;
@@ -2008,4 +2008,33 @@ div.dataTables_wrapper div.dataTables_paginate ul.pagination li:hover {
 }
 .dataTables_wrapper:last-of-type {
   margin-bottom: 25px;
+}
+/* Front page - Upcomging Events Calendar */
+#block-views-block-calendar-block-1,
+#block-views-block-calendar-block-1 .calendar-week {
+  width:100%;
+}
+.fc-scroller {
+  height:300px!important;
+}
+body.path-frontpage .calendar-week .fc-center h2 {
+  font-size: 1.3em;
+}
+#block-views-block-calendar-block-1 .content {
+  padding:0 30px;
+}
+#block-views-block-calendar-block-1 .fullcalendar-bottom-btn {
+  padding-top:5px;
+  padding-bottom:5px;
+}
+#block-views-block-calendar-block-1 .fullcalendar-bottom-btn a {
+  display: block;
+  border: solid 1px #D7D7D7;
+  width: 100px;
+  margin:0 auto;
+  text-align: center;
+}
+#block-views-block-calendar-block-1 .fullcalendar-bottom-btn a:hover {
+  color:white;
+  background-color: #003466;
 }
