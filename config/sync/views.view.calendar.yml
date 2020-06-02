@@ -485,11 +485,12 @@ display:
           rrule: field_event_reoccurring_rules
           duration: ''
           bundle_type: events
-          classes: ''
+          classes: calendar-week
       defaults:
         style: false
         row: false
         fields: false
+        title: false
       row:
         type: fields
         options: {  }
@@ -846,6 +847,7 @@ display:
           entity_type: node
           plugin_id: rendered_entity
       block_description: 'Calendar Block'
+      title: 'Upcoming Events'
     cache_metadata:
       max-age: -1
       contexts:
