@@ -2073,3 +2073,8 @@ article[class*="node--type-events"] .field--name-field-event-end-date {
 .field--name-field-attachments .field__items .field__item {
   margin-right:10px;
 }
+.field--type-add-to-calendar-field {
+  font-size: .85em;
+  color: #999;
+  margin:10px 0;
+}
