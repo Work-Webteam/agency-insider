@@ -2041,6 +2041,7 @@ article .node__content .field--name-field-attachments {
   border: solid 1px #d7d7d7;
   padding:5px;
   font-size: .85em;
+  margin-bottom:25px;
 }
 article .node__content .field--name-field-attachments .field__items {
   border-top: solid 1px #d7d7d7;
