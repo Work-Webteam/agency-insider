@@ -2014,13 +2014,17 @@ div.dataTables_wrapper div.dataTables_paginate ul.pagination li:hover {
 #block-views-block-calendar-block-1 .calendar-week {
   width:100%;
 }
-.fc-scroller {
+.path-frontpage .fc-scroller{
   height:300px!important;
+}
+.page-view-calendar .fc-scroller {
+  height: auto;
 }
 body.path-frontpage .calendar-week .fc-center h2 {
   font-size: 1.3em;
 }
-#block-views-block-calendar-block-1 .content {
+#block-views-block-calendar-block-1 .content,
+.page-view-calendar .view-display-id-page_1  {
   padding:0 30px;
 }
 #block-views-block-calendar-block-1 .fullcalendar-bottom-btn {
@@ -2037,4 +2041,21 @@ body.path-frontpage .calendar-week .fc-center h2 {
 #block-views-block-calendar-block-1 .fullcalendar-bottom-btn a:hover {
   color:white;
   background-color: #003466;
+}
+.fc-dayGrid-view .fc-body .fc-row {
+  min-height:7em;
+}
+
+/* Popup window used when clicking on a calendar event */
+article[class*="node--type-events"] {
+  padding:15px;
+}
+article[class*="node--type-events"] .field--name-field-event-start-date,
+article[class*="node--type-events"] .field--name-field-event-end-date {
+  margin-bottom: 10px;
+}
+
+/* Full calendar page view */
+.page-view-calendar .fc-title a {
+  color:white;
 }
