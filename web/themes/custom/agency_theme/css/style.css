@@ -2059,3 +2059,17 @@ article[class*="node--type-events"] .field--name-field-event-end-date {
 .page-view-calendar .fc-title a {
   color:white;
 }
+
+/* Attachment block at the bottom of each page when supporting docs are uploaded */
+.field--name-field-attachments {
+  border: solid 1px #d7d7d7;
+  padding: 5px 10px;
+  font-size: .85em;
+  margin-bottom:25px;
+}
+.field--name-field-attachments .field__items {
+  border-top:solid 1px #d7d7d7;
+}
+.field--name-field-attachments .field__items .field__item {
+  margin-right:10px;
+}
