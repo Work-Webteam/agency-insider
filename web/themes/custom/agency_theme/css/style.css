@@ -616,12 +616,13 @@ ul.sf-menu.sf-navbar.sf-shadow ul ul li {
 #block-headernavigationsecondary ul li a {
   padding: 0.8em 1em;
 }
-/* Page sidebar*/
+/* Page sidebar menu blocks */
 #page-sidebar-second {
   background-color: transparent;
   margin-top: 30px;
 }
 #page-sidebar-second .block,
+#page-sidebar-second .field--name-field-landing-sidebar,
 #page-sidebar-first .block {
   background: transparent;
   display: block;
@@ -667,7 +668,12 @@ ul.sf-menu.sf-navbar.sf-shadow ul ul li {
   margin: 0px;
   padding: 0 0 15px;
 }
+#page-sidebar-second .field--name-field-landing-sidebar ul {
+  padding:0;
+  margin:0;
+}
 #page-sidebar-second .block ul li,
+#page-sidebar-second .field--name-field-landing-sidebar ul li,
 #page-sidebar-first .block ul li {
   width:100%;
   display: block;
@@ -678,12 +684,14 @@ ul.sf-menu.sf-navbar.sf-shadow ul ul li {
   border-bottom: #e3e3e3 1px solid;
 }
 #page-sidebar-second .block ul,
+#page-sidebar-second .field--name-field-landing-sidebar ul,
 #page-sidebar-first .block ul {
   opacity: 1.6;
   background-color: transparent;
   filter: alpha(opacity=60);
 }
 #page-sidebar-second .block ul:not(.contextual-links) li a,
+#page-sidebar-second .field--name-field-landing-sidebar ul:not(.contextual-links) li a,
 #page-sidebar-first .block ul:not(.contextual-links) li a {
   opacity: 1;
   width: 100%;
@@ -693,14 +701,16 @@ ul.sf-menu.sf-navbar.sf-shadow ul ul li {
   line-height: 1.5rem;
 }
 
-#page-sidebar-second .block ul:not(.contextual-links) li a {
+#page-sidebar-second .block ul:not(.contextual-links) li a,
+#page-sidebar-second .field--name-field-landing-sidebar ul:not(.contextual-links) li a {
   padding: 0.75em 1em 0.75em 0;
   color: #1663b4;
   /*margin-left: 5px;*/
 }
 .path-frontpage #page-sidebar-second .block ul:not(.contextual-links) li a,
 .path-posts #page-sidebar-second .block ul:not(.contextual-links) li a,
-.path-events #page-sidebar-second .block ul:not(.contextual-links) li a   {
+.path-events #page-sidebar-second .block ul:not(.contextual-links) li a,
+#page-sidebar-second .field--name-field-landing-sidebar ul:not(.contextual-links) li a {
   padding: 0.75em 1em 0.25em 5px;
   /*color: white;
   margin: 5px;*/
@@ -709,7 +719,8 @@ ul.sf-menu.sf-navbar.sf-shadow ul ul li {
 }
 .path-frontpage #page-sidebar-second .block ul:not(.contextual-links) li a:hover,
 .path-posts #page-sidebar-second .block ul:not(.contextual-links) li a:hover,
-.path-events #page-sidebar-second .block ul:not(.contextual-links) li a:hover  {
+.path-events #page-sidebar-second .block ul:not(.contextual-links) li a:hover,
+#page-sidebar-second .field--name-field-landing-sidebar ul:not(.contextual-links) li a:hover {
   color: white;
   background: #2261a4;
   text-decoration: none;
