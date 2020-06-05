@@ -1987,8 +1987,14 @@ ul#superfish-navigation-footer {
 div.sf-accordion-toggle {
   display:none;
 }
-/* DataTables styling */
 
+/* DataTables styling */
+.page-node-411 div[id^="agency-datatable"] {
+  overflow:auto;
+}
+div.dataTables_wrapper th {
+  vertical-align: top;
+}
 div.dataTables_wrapper div.dataTables_length select {
   margin-left:10px;
   margin-right:10px;
@@ -2008,6 +2014,18 @@ div.dataTables_wrapper div.dataTables_paginate ul.pagination li:hover {
 }
 .dataTables_wrapper:last-of-type {
   margin-bottom: 25px;
+}
+table.dataTable thead .sorting:after,
+table.dataTable thead .sorting_asc:after,
+table.dataTable thead .sorting_desc:after,
+table.dataTable thead .sorting_asc_disabled:after,
+table.dataTable thead .sorting_desc_disabled:after {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  display: block;
+  content: url("images/baseline_sort_by_alpha_white_18dp.png");
+  opacity: 1;
 }
 /* Front page - Upcomging Events Calendar */
 #block-views-block-calendar-block-1,
