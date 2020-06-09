@@ -475,7 +475,7 @@ header .row-second {
   color: white;
 }
 .view-post-listing {
-  padding-top: 30px;
+  padding-top: 15px;
 }
 .view-post-listing .posts-listing-wrapper {
   margin-bottom: 30px;
@@ -487,8 +487,9 @@ header .row-second {
 
 .view-display-id-post_listing_category .view-content > .views-row,
 .view-display-id-post_listing .view-content > .views-row {
-  width: 50%;
-  padding-bottom: 30px;
+  /*width: 50%;*/
+  width:33%;
+  padding-bottom: 10px;
 }
 .view-display-id-post_listing_category .view-content > .views-row > .views-field-nothing,
 .view-display-id-post_listing .view-content > .views-row > .views-field-nothing {
@@ -496,11 +497,11 @@ header .row-second {
 }
 .view-display-id-post_listing_category .view-content > .views-row:nth-child(odd),
 .view-display-id-post_listing .view-content > .views-row:nth-child(odd) {
-  padding-right: 15px;
+  padding-right: 5px;
 }
 .view-display-id-post_listing_category .view-content > .views-row:nth-child(even),
 .view-display-id-post_listing .view-content > .views-row:nth-child(even) {
-  padding-left: 15px;
+  padding-right: 5px;
 }
 .view-post-listing .posts-listing-wrapper > .no-gutters {
   height: 100%;
