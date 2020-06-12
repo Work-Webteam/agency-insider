@@ -1,22 +1,22 @@
-uuid: 95cd3a26-e990-4a04-85cb-4be414ef1910
+uuid: 3ec5d437-ca99-49f2-9bb2-1766d77edf91
 langcode: en
 status: true
 dependencies:
   config:
-    - views.view.events
+    - views.view.post_listing
   module:
     - system
     - views
   theme:
     - agency_theme
-id: views_block__events_latest_events
+id: views_block__post_listing_fp_announce_block
 theme: agency_theme
-region: sidebar_second
-weight: -15
+region: content
+weight: -4
 provider: null
-plugin: 'views_block:events-latest_events'
+plugin: 'views_block:post_listing-fp_announce_block'
 settings:
-  id: 'views_block:events-latest_events'
+  id: 'views_block:post_listing-fp_announce_block'
   label: ''
   provider: views
   label_display: visible
@@ -25,6 +25,6 @@ settings:
 visibility:
   request_path:
     id: request_path
-    pages: "/events\r\n/events/*"
+    pages: '<front>'
     negate: false
     context_mapping: {  }

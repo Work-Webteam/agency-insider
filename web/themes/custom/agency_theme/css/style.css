@@ -2009,3 +2009,82 @@ div.dataTables_wrapper div.dataTables_paginate ul.pagination li:hover {
 .dataTables_wrapper:last-of-type {
   margin-bottom: 25px;
 }
+
+/* Front page News / Employee Announcement / Events Columns */
+
+/* Initial column spacing */
+#block-views-block-post-listing-fp-news-block,
+#block-views-block-post-listing-fp-announce-block,
+#block-views-block-post-listing-fp-events-block {
+  display: flex;
+  flex-direction: column;
+  flex: 3 1 0;
+  /*width: 32%;*/
+  margin-right:5px;
+  padding:0 10px;
+}
+.path-frontpage .view-post-listing {
+  padding-top:0;
+}
+.fp-news, .fp-announcement, .fp-events {
+  margin-bottom:25px;
+}
+
+.fp-news .view-content.row, .fp-announcement .view-content.row, .fp-events .view-content.row {
+  min-height: 365px;
+}
+/* H2 title text adjustments */
+#block-views-block-post-listing-fp-news-block h2,
+#block-views-block-post-listing-fp-announce-block h2,
+#block-views-block-post-listing-fp-events-block h2 {
+  border-top:solid 1px #999;
+  border-bottom:solid 1px #999;
+  font-size: 1.15rem;
+  padding: 3px 5px;
+}
+/* Number count and date blocks */
+#block-views-block-post-listing-fp-news-block aside,
+#block-views-block-post-listing-fp-announce-block aside,
+#block-views-block-post-listing-fp-events-block aside {
+  float:left;
+  font-size: .75rem;
+}
+.path-frontpage aside div.count,
+.path-frontpage aside div.event-date {
+  display: block;
+  background-color: #1F5792;
+  color:white;
+  width:40px;
+  text-align: center;
+  padding: 5px 0;
+}
+.fp-news .view-content.row > div:nth-child(odd) .count,
+.fp-announcement .view-content.row > div:nth-child(odd) .count,
+.fp-events .view-content.row > div li:nth-child(odd) .event-date {
+  background-color: #389bb8;
+} 
+
+/* fp content blocks sizing*/
+.path-frontpage .fp-content {
+  padding-left:45px;
+  min-height:45px;
+  max-height:90px;
+  margin-bottom:10px;
+  font-size: .85rem;
+}
+/* fp.content text adjustments*/
+.path-frontpage .fp-content .announce-time {
+  color:#6c757d;
+  font-size: .75rem;
+}
+
+/* FP column pagers */
+.path-frontpage .fp-footer {
+  position: relative;
+  bottom:0px;
+  display: block;
+  width:100%;
+  font-size:.85rem;
+  border: solid 1px #ECECEC;
+  padding-left:8px;
+}

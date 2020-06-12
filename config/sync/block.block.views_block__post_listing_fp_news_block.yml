@@ -1,26 +1,22 @@
-uuid: e5e64e8f-5b1f-48ff-b966-23fd415c95e8
+uuid: cf36be7e-3511-4a1e-b9bf-0ed46227d4f2
 langcode: en
 status: true
 dependencies:
   config:
     - views.view.post_listing
   module:
-    - block_class
     - system
     - views
   theme:
     - agency_theme
-third_party_settings:
-  block_class:
-    classes: col-xs-12
-id: views_block__post_listing_last_post_staff_update
+id: views_block__post_listing_fp_news_block
 theme: agency_theme
 region: content
-weight: -6
+weight: -5
 provider: null
-plugin: 'views_block:post_listing-last_post_staff_update'
+plugin: 'views_block:post_listing-fp_news_block'
 settings:
-  id: 'views_block:post_listing-last_post_staff_update'
+  id: 'views_block:post_listing-fp_news_block'
   label: ''
   provider: views
   label_display: visible
