@@ -488,8 +488,7 @@ header .row-second {
 
 .view-display-id-post_listing_category .view-content > .views-row,
 .view-display-id-post_listing .view-content > .views-row {
-  /*width: 50%;*/
-  width:33%;
+  width:25%;
   padding-bottom: 10px;
 }
 .view-display-id-post_listing_category .view-content > .views-row > .views-field-nothing,
@@ -540,8 +539,8 @@ header .row-second {
 .block-superfish {
   width: -webkit-fit-content !important;
   /*width: -moz-fit-content !important;*/
-  width: fit-content !important;
-  width: 60%;
+  width:max-content;
+  min-width: 60%;
 }
 #block-headernavigation ul:not(.contextual-links) a {
   background-color: #1F5792;
@@ -2049,10 +2048,9 @@ div.dataTables_wrapper div.dataTables_paginate ul.pagination li:hover {
 #block-views-block-post-listing-fp-events-block {
   display: flex;
   flex-direction: column;
-  flex: 3 1 0;
-  /*width: 32%;*/
-  margin-right:5px;
-  padding:0 10px;
+  flex: auto;
+  min-width: 33%;
+  margin: 0 auto;
 }
 .path-frontpage .view-post-listing {
   padding-top:0;

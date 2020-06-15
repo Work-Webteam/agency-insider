@@ -6,11 +6,8 @@ dependencies:
     - field.field.node.events.body
     - field.field.node.events.field_add_to_calendar
     - field.field.node.events.field_event_end_date
-<<<<<<< HEAD
     - field.field.node.events.field_event_location
     - field.field.node.events.field_event_online
-=======
->>>>>>> new_calendar
     - field.field.node.events.field_event_reoccurring_rules
     - field.field.node.events.field_event_start_date
     - field.field.node.events.field_image
@@ -19,10 +16,7 @@ dependencies:
   module:
     - addtocalendar
     - datetime
-<<<<<<< HEAD
     - link
-=======
->>>>>>> new_calendar
     - media_library
     - path
     - scheduler
@@ -56,7 +50,6 @@ content:
     region: content
   field_event_end_date:
     weight: 2
-<<<<<<< HEAD
     settings: {  }
     third_party_settings: {  }
     type: datetime_default
@@ -90,7 +83,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: datetime_default
-=======
     settings: {  }
     third_party_settings: {  }
     type: datetime_default
@@ -108,7 +100,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: datetime_default
->>>>>>> new_calendar
     region: content
   field_media_event_icon:
     type: media_library_widget
