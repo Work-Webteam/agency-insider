@@ -5,15 +5,21 @@ dependencies:
   config:
     - field.storage.node.body
     - field.storage.node.field_event_end_date
+<<<<<<< HEAD:config/sync/views.view.calendar.yml
     - field.storage.node.field_event_location
     - field.storage.node.field_event_online
+=======
+>>>>>>> new_calendar:config/sync/views.view.calendar.yml
     - field.storage.node.field_event_reoccurring_rules
     - field.storage.node.field_event_start_date
     - node.type.events
   module:
     - datetime
     - fullcalendar_view
+<<<<<<< HEAD:config/sync/views.view.calendar.yml
     - link
+=======
+>>>>>>> new_calendar:config/sync/views.view.calendar.yml
     - node
     - text
     - user

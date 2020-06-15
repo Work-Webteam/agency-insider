@@ -135,13 +135,13 @@ h1.js-quickedit-page-title,
   background:transparent;
 }
 #block-views-block-post-listing-last-post-staff-update .block-title,
-#block-views-block-events-upcoming-events .block-title {
+#block-views-block-calendar-block-1 .block-title {
   color: white;
   display: block;
   text-align: center;
   margin-bottom: 40px;
   background: #003466;
-  margin: 0 30px 2.5rem;
+  margin: 0 30px .5rem;
   font-size: 1.75rem;
   line-height: 3.5rem;
   font-weight: bold;
@@ -476,7 +476,7 @@ header .row-second {
   color: white;
 }
 .view-post-listing {
-  padding-top: 30px;
+  padding-top: 15px;
 }
 .view-post-listing .posts-listing-wrapper {
   margin-bottom: 30px;
@@ -488,8 +488,9 @@ header .row-second {
 
 .view-display-id-post_listing_category .view-content > .views-row,
 .view-display-id-post_listing .view-content > .views-row {
-  width: 50%;
-  padding-bottom: 30px;
+  /*width: 50%;*/
+  width:33%;
+  padding-bottom: 10px;
 }
 .view-display-id-post_listing_category .view-content > .views-row > .views-field-nothing,
 .view-display-id-post_listing .view-content > .views-row > .views-field-nothing {
@@ -497,11 +498,11 @@ header .row-second {
 }
 .view-display-id-post_listing_category .view-content > .views-row:nth-child(odd),
 .view-display-id-post_listing .view-content > .views-row:nth-child(odd) {
-  padding-right: 15px;
+  padding-right: 5px;
 }
 .view-display-id-post_listing_category .view-content > .views-row:nth-child(even),
 .view-display-id-post_listing .view-content > .views-row:nth-child(even) {
-  padding-left: 15px;
+  padding-right: 5px;
 }
 .view-post-listing .posts-listing-wrapper > .no-gutters {
   height: 100%;
@@ -617,12 +618,13 @@ ul.sf-menu.sf-navbar.sf-shadow ul ul li {
 #block-headernavigationsecondary ul li a {
   padding: 0.8em 1em;
 }
-/* Page sidebar*/
+/* Page sidebar menu blocks */
 #page-sidebar-second {
   background-color: transparent;
   margin-top: 30px;
 }
 #page-sidebar-second .block,
+#page-sidebar-second .field--name-field-landing-sidebar,
 #page-sidebar-first .block {
   background: transparent;
   display: block;
@@ -668,6 +670,7 @@ ul.sf-menu.sf-navbar.sf-shadow ul ul li {
   margin: 0px;
   padding: 0 0 15px;
 }
+
 /* Node landing page sidebar menu */
 .path-node #page-sidebar-second .field--name-field-landing-sidebar ul:not(.contextual-links)  {
   list-style-type: none;
@@ -678,7 +681,12 @@ ul.sf-menu.sf-navbar.sf-shadow ul ul li {
   margin: 25px 0 0;
 }
 
+#page-sidebar-second .field--name-field-landing-sidebar ul {
+  padding:0;
+  margin:0;
+}
 #page-sidebar-second .block ul li,
+#page-sidebar-second .field--name-field-landing-sidebar ul li,
 #page-sidebar-first .block ul li {
   width:100%;
   display: block;
@@ -689,14 +697,15 @@ ul.sf-menu.sf-navbar.sf-shadow ul ul li {
   border-bottom: #e3e3e3 1px solid;
 }
 #page-sidebar-second .block ul,
+#page-sidebar-second .field--name-field-landing-sidebar ul,
 #page-sidebar-first .block ul {
   opacity: 1.6;
   background-color: transparent;
   filter: alpha(opacity=60);
 }
 #page-sidebar-second .block ul:not(.contextual-links) li a,
-#page-sidebar-first .block ul:not(.contextual-links) li a,
-.path-node #page-sidebar-second .field--name-field-landing-sidebar ul:not(.contextual-links) li a  {
+#page-sidebar-second .field--name-field-landing-sidebar ul:not(.contextual-links) li a,
+#page-sidebar-first .block ul:not(.contextual-links) li a {
   opacity: 1;
   width: 100%;
   display: block;
@@ -704,12 +713,16 @@ ul.sf-menu.sf-navbar.sf-shadow ul ul li {
   font-size: 1.2rem;
   line-height: 1.5rem;
 }
-
-
+#page-sidebar-second .block ul:not(.contextual-links) li a,
+#page-sidebar-second .field--name-field-landing-sidebar ul:not(.contextual-links) li a {
+  padding: 0.75em 1em 0.75em 0;
+  color: #1663b4;
+  /*margin-left: 5px;*/
+}
 .path-frontpage #page-sidebar-second .block ul:not(.contextual-links) li a,
 .path-posts #page-sidebar-second .block ul:not(.contextual-links) li a,
 .path-events #page-sidebar-second .block ul:not(.contextual-links) li a,
-.path-node #page-sidebar-second .field--name-field-landing-sidebar ul:not(.contextual-links) li a   {
+#page-sidebar-second .field--name-field-landing-sidebar ul:not(.contextual-links) li a {
   padding: 0.75em 1em 0.25em 5px;
   /*color: white;
   margin: 5px;*/
@@ -719,7 +732,7 @@ ul.sf-menu.sf-navbar.sf-shadow ul ul li {
 .path-frontpage #page-sidebar-second .block ul:not(.contextual-links) li a:hover,
 .path-posts #page-sidebar-second .block ul:not(.contextual-links) li a:hover,
 .path-events #page-sidebar-second .block ul:not(.contextual-links) li a:hover,
-.path-node #page-sidebar-second .field--name-field-landing-sidebar ul:not(.contextual-links) li a:hover  {
+#page-sidebar-second .field--name-field-landing-sidebar ul:not(.contextual-links) li a:hover {
   color: white;
   background: #2261a4;
   text-decoration: none;
@@ -1999,8 +2012,14 @@ ul#superfish-navigation-footer {
 div.sf-accordion-toggle {
   display:none;
 }
-/* DataTables styling */
 
+/* DataTables styling */
+.page-node-411 div[id^="agency-datatable"] {
+  overflow:auto;
+}
+div.dataTables_wrapper th {
+  vertical-align: top;
+}
 div.dataTables_wrapper div.dataTables_length select {
   margin-left:10px;
   margin-right:10px;
@@ -2127,4 +2146,85 @@ article .node__content .field--name-field-attachments .field__items {
 }
 article .node__content .field--name-field-attachments .field__items .field__item .file {
   margin-right:15px;
+}
+table.dataTable thead .sorting:after,
+table.dataTable thead .sorting_asc:after,
+table.dataTable thead .sorting_desc:after,
+table.dataTable thead .sorting_asc_disabled:after,
+table.dataTable thead .sorting_desc_disabled:after {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  display: block;
+  content: url("images/baseline_sort_by_alpha_white_18dp.png");
+  opacity: 1;
+}
+/* Front page - Upcomging Events Calendar */
+#block-views-block-calendar-block-1,
+#block-views-block-calendar-block-1 .calendar-week {
+  width:100%;
+}
+.path-frontpage .fc-scroller{
+  height:300px!important;
+}
+.page-view-calendar .fc-scroller {
+  height: auto;
+}
+body.path-frontpage .calendar-week .fc-center h2 {
+  font-size: 1.3em;
+}
+#block-views-block-calendar-block-1 .content,
+.page-view-calendar .view-display-id-page_1  {
+  padding:0 30px;
+}
+#block-views-block-calendar-block-1 .fullcalendar-bottom-btn {
+  padding-top:5px;
+  padding-bottom:5px;
+}
+#block-views-block-calendar-block-1 .fullcalendar-bottom-btn a {
+  display: block;
+  border: solid 1px #D7D7D7;
+  width: 100px;
+  margin:0 auto;
+  text-align: center;
+}
+#block-views-block-calendar-block-1 .fullcalendar-bottom-btn a:hover {
+  color:white;
+  background-color: #003466;
+}
+.fc-dayGrid-view .fc-body .fc-row {
+  min-height:7em;
+}
+
+/* Popup window used when clicking on a calendar event */
+article[class*="node--type-events"] {
+  padding:15px;
+}
+article[class*="node--type-events"] .field--name-field-event-start-date,
+article[class*="node--type-events"] .field--name-field-event-end-date {
+  margin-bottom: 10px;
+}
+
+/* Full calendar page view */
+.page-view-calendar .fc-title a {
+  color:white;
+}
+
+/* Attachment block at the bottom of each page when supporting docs are uploaded */
+.field--name-field-attachments {
+  border: solid 1px #d7d7d7;
+  padding: 5px 10px;
+  font-size: .85em;
+  margin-bottom:25px;
+}
+.field--name-field-attachments .field__items {
+  border-top:solid 1px #d7d7d7;
+}
+.field--name-field-attachments .field__items .field__item {
+  margin-right:10px;
+}
+.field--type-add-to-calendar-field {
+  font-size: .85em;
+  color: #999;
+  margin:10px 0;
 }

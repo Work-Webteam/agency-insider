@@ -7,8 +7,11 @@ dependencies:
     - field.field.node.events.body
     - field.field.node.events.field_add_to_calendar
     - field.field.node.events.field_event_end_date
+<<<<<<< HEAD
     - field.field.node.events.field_event_location
     - field.field.node.events.field_event_online
+=======
+>>>>>>> new_calendar
     - field.field.node.events.field_event_reoccurring_rules
     - field.field.node.events.field_event_start_date
     - field.field.node.events.field_image
@@ -43,8 +46,11 @@ content:
 hidden:
   field_add_to_calendar: true
   field_event_end_date: true
+<<<<<<< HEAD
   field_event_location: true
   field_event_online: true
+=======
+>>>>>>> new_calendar
   field_event_reoccurring_rules: true
   field_event_start_date: true
   field_image: true

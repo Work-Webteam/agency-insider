@@ -6,8 +6,11 @@ dependencies:
     - field.field.node.events.body
     - field.field.node.events.field_add_to_calendar
     - field.field.node.events.field_event_end_date
+<<<<<<< HEAD
     - field.field.node.events.field_event_location
     - field.field.node.events.field_event_online
+=======
+>>>>>>> new_calendar
     - field.field.node.events.field_event_reoccurring_rules
     - field.field.node.events.field_event_start_date
     - field.field.node.events.field_image
@@ -16,7 +19,10 @@ dependencies:
   module:
     - addtocalendar
     - datetime
+<<<<<<< HEAD
     - link
+=======
+>>>>>>> new_calendar
     - text
     - user
 id: node.events.default
@@ -33,7 +39,11 @@ content:
     region: content
   field_add_to_calendar:
     type: add_to_calendar
+<<<<<<< HEAD
     weight: 5
+=======
+    weight: 3
+>>>>>>> new_calendar
     region: content
     label: hidden
     settings: {  }
@@ -47,6 +57,7 @@ content:
     third_party_settings: {  }
     type: datetime_default
     region: content
+<<<<<<< HEAD
   field_event_location:
     weight: 3
     label: above
@@ -67,6 +78,8 @@ content:
     third_party_settings: {  }
     type: link
     region: content
+=======
+>>>>>>> new_calendar
   field_event_start_date:
     weight: 1
     label: above
@@ -77,12 +90,20 @@ content:
     type: datetime_default
     region: content
   flag_bookmark:
+<<<<<<< HEAD
     weight: 6
+=======
+    weight: 4
+>>>>>>> new_calendar
     region: content
     settings: {  }
     third_party_settings: {  }
   links:
+<<<<<<< HEAD
     weight: 7
+=======
+    weight: 5
+>>>>>>> new_calendar
     region: content
     settings: {  }
     third_party_settings: {  }
