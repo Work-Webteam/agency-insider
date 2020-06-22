@@ -23,7 +23,7 @@ settings:
   follow_parent: child
   level: 1
   depth: 1
-  expand: 0
+  expand: false
   parent: 'account:'
   suggestion: account
 visibility: {  }

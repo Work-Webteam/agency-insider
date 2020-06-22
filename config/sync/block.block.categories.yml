@@ -24,12 +24,12 @@ settings:
   follow_parent: child
   level: 1
   depth: 0
-  expand: 0
+  expand: false
   parent: 'categories:'
   suggestion: categories
 visibility:
   request_path:
     id: request_path
-    pages: "/posts/news-articles\r\n/posts/employee-announcements\r\n/posts/career-spotlights\r\n/posts/executive-messages"
+    pages: "/posts\r\n/posts/news-articles\r\n/posts/employee-announcements\r\n/posts/career-spotlights\r\n/posts/executive-messages"
     negate: false
     context_mapping: {  }

@@ -25,7 +25,7 @@ settings:
   follow_parent: child
   level: 1
   depth: 1
-  expand: 0
+  expand: false
   parent: 'post-links:'
   suggestion: post_links
 visibility:
