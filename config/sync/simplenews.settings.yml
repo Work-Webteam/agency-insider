@@ -23,6 +23,7 @@ subscription:
   confirm_combined_line_unsubscribe_unsubscribed: 'Already unsubscribed from [simplenews-newsletter:name]'
   confirm_subscribe_page: ''
   confirm_unsubscribe_page: ''
+  tidy_unconfirmed: 0
 mail:
   use_cron: true
   throttle: 20
