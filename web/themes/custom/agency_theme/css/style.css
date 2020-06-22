@@ -609,6 +609,7 @@ ul.sf-menu.sf-navbar.sf-shadow ul ul li {
   padding: 0.8em 1em;
 }
 /* Page sidebar*/
+#page-sidebar-first,
 #page-sidebar-second {
   background-color: transparent;
   margin-top: 30px;
@@ -648,11 +649,11 @@ ul.sf-menu.sf-navbar.sf-shadow ul ul li {
   padding: 0;
 }
 #page-sidebar-second h2.block-title,
-#page-sidebar-first h2.block-title {
+#page-sidebar-first h2#block-categories-menu {
   color: black;
   background: transparent;
   padding: 0 0 15px 15px;
-  font-size: 2rem;
+  font-size: 1.75rem;
   font-weight: bold;
 }
 #page-sidebar-second h2.block-title {
