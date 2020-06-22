@@ -2162,31 +2162,32 @@ table.dataTable thead .sorting_desc_disabled:after {
 #block-views-block-calendar-block-1 .calendar-week {
   width:100%;
 }
-.path-frontpage .fc-scroller{
-  height:300px!important;
-}
+
 .page-view-calendar .fc-scroller {
   height: auto;
 }
-body.path-frontpage .calendar-week .fc-center h2 {
-  font-size: 1.3em;
+#block-agency-theme-content tbody.fc-body tr {
+  background-color:transparent;
 }
-#block-views-block-calendar-block-1 .content,
+#block-agency-theme-content .view-content.row > div {
+  width:100%;
+}
+#block-agency-theme-content .content,
 .page-view-calendar .view-display-id-page_1  {
   padding:0 30px;
 }
-#block-views-block-calendar-block-1 .fullcalendar-bottom-btn {
+#block-agency-theme-content .fullcalendar-bottom-btn {
   padding-top:5px;
   padding-bottom:5px;
 }
-#block-views-block-calendar-block-1 .fullcalendar-bottom-btn a {
+#block-agency-theme-content .fullcalendar-bottom-btn a {
   display: block;
   border: solid 1px #D7D7D7;
   width: 100px;
   margin:0 auto;
   text-align: center;
 }
-#block-views-block-calendar-block-1 .fullcalendar-bottom-btn a:hover {
+#block-agency-theme-content .fullcalendar-bottom-btn a:hover {
   color:white;
   background-color: #003466;
 }

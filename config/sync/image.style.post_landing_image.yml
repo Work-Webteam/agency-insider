@@ -1,0 +1,15 @@
+uuid: 8eac25e2-8607-4b45-8eaa-4646e53997ff
+langcode: en
+status: true
+dependencies: {  }
+name: post_landing_image
+label: 'Post Landing Image'
+effects:
+  7fa6a6e8-d640-4ca3-a26b-86bd3d3f8feb:
+    uuid: 7fa6a6e8-d640-4ca3-a26b-86bd3d3f8feb
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 1200
+      height: 900
+      anchor: center-center

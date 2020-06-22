@@ -15,6 +15,7 @@ dependencies:
     - flag.flag.promote_to_home_page_carousel
     - image.style.landscape
     - image.style.our_people
+    - image.style.post_landing_image
     - node.type.events
     - node.type.post
     - taxonomy.vocabulary.post_category
@@ -435,11 +436,14 @@ display:
         use_ajax: false
         footer: false
       style:
-        type: default
+        type: html_list
         options:
           grouping: {  }
           row_class: ''
           default_row_class: false
+          type: ul
+          wrapper_class: 'item-list '
+          class: ''
       row:
         type: fields
         options:
@@ -1758,11 +1762,14 @@ display:
         footer: false
         relationships: false
       style:
-        type: default
+        type: html_list
         options:
           grouping: {  }
           row_class: ''
           default_row_class: false
+          type: ul
+          wrapper_class: item-list
+          class: ''
       row:
         type: fields
         options:
@@ -3753,7 +3760,7 @@ display:
       pager:
         type: full
         options:
-          items_per_page: 9
+          items_per_page: 12
           offset: 0
           id: 0
           total_pages: null
@@ -3929,7 +3936,7 @@ display:
           click_sort_column: target_id
           type: media_thumbnail
           settings:
-            image_style: landscape
+            image_style: post_landing_image
             image_link: content
           group_column: target_id
           group_columns: {  }
@@ -4389,7 +4396,7 @@ display:
       pager:
         type: mini
         options:
-          items_per_page: 9
+          items_per_page: 12
           offset: 0
           id: 0
           total_pages: null
