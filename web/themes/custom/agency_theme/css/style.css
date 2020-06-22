@@ -2087,8 +2087,8 @@ div.dataTables_wrapper div.dataTables_paginate ul.pagination li:hover {
   text-align: center;
   padding: 5px 0;
 }
-.fp-news .view-content.row > div:nth-child(odd) .count,
-.fp-announcement .view-content.row > div:nth-child(odd) .count,
+.fp-news .view-content.row > div li:nth-child(odd) .count,
+.fp-announcement .view-content.row > div li:nth-child(even) .count,
 .fp-events .view-content.row > div li:nth-child(odd) .event-date {
   background-color: #389bb8;
 } 
