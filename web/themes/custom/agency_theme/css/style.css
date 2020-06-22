@@ -2166,28 +2166,28 @@ table.dataTable thead .sorting_desc_disabled:after {
 .page-view-calendar .fc-scroller {
   height: auto;
 }
-#block-agency-theme-content tbody.fc-body tr {
+.view-calendar tbody.fc-body tr {
   background-color:transparent;
 }
-#block-agency-theme-content .view-content.row > div {
+.view-calendar .view-content.row > div {
   width:100%;
 }
-#block-agency-theme-content .content,
+.view-calendar .content,
 .page-view-calendar .view-display-id-page_1  {
   padding:0 30px;
 }
-#block-agency-theme-content .fullcalendar-bottom-btn {
+.view-calendar .fullcalendar-bottom-btn {
   padding-top:5px;
   padding-bottom:5px;
 }
-#block-agency-theme-content .fullcalendar-bottom-btn a {
+.view-calendar .fullcalendar-bottom-btn a {
   display: block;
   border: solid 1px #D7D7D7;
   width: 100px;
   margin:0 auto;
   text-align: center;
 }
-#block-agency-theme-content .fullcalendar-bottom-btn a:hover {
+.view-calendar .fullcalendar-bottom-btn a:hover {
   color:white;
   background-color: #003466;
 }
