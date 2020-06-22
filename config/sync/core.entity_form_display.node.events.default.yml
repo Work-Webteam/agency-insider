@@ -6,6 +6,8 @@ dependencies:
     - field.field.node.events.body
     - field.field.node.events.field_add_to_calendar
     - field.field.node.events.field_event_end_date
+    - field.field.node.events.field_event_location
+    - field.field.node.events.field_event_online
     - field.field.node.events.field_event_reoccurring_rules
     - field.field.node.events.field_event_start_date
     - field.field.node.events.field_image
@@ -14,6 +16,7 @@ dependencies:
   module:
     - addtocalendar
     - datetime
+    - link
     - media_library
     - path
     - scheduler
@@ -50,6 +53,22 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: datetime_default
+    region: content
+  field_event_location:
+    weight: 16
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_event_online:
+    weight: 17
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
     region: content
   field_event_reoccurring_rules:
     weight: 14

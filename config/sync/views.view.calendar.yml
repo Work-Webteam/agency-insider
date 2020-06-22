@@ -92,7 +92,7 @@ display:
           languageSelector: 0
           dialogWindow: 1
           openEntityInNewTab: 1
-          createEventLink: 0
+          createEventLink: 1
           tax_field: ''
           vocabularies: ''
           color_bundle:
