@@ -1,31 +1,30 @@
-uuid: 1a92891a-9b93-4d8a-af49-ca55a9b16f56
+uuid: 95cd3a26-e990-4a04-85cb-4be414ef1910
 langcode: en
 status: true
 dependencies:
   config:
-    - views.view.team_members
+    - views.view.events
   module:
     - system
     - views
   theme:
     - agency_theme
-id: views_block__team_members_team_leader
+id: views_block__events_latest_events
 theme: agency_theme
-region: sidebar_first
-weight: -12
+region: sidebar_second
+weight: -13
 provider: null
-plugin: 'views_block:team_members-team_leader'
+plugin: 'views_block:events-latest_events'
 settings:
-  id: 'views_block:team_members-team_leader'
+  id: 'views_block:events-latest_events'
   label: ''
   provider: views
-  label_display: '0'
+  label_display: visible
   views_label: ''
   items_per_page: none
-  context_mapping: {  }
 visibility:
   request_path:
     id: request_path
-    pages: '/team-members/*'
+    pages: "/events\r\n/events/*"
     negate: false
     context_mapping: {  }
