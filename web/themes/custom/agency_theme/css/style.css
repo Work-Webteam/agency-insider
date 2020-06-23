@@ -618,6 +618,7 @@ ul.sf-menu.sf-navbar.sf-shadow ul ul li {
   padding: 0.8em 1em;
 }
 /* Page sidebar menu blocks */
+#page-sidebar-first,
 #page-sidebar-second {
   background-color: transparent;
   margin-top: 30px;
@@ -658,7 +659,7 @@ ul.sf-menu.sf-navbar.sf-shadow ul ul li {
   padding: 0;
 }
 #page-sidebar-second h2.block-title,
-#page-sidebar-first h2.block-title {
+#page-sidebar-first h2#block-categories-menu {
   color: black;
   background: transparent;
   padding: 0 0 15px 15px;
@@ -718,6 +719,8 @@ ul.sf-menu.sf-navbar.sf-shadow ul ul li {
   color: #1663b4;
   /*margin-left: 5px;*/
 }
+#page-sidebar-first .block ul:not(.contextual-links) li a,
+#page-sidebar-first .field--name-field-landing-sidebar ul:not(.contextual-links) li a,
 .path-frontpage #page-sidebar-second .block ul:not(.contextual-links) li a,
 .path-posts #page-sidebar-second .block ul:not(.contextual-links) li a,
 .path-events #page-sidebar-second .block ul:not(.contextual-links) li a,
@@ -728,6 +731,8 @@ ul.sf-menu.sf-navbar.sf-shadow ul ul li {
   border-bottom: 1px solid #2261a4;
   /*background: #2261a4;*/
 }
+
+#page-sidebar-first .block ul:not(.contextual-links) li a:hover,
 .path-frontpage #page-sidebar-second .block ul:not(.contextual-links) li a:hover,
 .path-posts #page-sidebar-second .block ul:not(.contextual-links) li a:hover,
 .path-events #page-sidebar-second .block ul:not(.contextual-links) li a:hover,
@@ -736,9 +741,11 @@ ul.sf-menu.sf-navbar.sf-shadow ul ul li {
   background: #2261a4;
   text-decoration: none;
 }
-#page-sidebar-first .block ul:not(.contextual-links) li a:hover {
-  background: #e3e3e3;
+#page-sidebar-first .nav-link.current-page {
+  font-size:1.2em;
+  padding: .5em 0;
 }
+
 .node--type-post .field--name-field-subtitle {
   font-size: 2rem;
   margin: 0 0 15px;
