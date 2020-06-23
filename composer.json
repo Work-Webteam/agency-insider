@@ -118,8 +118,7 @@
         "drupal/recurring_period": "^1.0@alpha",
         "drupal/easy_install": "^10.2",
         "drupal/fullcalendar_view": "^5.0",
-        "drupal/calendar_datetime": "^1.0@alpha",
-        "drupal/config_ignore": "^2.2"
+        "drupal/calendar_datetime": "^1.0@alpha"
     },
     "require-dev": {
         "neronmoon/scriptsdev": "^0.1.0",
