@@ -16,8 +16,6 @@ module:
   block_content: 0
   bootstrap_layouts: 0
   breakpoint: 0
-  calendar: 0
-  calendar_datetime: 0
   ckeditor: 0
   color: 0
   comment: 0
@@ -35,7 +33,6 @@ module:
   ds_switch_view_mode: 0
   dynamic_page_cache: 0
   easy_breadcrumb: 0
-  easy_install: 0
   editor: 0
   editor_advanced_link: 0
   entity: 0
@@ -48,12 +45,15 @@ module:
   flag_bookmark: 0
   flag_follower: 0
   focal_point: 0
+  fullcalendar_view: 0
   hal: 0
   help: 0
   hierarchical_taxonomy_menu: 0
   history: 0
   image: 0
   inline_entity_form: 0
+  insider_datatables: 0
+  kint: 0
   layout_discovery: 0
   libraries: 0
   link: 0

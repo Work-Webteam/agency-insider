@@ -135,13 +135,13 @@ h1.js-quickedit-page-title,
   background:transparent;
 }
 #block-views-block-post-listing-last-post-staff-update .block-title,
-#block-views-block-events-upcoming-events .block-title {
+#block-views-block-calendar-block-1 .block-title {
   color: white;
   display: block;
   text-align: center;
   margin-bottom: 40px;
   background: #003466;
-  margin: 0 30px 2.5rem;
+  margin: 0 30px .5rem;
   font-size: 1.75rem;
   line-height: 3.5rem;
   font-weight: bold;
@@ -278,10 +278,11 @@ h1.js-quickedit-page-title,
   display: block;
   width: 100%;
   float: left;
-  padding: 15px;
+  padding: 0 15px;
   border: 1px solid #003366;
   margin-bottom: 10px;
 }
+
 #page-sidebar-second .field--name-field-landing-sidebar .field__label {
   display: none;
 }
@@ -475,7 +476,7 @@ header .row-second {
   color: white;
 }
 .view-post-listing {
-  padding-top: 30px;
+  padding-top: 15px;
 }
 .view-post-listing .posts-listing-wrapper {
   margin-bottom: 30px;
@@ -487,8 +488,8 @@ header .row-second {
 
 .view-display-id-post_listing_category .view-content > .views-row,
 .view-display-id-post_listing .view-content > .views-row {
-  width: 50%;
-  padding-bottom: 30px;
+  width:25%;
+  padding-bottom: 10px;
 }
 .view-display-id-post_listing_category .view-content > .views-row > .views-field-nothing,
 .view-display-id-post_listing .view-content > .views-row > .views-field-nothing {
@@ -496,11 +497,11 @@ header .row-second {
 }
 .view-display-id-post_listing_category .view-content > .views-row:nth-child(odd),
 .view-display-id-post_listing .view-content > .views-row:nth-child(odd) {
-  padding-right: 15px;
+  padding-right: 5px;
 }
 .view-display-id-post_listing_category .view-content > .views-row:nth-child(even),
 .view-display-id-post_listing .view-content > .views-row:nth-child(even) {
-  padding-left: 15px;
+  padding-right: 5px;
 }
 .view-post-listing .posts-listing-wrapper > .no-gutters {
   height: 100%;
@@ -538,8 +539,8 @@ header .row-second {
 .block-superfish {
   width: -webkit-fit-content !important;
   /*width: -moz-fit-content !important;*/
-  width: fit-content !important;
-  width: 60%;
+  width:max-content;
+  min-width: 60%;
 }
 #block-headernavigation ul:not(.contextual-links) a {
   background-color: #1F5792;
@@ -616,12 +617,14 @@ ul.sf-menu.sf-navbar.sf-shadow ul ul li {
 #block-headernavigationsecondary ul li a {
   padding: 0.8em 1em;
 }
-/* Page sidebar*/
+/* Page sidebar menu blocks */
+#page-sidebar-first,
 #page-sidebar-second {
   background-color: transparent;
   margin-top: 30px;
 }
 #page-sidebar-second .block,
+#page-sidebar-second .field--name-field-landing-sidebar,
 #page-sidebar-first .block {
   background: transparent;
   display: block;
@@ -656,7 +659,7 @@ ul.sf-menu.sf-navbar.sf-shadow ul ul li {
   padding: 0;
 }
 #page-sidebar-second h2.block-title,
-#page-sidebar-first h2.block-title {
+#page-sidebar-first h2#block-categories-menu {
   color: black;
   background: transparent;
   padding: 0 0 15px 15px;
@@ -667,7 +670,23 @@ ul.sf-menu.sf-navbar.sf-shadow ul ul li {
   margin: 0px;
   padding: 0 0 15px;
 }
+
+/* Node landing page sidebar menu */
+.path-node #page-sidebar-second .field--name-field-landing-sidebar ul:not(.contextual-links)  {
+  list-style-type: none;
+  padding:0;
+}
+.path-node #page-sidebar-second .field--name-field-landing-sidebar h5 {
+  font-size:1.35rem;
+  margin: 25px 0 0;
+}
+
+#page-sidebar-second .field--name-field-landing-sidebar ul {
+  padding:0;
+  margin:0;
+}
 #page-sidebar-second .block ul li,
+#page-sidebar-second .field--name-field-landing-sidebar ul li,
 #page-sidebar-first .block ul li {
   width:100%;
   display: block;
@@ -678,12 +697,14 @@ ul.sf-menu.sf-navbar.sf-shadow ul ul li {
   border-bottom: #e3e3e3 1px solid;
 }
 #page-sidebar-second .block ul,
+#page-sidebar-second .field--name-field-landing-sidebar ul,
 #page-sidebar-first .block ul {
   opacity: 1.6;
   background-color: transparent;
   filter: alpha(opacity=60);
 }
 #page-sidebar-second .block ul:not(.contextual-links) li a,
+#page-sidebar-second .field--name-field-landing-sidebar ul:not(.contextual-links) li a,
 #page-sidebar-first .block ul:not(.contextual-links) li a {
   opacity: 1;
   width: 100%;
@@ -692,35 +713,45 @@ ul.sf-menu.sf-navbar.sf-shadow ul ul li {
   font-size: 1.2rem;
   line-height: 1.5rem;
 }
-
-#page-sidebar-second .block ul:not(.contextual-links) li a {
+#page-sidebar-second .block ul:not(.contextual-links) li a,
+#page-sidebar-second .field--name-field-landing-sidebar ul:not(.contextual-links) li a {
   padding: 0.75em 1em 0.75em 0;
   color: #1663b4;
   /*margin-left: 5px;*/
 }
+#page-sidebar-first .block ul:not(.contextual-links) li a,
+#page-sidebar-first .field--name-field-landing-sidebar ul:not(.contextual-links) li a,
 .path-frontpage #page-sidebar-second .block ul:not(.contextual-links) li a,
 .path-posts #page-sidebar-second .block ul:not(.contextual-links) li a,
-.path-events #page-sidebar-second .block ul:not(.contextual-links) li a   {
+.path-events #page-sidebar-second .block ul:not(.contextual-links) li a,
+#page-sidebar-second .field--name-field-landing-sidebar ul:not(.contextual-links) li a {
   padding: 0.75em 1em 0.25em 5px;
   /*color: white;
   margin: 5px;*/
   border-bottom: 1px solid #2261a4;
   /*background: #2261a4;*/
 }
+
+#page-sidebar-first .block ul:not(.contextual-links) li a:hover,
 .path-frontpage #page-sidebar-second .block ul:not(.contextual-links) li a:hover,
 .path-posts #page-sidebar-second .block ul:not(.contextual-links) li a:hover,
-.path-events #page-sidebar-second .block ul:not(.contextual-links) li a:hover  {
+.path-events #page-sidebar-second .block ul:not(.contextual-links) li a:hover,
+#page-sidebar-second .field--name-field-landing-sidebar ul:not(.contextual-links) li a:hover {
   color: white;
   background: #2261a4;
   text-decoration: none;
 }
-#page-sidebar-first .block ul:not(.contextual-links) li a:hover {
-  background: #e3e3e3;
+#page-sidebar-first .nav-link.current-page {
+  font-size:1.2em;
+  padding: .5em 0;
 }
+
 .node--type-post .field--name-field-subtitle {
   font-size: 2rem;
   margin: 0 0 15px;
 }
+
+
 /*Polls*/
 #block-mostrecentpoll form legend{
   display: none;
@@ -1987,8 +2018,14 @@ ul#superfish-navigation-footer {
 div.sf-accordion-toggle {
   display:none;
 }
-/* DataTables styling */
 
+/* DataTables styling */
+.page-node-411 div[id^="agency-datatable"] {
+  overflow:auto;
+}
+div.dataTables_wrapper th {
+  vertical-align: top;
+}
 div.dataTables_wrapper div.dataTables_length select {
   margin-left:10px;
   margin-right:10px;
@@ -2008,4 +2045,193 @@ div.dataTables_wrapper div.dataTables_paginate ul.pagination li:hover {
 }
 .dataTables_wrapper:last-of-type {
   margin-bottom: 25px;
+}
+
+/* Front page News / Employee Announcement / Events Columns */
+
+/* Initial column spacing */
+#block-views-block-post-listing-fp-news-block,
+#block-views-block-post-listing-fp-announce-block,
+#block-views-block-post-listing-fp-events-block {
+  display: flex;
+  flex-direction: column;
+  flex: auto;
+  min-width: 33%;
+  margin: 0 auto;
+}
+.path-frontpage .view-post-listing {
+  padding-top:0;
+}
+.fp-news, .fp-announcement, .fp-events {
+  margin-bottom:25px;
+}
+
+.fp-news .view-content.row, .fp-announcement .view-content.row, .fp-events .view-content.row {
+  min-height: 365px;
+}
+/* H2 title text adjustments */
+#block-views-block-post-listing-fp-news-block h2,
+#block-views-block-post-listing-fp-announce-block h2,
+#block-views-block-post-listing-fp-events-block h2 {
+  border-top:solid 1px #999;
+  border-bottom:solid 1px #999;
+  font-size: 1.15rem;
+  padding: 3px 5px;
+  text-align: center;
+}
+/* Number count and date blocks */
+#block-views-block-post-listing-fp-news-block aside,
+#block-views-block-post-listing-fp-announce-block aside,
+#block-views-block-post-listing-fp-events-block aside {
+  float:left;
+  font-size: .75rem;
+}
+.path-frontpage aside div.count,
+.path-frontpage aside div.event-date {
+  display: block;
+  background-color: #1F5792;
+  color:white;
+  width:40px;
+  text-align: center;
+  padding: 5px 0;
+}
+.fp-news .view-content.row > div li:nth-child(odd) .count,
+.fp-announcement .view-content.row > div li:nth-child(even) .count,
+.fp-events .view-content.row > div li:nth-child(odd) .event-date {
+  background-color: #389bb8;
+} 
+
+/* fp content blocks sizing*/
+.path-frontpage .fp-content {
+  padding-left:45px;
+  min-height:45px;
+  max-height:90px;
+  margin-bottom:10px;
+  font-size: .85rem;
+}
+/* fp.content text adjustments*/
+.path-frontpage .fp-content .announce-time {
+  color:#6c757d;
+  font-size: .75rem;
+}
+
+/* FP column pagers */
+.path-frontpage .fp-footer {
+  position: relative;
+  bottom:0px;
+  display: block;
+  width:100%;
+  font-size:.85rem;
+  border: solid 1px #ECECEC;
+  padding-left:8px;
+}
+
+/* Search results page */
+/* Adjust the margins and spacing */ 
+
+body.path-search form#search-form {
+  margin-left:25px;
+  margin-right:25px;
+}
+body.path-search h2 {
+  margin: 20px 30px 0;
+}
+body.path-search ol.node_search-results li {
+  margin:10px 30px 0;
+}
+
+/* Styling fix for attachements shown at the bottom of article content */
+article .node__content .field--name-field-attachments {
+  border: solid 1px #d7d7d7;
+  padding:5px;
+  font-size: .85em;
+  margin-bottom:25px;
+}
+article .node__content .field--name-field-attachments .field__items {
+  border-top: solid 1px #d7d7d7;
+}
+article .node__content .field--name-field-attachments .field__items .field__item .file {
+  margin-right:15px;
+}
+table.dataTable thead .sorting:after,
+table.dataTable thead .sorting_asc:after,
+table.dataTable thead .sorting_desc:after,
+table.dataTable thead .sorting_asc_disabled:after,
+table.dataTable thead .sorting_desc_disabled:after {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  display: block;
+  content: url("images/baseline_sort_by_alpha_white_18dp.png");
+  opacity: 1;
+}
+/* Front page - Upcomging Events Calendar */
+#block-views-block-calendar-block-1,
+#block-views-block-calendar-block-1 .calendar-week {
+  width:100%;
+}
+
+.page-view-calendar .fc-scroller {
+  height: auto;
+}
+.view-calendar tbody.fc-body tr {
+  background-color:transparent;
+}
+.view-calendar .view-content.row > div {
+  width:100%;
+}
+.view-calendar .content,
+.page-view-calendar .view-display-id-page_1  {
+  padding:0 30px;
+}
+.view-calendar .fullcalendar-bottom-btn {
+  padding-top:5px;
+  padding-bottom:5px;
+}
+.view-calendar .fullcalendar-bottom-btn a {
+  display: block;
+  border: solid 1px #D7D7D7;
+  width: 100px;
+  margin:0 auto;
+  text-align: center;
+}
+.view-calendar .fullcalendar-bottom-btn a:hover {
+  color:white;
+  background-color: #003466;
+}
+.fc-dayGrid-view .fc-body .fc-row {
+  min-height:7em;
+}
+
+/* Popup window used when clicking on a calendar event */
+article[class*="node--type-events"] {
+  padding:15px;
+}
+article[class*="node--type-events"] .field--name-field-event-start-date,
+article[class*="node--type-events"] .field--name-field-event-end-date {
+  margin-bottom: 10px;
+}
+
+/* Full calendar page view */
+.page-view-calendar .fc-title a {
+  color:white;
+}
+
+/* Attachment block at the bottom of each page when supporting docs are uploaded */
+.field--name-field-attachments {
+  border: solid 1px #d7d7d7;
+  padding: 5px 10px;
+  font-size: .85em;
+  margin-bottom:25px;
+}
+.field--name-field-attachments .field__items {
+  border-top:solid 1px #d7d7d7;
+}
+.field--name-field-attachments .field__items .field__item {
+  margin-right:10px;
+}
+.field--type-add-to-calendar-field {
+  font-size: .85em;
+  color: #999;
+  margin:10px 0;
 }

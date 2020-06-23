@@ -1,9 +1,9 @@
-uuid: 33800122-c9a8-4c8d-851d-4221fb3ad2a4
+uuid: 3ec5d437-ca99-49f2-9bb2-1766d77edf91
 langcode: en
 status: true
 dependencies:
   config:
-    - views.view.events
+    - views.view.post_listing
   module:
     - block_class
     - system
@@ -12,15 +12,15 @@ dependencies:
     - agency_theme
 third_party_settings:
   block_class:
-    classes: col-xs-12
-id: views_block__events_upcoming_events
+    classes: 'col-lg-3 col-md-6 col-sm-12'
+id: views_block__post_listing_fp_announce_block
 theme: agency_theme
 region: content
 weight: -4
 provider: null
-plugin: 'views_block:events-upcoming_events'
+plugin: 'views_block:post_listing-fp_announce_block'
 settings:
-  id: 'views_block:events-upcoming_events'
+  id: 'views_block:post_listing-fp_announce_block'
   label: ''
   provider: views
   label_display: visible

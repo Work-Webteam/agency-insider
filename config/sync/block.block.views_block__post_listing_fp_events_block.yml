@@ -1,4 +1,4 @@
-uuid: e5e64e8f-5b1f-48ff-b966-23fd415c95e8
+uuid: bfa03253-73c8-4147-b397-96a3813a8575
 langcode: en
 status: true
 dependencies:
@@ -12,20 +12,21 @@ dependencies:
     - agency_theme
 third_party_settings:
   block_class:
-    classes: col-xs-12
-id: views_block__post_listing_last_post_staff_update
+    classes: 'col-lg-3 col-md-6 col-sm-12'
+id: views_block__post_listing_fp_events_block
 theme: agency_theme
 region: content
-weight: -6
+weight: 0
 provider: null
-plugin: 'views_block:post_listing-last_post_staff_update'
+plugin: 'views_block:post_listing-fp_events_block'
 settings:
-  id: 'views_block:post_listing-last_post_staff_update'
+  id: 'views_block:post_listing-fp_events_block'
   label: ''
   provider: views
   label_display: visible
   views_label: ''
   items_per_page: none
+  context_mapping: {  }
 visibility:
   request_path:
     id: request_path

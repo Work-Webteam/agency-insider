@@ -9,7 +9,7 @@ _core:
 id: agency_theme_local_actions
 theme: agency_theme
 region: content
-weight: -13
+weight: -12
 provider: null
 plugin: local_actions_block
 settings:

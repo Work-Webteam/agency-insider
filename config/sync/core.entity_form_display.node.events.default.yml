@@ -5,13 +5,18 @@ dependencies:
   config:
     - field.field.node.events.body
     - field.field.node.events.field_add_to_calendar
-    - field.field.node.events.field_event_date
+    - field.field.node.events.field_event_end_date
+    - field.field.node.events.field_event_location
+    - field.field.node.events.field_event_online
+    - field.field.node.events.field_event_reoccurring_rules
+    - field.field.node.events.field_event_start_date
     - field.field.node.events.field_image
     - field.field.node.events.field_media_event_icon
     - node.type.events
   module:
     - addtocalendar
-    - datetime_range
+    - datetime
+    - link
     - media_library
     - path
     - scheduler
@@ -23,7 +28,7 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 2
+    weight: 15
     settings:
       rows: 9
       summary_rows: 3
@@ -38,21 +43,52 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_add_to_calendar:
-    weight: 51
+    weight: 12
     settings: {  }
     third_party_settings: {  }
     type: add_to_calendar_widget_type
     region: content
-  field_event_date:
-    weight: 52
+  field_event_end_date:
+    weight: 2
     settings: {  }
     third_party_settings: {  }
-    type: daterange_default
+    type: datetime_default
+    region: content
+  field_event_location:
+    weight: 16
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_event_online:
+    weight: 17
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_event_reoccurring_rules:
+    weight: 14
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_event_start_date:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
     region: content
   field_media_event_icon:
     type: media_library_widget
-    weight: 54
-    settings: {  }
+    weight: 13
+    settings:
+      media_types: {  }
     third_party_settings: {  }
     region: content
   path:
@@ -70,7 +106,7 @@ content:
     third_party_settings: {  }
   publish_on:
     type: datetime_timestamp_no_default
-    weight: 30
+    weight: 9
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -108,12 +144,12 @@ content:
     third_party_settings: {  }
   unpublish_on:
     type: datetime_timestamp_no_default
-    weight: 30
+    weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }
   url_redirects:
-    weight: 50
+    weight: 11
     region: content
     settings: {  }
     third_party_settings: {  }
