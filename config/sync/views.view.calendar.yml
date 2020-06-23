@@ -84,7 +84,7 @@ display:
           default_view: dayGridMonth
           firstDay: '0'
           nav_links: 1
-          timeFormat: 'H(:mm)'
+          timeFormat: 'H:mm'
           allowEventOverlap: 1
           updateAllowed: 1
           updateConfirm: 1
@@ -96,8 +96,8 @@ display:
           tax_field: ''
           vocabularies: ''
           color_bundle:
-            events: '#3a87ad'
             event_model: '#3a87ad'
+            events: '#3a87ad'
             page: '#3a87ad'
             poll: '#3a87ad'
             post: '#3a87ad'
