@@ -29,6 +29,7 @@ module:
   datetime: 0
   datetime_range: 0
   dblog: 0
+  devel: 0
   devel_generate: 0
   ds_switch_view_mode: 0
   dynamic_page_cache: 0
@@ -52,7 +53,6 @@ module:
   history: 0
   image: 0
   inline_entity_form: 0
-  insider_datatables: 0
   kint: 0
   layout_discovery: 0
   libraries: 0
@@ -94,7 +94,6 @@ module:
   simple_sitemap_engines: 0
   simplenews: 0
   sitemap: 0
-  siteminder: 0
   state_machine: 0
   statistics: 0
   structure_sync: 0
