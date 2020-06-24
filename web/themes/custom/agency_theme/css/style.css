@@ -523,13 +523,13 @@ header .row-second {
   font-size: 1.2rem;
 }
 .view-post-listing .posts-listing-wrapper .sec-col span.created {
-  font-size: 1rem;
+  font-size: .9rem; /* Original size: 1rem */
 }
 .view-post-listing .posts-listing-wrapper .sec-col span.last-updated {
   font-size: 1rem;
 }
 .view-post-listing .posts-listing-wrapper .sec-col h3 a {
-  font-size: 1.5rem;
+  font-size: 1.3rem;/* Original size: 1.5rem */
 }
 #block-agency-theme-page-title,
 #block-agency-theme-content {
@@ -710,7 +710,7 @@ ul.sf-menu.sf-navbar.sf-shadow ul ul li {
   width: 100%;
   display: block;
   padding: 1em 1em;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   line-height: 1.5rem;
 }
 #page-sidebar-second .block ul:not(.contextual-links) li a,
@@ -742,7 +742,7 @@ ul.sf-menu.sf-navbar.sf-shadow ul ul li {
   text-decoration: none;
 }
 #page-sidebar-first .nav-link.current-page {
-  font-size:1.2em;
+  font-size:1.1em;
   padding: .5em 0;
 }
 
