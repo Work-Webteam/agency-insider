@@ -975,7 +975,7 @@ display:
           admin_label: ''
           empty: false
           tokenize: false
-          content: '<div class="fp-footer"><a href="posts/employee-announcements"> More Announcements   <i class="fa fa-angle-double-right" aria-hidden="true"></i></a></div>'
+          content: '<div class="fp-footer"><a href="posts/employee-announcements"> More Announcements ››</a></div>'
           plugin_id: text_custom
     cache_metadata:
       max-age: -1
@@ -1619,7 +1619,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"fp-event\">\r\n   <aside>\r\n     <div class=\"event-date\">{{ field_event_start_date }}<br>{{ field_event_start_date_2 }}</div>\r\n   </aside>\r\n   <div class=\"fp-content\">\r\n      <div class=\"announce-title\">{{ title }}</div>\r\n     <div class=\"announce-time\"> <strong>Time: </strong>{{ field_event_start_date_1 }}<br>\r\n      Location: {{ field_event_location }} <br>\r\n      Online: {{ field_event_online }}\r\n</div>\r\n</div>"
+            text: "<div class=\"fp-event\">\r\n   <aside>\r\n     <div class=\"event-date\">{{ field_event_start_date }}<br>{{ field_event_start_date_2 }}</div>\r\n   </aside>\r\n   <div class=\"fp-content\">\r\n      <div class=\"announce-title\">{{ title }}</div>\r\n     <div class=\"announce-time\"> <strong>Time: </strong>{{ field_event_start_date_1 }}<br>\r\n      Location: {{ field_event_location }} <br>\r\n      Online meeting: {{ field_event_online }}\r\n</div>\r\n</div>"
             make_link: false
             path: ''
             absolute: false
@@ -1720,7 +1720,7 @@ display:
           admin_label: ''
           empty: false
           tokenize: false
-          content: '<div class="fp-footer"><a href="Events"> More Events   <i class="fa fa-angle-double-right" aria-hidden="true"></i></a></div>'
+          content: '<div class="fp-footer"><a href="Events"> More Events ››</a></div>'
           plugin_id: text_custom
     cache_metadata:
       max-age: -1
@@ -2299,7 +2299,7 @@ display:
           admin_label: ''
           empty: false
           tokenize: false
-          content: "<div class=\"fp-footer\"><a href=\"posts/news-articles\"> More News   <i class=\"fa fa-angle-double-right\" aria-hidden=\"true\"></i>\r\n</a></div>"
+          content: '<div class="fp-footer"><a href="posts/news-articles"> More News ››</a></div>'
           plugin_id: text_custom
       relationships:
         flag_relationship:
@@ -3240,7 +3240,6 @@ display:
           query_tags: null
       group_by: false
       footer: {  }
-      enabled: false
     cache_metadata:
       max-age: -1
       contexts:
@@ -4363,8 +4362,8 @@ display:
           id: 0
           total_pages: null
           tags:
-            previous: Previous
-            next: Next
+            previous: ‹‹
+            next: ››
           expose:
             items_per_page: false
             items_per_page_label: 'Items per page'

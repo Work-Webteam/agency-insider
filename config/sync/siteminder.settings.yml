@@ -7,7 +7,7 @@ user:
   mail_mapping: smgov_useremail
   role_mapping: ''
   role_evaluate_everytime: false
-  username_mapping_field: smgov_userguid
+  username_mapping_field: field_user_guid
   id_mapping: smgov_userguid
   guid_mapping: field_user_guid
   username_form: 0
