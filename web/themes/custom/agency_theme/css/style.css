@@ -849,6 +849,7 @@ ul.sf-menu.sf-navbar.sf-shadow ul ul li {
 #block-views-block-news-homepage-carousel .view-content [class*="col-"] {
   padding-left: 5px;
   padding-right: 5px;
+  margin-bottom:10px;
 }
 #block-views-block-news-homepage-carousel .view-content [class*="col-"]:first-child {
   padding-left: 0;
@@ -863,11 +864,11 @@ ul.sf-menu.sf-navbar.sf-shadow ul ul li {
   height: 380px;
 }
 
-#block-views-block-news-homepage-carousel .carousel-image:hover img {
+/*#block-views-block-news-homepage-carousel .carousel-image:hover img {
   -webkit-transform: scale3d(1.5, 1.5, 1.5);
           transform: scale3d(1.5, 1.5, 1.5);
-}
-#block-views-block-news-homepage-carousel .carousel-image img {
+}*/
+/*#block-views-block-news-homepage-carousel .carousel-image img {
   max-height: 380px;
   -webkit-transition: -webkit-transform .6s ease;
   transition: -webkit-transform .6s ease;
@@ -875,10 +876,10 @@ ul.sf-menu.sf-navbar.sf-shadow ul ul li {
   transition: transform .6s ease, -webkit-transform .6s ease;
   -o-object-fit: none;
      object-fit: none;
-}
+}*/
 #views-bootstrap-news-homepage-carousel {
   width: 100%;
-  min-height: 600px;
+  /*min-height: 600px;*/
 }
 #views-bootstrap-news-homepage-carousel .carousel-item {
   min-height: 600px;
@@ -915,6 +916,7 @@ ul.sf-menu.sf-navbar.sf-shadow ul ul li {
       -ms-flex-direction: column;
           flex-direction: column;
   padding: 5px 15px 20px 15px;
+  min-height: 125px!important;
 }
 #views-bootstrap-news-homepage-carousel .carousel-item a,
 #views-bootstrap-news-homepage-carousel .carousel-item p,
@@ -940,6 +942,7 @@ ul.sf-menu.sf-navbar.sf-shadow ul ul li {
   margin-right: 10px;
   margin-left: 10px;
 }
+
 #block-copyright {
   width: 100%;
 }
