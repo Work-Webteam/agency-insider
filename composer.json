@@ -47,7 +47,7 @@
         "drupal/core": "8.*",
         "drupal/flags": "^1.0@beta",
         "drupal/flags_ui": "^1.0@beta",
-        "drupal/interval": "^1.2",
+        "drupal/interval": "^1.7",
         "drupal/address": "^1.7",
         "drupal/bootstrap": "^3.20",
         "drupal/bootstrap_library": "^1.11",
@@ -81,7 +81,6 @@
         "drupal/structure_sync": "^1.16",
         "drupal/poll": "^1.2",
         "drupal/scheduler": "^1.1",
-        "drupal/devel": "^4.0",
         "drupal/views_bootstrap": "^4.1",
         "drupal/bootstrap_barrio": "4.x-dev",
         "drupal/block_class": "^1.2",
@@ -118,7 +117,10 @@
         "drupal/easy_install": "^10.2",
         "drupal/fullcalendar_view": "^5.0",
         "drupal/calendar_datetime": "^1.0@alpha",
-        "kint-php/kint": "^3.3"
+        "kint-php/kint": "^3.3",
+        "drupal/devel": "^2.1",
+        "drupal/kint": "^2.1",
+        "drupal/recurring_period": "^1.0@alpha"
     },
     "require-dev": {
         "neronmoon/scriptsdev": "^0.1.0",
