@@ -117,7 +117,6 @@
         "drupal/easy_install": "^10.2",
         "drupal/fullcalendar_view": "^5.0",
         "drupal/calendar_datetime": "^1.0@alpha",
-        "kint-php/kint": "^3.3",
         "drupal/devel": "^2.1",
         "drupal/kint": "^2.1",
         "drupal/recurring_period": "^1.0@alpha"
