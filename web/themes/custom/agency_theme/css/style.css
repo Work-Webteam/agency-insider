@@ -109,6 +109,9 @@ h1.js-quickedit-page-title,
 .main-content article header {
   padding: 0 15px 20px !important;
 }
+.main-content article header h2 {
+  font-size:1.5rem;
+}
 .path-node .node__meta span,
 .path-node .node__meta span a {
   color: #416eac;
@@ -638,7 +641,7 @@ ul.sf-menu.sf-navbar.sf-shadow ul ul li {
 #page-sidebar-first .block .content {
   background: transparent;
   padding-left: 20px;
-  font-size: 1.2rem;
+  font-size: 1em;
 }
 #page-sidebar-second .block .content {
   padding-left: 0;
@@ -663,7 +666,7 @@ ul.sf-menu.sf-navbar.sf-shadow ul ul li {
   color: black;
   background: transparent;
   padding: 0 0 15px 15px;
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: bold;
 }
 #page-sidebar-second h2.block-title {
@@ -2237,4 +2240,23 @@ article[class*="node--type-events"] .field--name-field-event-end-date {
   font-size: .85em;
   color: #999;
   margin:10px 0;
+}
+/* Styling changes for sidebar added to post content type */
+body:not(.path-frontpage) #page-sidebar-second #block-views-block-post-sidebar-block-1:[data-content=""] {
+  background-color: aqua;
+}
+@media(min-width:992px) {
+  body:not(.path-frontpage) #page-sidebar-second {
+    margin-top:135px;
+  }
+}
+body:not(.path-frontpage) #page-sidebar-second .block {
+  border-color: #ced4da;
+}
+body:not(.path-frontpage) #page-sidebar-second .block h3 {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+}
+body:not(.path-frontpage) #page-sidebar-second .block p {
+  margin-top:10px;
 }
