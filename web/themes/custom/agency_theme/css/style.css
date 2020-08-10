@@ -2210,11 +2210,23 @@ table.dataTable thead .sorting_desc_disabled:after {
 article[class*="node--type-events"] {
   padding:15px;
 }
+article[class*="node--type-events"] .node__content .field__label:after {
+  content:":";
+}
 article[class*="node--type-events"] .field--name-field-event-start-date,
-article[class*="node--type-events"] .field--name-field-event-end-date {
+article[class*="node--type-events"] .field--name-field-event-end-date,
+article[class*="node--type-events"] .field--name-field-event-location {
   margin-bottom: 10px;
 }
-
+article[class*="node--type-events"] .field--name-field-add-to-calendar {
+  position: relative;
+  width:35px;
+}
+article[class*="node--type-events"] .flag-bookmark {
+  position: relative;
+  top:-35px;
+  left:40px;
+}
 /* Full calendar page view */
 .page-view-calendar .fc-title a {
   color:white;
