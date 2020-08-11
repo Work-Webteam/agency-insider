@@ -12,7 +12,10 @@ dependencies:
     - field.field.node.post.field_media_featured_photo
     - field.field.node.post.field_media_post_thumbnail
     - field.field.node.post.field_post_category
+    - field.field.node.post.field_sidebar_image
+    - field.field.node.post.field_sidebar_text
     - field.field.node.post.field_subtitle
+    - field.field.node.post.field_title
     - node.type.post
   module:
     - comment
@@ -63,6 +66,14 @@ content:
     third_party_settings: {  }
     type: string
     region: content
+  field_title:
+    type: string
+    weight: 11
+    region: content
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
   flag_bookmark:
     weight: 5
     region: content
@@ -79,4 +90,6 @@ hidden:
   field_media_featured_photo: true
   field_media_post_thumbnail: true
   field_post_category: true
+  field_sidebar_image: true
+  field_sidebar_text: true
   links: true

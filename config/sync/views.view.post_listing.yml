@@ -1489,8 +1489,8 @@ display:
           label: ''
           exclude: true
           alter:
-            alter_text: true
-            text: "Location: {{ field_event_location }}\r\n"
+            alter_text: false
+            text: ''
             make_link: false
             path: ''
             absolute: false
@@ -1523,8 +1523,8 @@ display:
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
-          empty: ''
-          hide_empty: true
+          empty: '--'
+          hide_empty: false
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: value
@@ -1552,8 +1552,8 @@ display:
           label: ''
           exclude: true
           alter:
-            alter_text: true
-            text: 'Online: {{ field_event_online }}'
+            alter_text: false
+            text: ''
             make_link: false
             path: ''
             absolute: false
@@ -1586,8 +1586,8 @@ display:
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
-          empty: ''
-          hide_empty: true
+          empty: 'No'
+          hide_empty: false
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: uri
@@ -1620,7 +1620,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"fp-event\">\r\n   <aside>\r\n     <div class=\"event-date\">{{ field_event_start_date }}<br>{{ field_event_start_date_2 }}</div>\r\n   </aside>\r\n   <div class=\"fp-content\">\r\n      <div class=\"announce-title\">{{ title }}</div>\r\n     <div class=\"announce-time\"> <strong>Time: </strong>{{ field_event_start_date_1 }}<br>\r\n     <div class=\"fp-event-loc\">{{ field_event_location }} </div>\r\n      <div class=\"fp-event-on\">{{ field_event_online }}</div>\r\n</div>\r\n</div>"
+            text: "<div class=\"fp-event\">\r\n   <aside>\r\n     <div class=\"event-date\">{{ field_event_start_date }}<br>{{ field_event_start_date_2 }}</div>\r\n   </aside>\r\n   <div class=\"fp-content\">\r\n      <div class=\"announce-title\">{{ title }}</div>\r\n     <div class=\"announce-time\"> <strong>Time: </strong>{{ field_event_start_date_1 }}<br>\r\n      Location: {{ field_event_location }} <br>\r\n      Online meeting: {{ field_event_online }}\r\n</div>\r\n</div>"
             make_link: false
             path: ''
             absolute: false

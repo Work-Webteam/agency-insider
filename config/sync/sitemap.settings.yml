@@ -3,19 +3,19 @@ page_title: Sitemap
 message:
   value: ''
   format: restricted_html
-show_front: true
+show_front: false
 show_titles: false
 show_books: {  }
 books_expanded: true
 show_menus:
   header-navigation: header-navigation
-  navigation-footer: navigation-footer
   account: '0'
   admin: '0'
-  devel: '0'
+  categories: '0'
   footer: '0'
   header-navigation-secondary: '0'
   main: '0'
+  navigation-footer: '0'
   orientation-tools: '0'
   post-links: '0'
   quick-links: '0'
@@ -41,24 +41,24 @@ rss_taxonomy: -1
 css: true
 order:
   front: -50
-  menus_post-links: -50
+  menus_resources: -50
+  vocabularies_team_member: -50
   vocabularies_tags: -50
   vocabularies_post_category: -50
   vocabularies_media_folder: -50
   vocabularies_job_title: -50
   vocabularies_event_category: -50
   menus_tools: -50
-  menus_resources: -50
   menus_quick-links: -50
-  menus_orientation-tools: -50
   menus_account: -50
+  menus_post-links: -50
+  menus_orientation-tools: -50
   menus_navigation-footer: -50
   menus_main: -50
   menus_header-navigation-secondary: -50
   menus_header-navigation: -50
   menus_footer: -50
-  menus_devel: -50
   menus_admin: -50
-  vocabularies_team_member: -50
+  menus_categories: -50
 _core:
   default_config_hash: f4sH8CGbEMFQXKFoGeaHbmIP_f6cOTi02EeFhHSbYyo
