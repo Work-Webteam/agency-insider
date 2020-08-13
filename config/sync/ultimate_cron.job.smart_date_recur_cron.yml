@@ -1,14 +1,14 @@
-uuid: b5c6271d-2168-4f9b-9259-fa1946679ab2
+uuid: 679b6301-defa-4889-a2b8-efdc2e3de727
 langcode: en
 status: true
 dependencies:
   module:
-    - rules
+    - smart_date_recur
 title: 'Default cron handler'
-id: rules_cron
+id: smart_date_recur_cron
 weight: 0
-module: rules
-callback: rules_cron
+module: smart_date_recur
+callback: smart_date_recur_cron
 scheduler:
   id: simple
 launcher:
