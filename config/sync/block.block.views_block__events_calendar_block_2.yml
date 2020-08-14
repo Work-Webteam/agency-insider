@@ -1,0 +1,29 @@
+uuid: c10ea201-c100-488c-a371-ce034c8abdc4
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.events_calendar
+  module:
+    - block_class
+    - views
+  theme:
+    - agency_theme
+third_party_settings:
+  block_class:
+    classes: 'col-lg-3 col-md-6 col-sm-12'
+id: views_block__events_calendar_block_2
+theme: agency_theme
+region: content
+weight: 0
+provider: null
+plugin: 'views_block:events_calendar-block_2'
+settings:
+  id: 'views_block:events_calendar-block_2'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+  context_mapping: {  }
+visibility: {  }

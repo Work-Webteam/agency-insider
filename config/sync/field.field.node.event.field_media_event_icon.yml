@@ -1,0 +1,28 @@
+uuid: 54b18542-5257-4a6f-8543-348aa8b5e2b2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_media_event_icon
+    - media.type.event_icon
+    - node.type.event
+id: node.event.field_media_event_icon
+field_name: field_media_event_icon
+entity_type: node
+bundle: event
+label: 'Event Icon'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      event_icon: event_icon
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

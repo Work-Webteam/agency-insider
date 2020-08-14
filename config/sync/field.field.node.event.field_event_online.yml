@@ -1,0 +1,23 @@
+uuid: 28c5610b-26e4-4851-b41b-4b5365b205cd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_event_online
+    - node.type.event
+  module:
+    - link
+id: node.event.field_event_online
+field_name: field_event_online
+entity_type: node
+bundle: event
+label: 'Event Online'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link
