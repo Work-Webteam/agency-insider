@@ -1,6 +1,6 @@
 uuid: bfa03253-73c8-4147-b397-96a3813a8575
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - views.view.post_listing

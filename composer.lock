@@ -1,10 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3488a69730f2982f2d3426c99c243121",
+    "content-hash": "f1acaee5b9e2feb11f5f89c97df9b5a1",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -350,6 +350,16 @@
                 "yawik",
                 "zend",
                 "zikula"
+            ],
+            "funding": [
+                {
+                    "url": "https://packagist.com",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/composer/composer",
+                    "type": "tidelift"
+                }
             ],
             "time": "2020-04-07T06:57:05+00:00"
         },
@@ -1399,9 +1409,7 @@
             "version": "1.8.2",
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/dinbror/blazy/archive/1.8.2.zip",
-                "reference": null,
-                "shasum": null
+                "url": "https://github.com/dinbror/blazy/archive/1.8.2.zip"
             },
             "type": "drupal-library"
         },
@@ -1588,6 +1596,20 @@
                 "redis",
                 "xcache"
             ],
+            "funding": [
+                {
+                    "url": "https://www.doctrine-project.org/sponsorship.html",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://www.patreon.com/phpdoctrine",
+                    "type": "patreon"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/doctrine%2Fcache",
+                    "type": "tidelift"
+                }
+            ],
             "time": "2020-07-07T18:54:01+00:00"
         },
         {
@@ -1735,6 +1757,20 @@
                 "common",
                 "doctrine",
                 "php"
+            ],
+            "funding": [
+                {
+                    "url": "https://www.doctrine-project.org/sponsorship.html",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://www.patreon.com/phpdoctrine",
+                    "type": "patreon"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/doctrine%2Fcommon",
+                    "type": "tidelift"
+                }
             ],
             "time": "2020-06-05T16:46:05+00:00"
         },
@@ -1890,6 +1926,20 @@
                 "uppercase",
                 "words"
             ],
+            "funding": [
+                {
+                    "url": "https://www.doctrine-project.org/sponsorship.html",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://www.patreon.com/phpdoctrine",
+                    "type": "patreon"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/doctrine%2Finflector",
+                    "type": "tidelift"
+                }
+            ],
             "time": "2020-05-29T07:19:59+00:00"
         },
         {
@@ -1951,6 +2001,20 @@
                 "lexer",
                 "parser",
                 "php"
+            ],
+            "funding": [
+                {
+                    "url": "https://www.doctrine-project.org/sponsorship.html",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://www.patreon.com/phpdoctrine",
+                    "type": "patreon"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/doctrine%2Flexer",
+                    "type": "tidelift"
+                }
             ],
             "time": "2020-05-25T17:44:05+00:00"
         },
@@ -2159,6 +2223,50 @@
             ],
             "description": "Composer Plugin for updating the Drupal scaffold files when using drupal/core",
             "time": "2019-03-30T10:41:38+00:00"
+        },
+        {
+            "name": "drupal/add_content_by_bundle",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/add_content_by_bundle.git",
+                "reference": "1.0.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/add_content_by_bundle-1.0.1.zip",
+                "reference": "1.0.1",
+                "shasum": "558647cc20e448fffe96fb41776f0d14d38de3eb"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "1.0.1",
+                    "datestamp": "1595790487",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "mandclu",
+                    "homepage": "https://www.drupal.org/user/52136"
+                }
+            ],
+            "description": "Provides a views header/footer link to add a node for a specific bundle",
+            "homepage": "https://www.drupal.org/project/add_content_by_bundle",
+            "support": {
+                "source": "https://git.drupalcode.org/project/add_content_by_bundle"
+            }
         },
         {
             "name": "drupal/address",
@@ -2851,7 +2959,7 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/bootstrap_barrio"
             },
-            "time": "2020-07-13 01:19:10"
+            "time": "2020-07-13T01:19:10+00:00"
         },
         {
             "name": "drupal/bootstrap_layouts",
@@ -3721,9 +3829,6 @@
             },
             "type": "drupal-module",
             "extra": {
-                "branch-alias": {
-                    "dev-2.x": "2.x-dev"
-                },
                 "drupal": {
                     "version": "8.x-2.1",
                     "datestamp": "1556799496",
@@ -3768,18 +3873,6 @@
                 {
                     "name": "See contributors",
                     "homepage": "https://www.drupal.org/node/3236/committers"
-                },
-                {
-                    "name": "pcambra",
-                    "homepage": "https://www.drupal.org/user/122101"
-                },
-                {
-                    "name": "salvis",
-                    "homepage": "https://www.drupal.org/user/82964"
-                },
-                {
-                    "name": "willzyx",
-                    "homepage": "https://www.drupal.org/user/1043862"
                 }
             ],
             "description": "Various blocks, pages, and functions for developers.",
@@ -5402,7 +5495,7 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/postal_code"
             },
-            "time": "2016-05-30 08:04:15"
+            "time": "2016-05-30T08:04:15+00:00"
         },
         {
             "name": "drupal/profile",
@@ -5557,9 +5650,6 @@
             },
             "type": "drupal-module",
             "extra": {
-                "branch-alias": {
-                    "dev-1.x": "1.x-dev"
-                },
                 "drupal": {
                     "version": "8.x-1.0-alpha5",
                     "datestamp": "1561811286",
@@ -6039,6 +6129,9 @@
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
                     }
+                },
+                "patches_applied": {
+                    "Patch to integrate smart date with fullcalendar view.": "https://www.drupal.org/files/issues/2020-06-04/smart_date-support_old_and_new_fcv-3145989-3.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -6068,6 +6161,106 @@
                 "source": "http://cgit.drupalcode.org/smart_date",
                 "issues": "https://www.drupal.org/project/issues/smart_date",
                 "documentation": "https://www.drupal.org/docs/contributed-modules/smart-date"
+            }
+        },
+        {
+            "name": "drupal/smart_date_calendar_kit",
+            "version": "1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/smart_date_calendar_kit.git",
+                "reference": "1.0.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/smart_date_calendar_kit-1.0.2.zip",
+                "reference": "1.0.2",
+                "shasum": "0cc41244d1f91489b3bcfa63a82fa6f8684cdf0a"
+            },
+            "require": {
+                "drupal/add_content_by_bundle": "*",
+                "drupal/core": "^8 || ^9",
+                "drupal/fullcalendar_view": "*",
+                "drupal/smart_date": "*",
+                "drupal/smart_date_starter_kit": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "1.0.2",
+                    "datestamp": "1594387851",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "mandclu",
+                    "homepage": "https://www.drupal.org/user/52136"
+                }
+            ],
+            "description": "Initial configuration to show your Smart Date values in a Fullcalendar View",
+            "homepage": "https://www.drupal.org/project/smart_date_calendar_kit",
+            "support": {
+                "source": "https://git.drupalcode.org/project/smart_date_calendar_kit",
+                "error": "name : invalid value (smart_date_calendar_kit), must match [A-Za-z0-9][A-Za-z0-9_.-]*/[A-Za-z0-9][A-Za-z0-9_.-]*"
+            }
+        },
+        {
+            "name": "drupal/smart_date_starter_kit",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/smart_date_starter_kit.git",
+                "reference": "8.x-1.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/smart_date_starter_kit-8.x-1.0.zip",
+                "reference": "8.x-1.0",
+                "shasum": "3638c266f5005ccb2e1481de1dd54904064b3ae6"
+            },
+            "require": {
+                "drupal/add_content_by_bundle": "^1.0@alpha",
+                "drupal/core": "^8 || ^9",
+                "drupal/smart_date": "^2.0",
+                "php": "^7.1"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.0",
+                    "datestamp": "1591263142",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "mandclu",
+                    "homepage": "https://www.drupal.org/user/52136"
+                }
+            ],
+            "description": "A content type and view to help you get started with Smart Date.",
+            "homepage": "https://www.drupal.org/project/smart_date_starter_kit",
+            "keywords": [
+                "Drupal"
+            ],
+            "support": {
+                "source": "http://cgit.drupalcode.org/smart_date_starter_kit",
+                "issues": "https://www.drupal.org/project/issues/smart_date_starter_kit"
             }
         },
         {
@@ -6509,7 +6702,7 @@
                 "source": "https://git.drupalcode.org/project/typed_data",
                 "issues": "https://www.drupal.org/project/issues/typed_data"
             },
-            "time": "2020-08-10 08:41:42"
+            "time": "2020-08-10T08:41:42+00:00"
         },
         {
             "name": "drupal/ultimate_cron",
@@ -7691,6 +7884,12 @@
                 "autoloading",
                 "laminas",
                 "zf"
+            ],
+            "funding": [
+                {
+                    "url": "https://funding.communitybridge.org/projects/laminas-project",
+                    "type": "community_bridge"
+                }
             ],
             "time": "2020-05-20T16:45:56+00:00"
         },
@@ -11423,7 +11622,7 @@
                 "Behat",
                 "test"
             ],
-            "time": "2016-06-21 17:28:28"
+            "time": "2016-06-21T17:28:28+00:00"
         },
         {
             "name": "doctrine/instantiator",
@@ -11478,6 +11677,20 @@
             "keywords": [
                 "constructor",
                 "instantiate"
+            ],
+            "funding": [
+                {
+                    "url": "https://www.doctrine-project.org/sponsorship.html",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://www.patreon.com/phpdoctrine",
+                    "type": "patreon"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/doctrine%2Finstantiator",
+                    "type": "tidelift"
+                }
             ],
             "time": "2020-05-29T17:27:14+00:00"
         },
@@ -13419,5 +13632,6 @@
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": [],
-    "platform-dev": []
+    "platform-dev": [],
+    "plugin-api-version": "1.1.0"
 }

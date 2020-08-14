@@ -72,8 +72,8 @@ display:
         options:
           default_date_source: now
           defaultDate: ''
-          start: field_event_date_value
-          end: field_event_date_end_value
+          start: field_event_date_duration
+          end: field_event_date_duration
           title: title
           right_buttons: 'dayGridMonth,timeGridWeek,timeGridDay,listYear'
           left_buttons: 'prev,next today'
@@ -92,8 +92,8 @@ display:
           tax_field: ''
           vocabularies: ''
           color_bundle:
+            event: '#3a87ad'
             events: '#3a87ad'
-            event_model: '#3a87ad'
             page: '#3a87ad'
             poll: '#3a87ad'
             post: '#3a87ad'
@@ -468,8 +468,8 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:core.entity_view_display.node.event_model.default'
-        - 'config:core.entity_view_display.node.event_model.teaser'
+        - 'config:core.entity_view_display.node.event.default'
+        - 'config:core.entity_view_display.node.event.teaser'
         - 'config:core.entity_view_display.node.events.default'
         - 'config:core.entity_view_display.node.events.teaser'
         - 'config:core.entity_view_display.node.page.default'
@@ -830,8 +830,8 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:core.entity_view_display.node.event_model.default'
-        - 'config:core.entity_view_display.node.event_model.teaser'
+        - 'config:core.entity_view_display.node.event.default'
+        - 'config:core.entity_view_display.node.event.teaser'
         - 'config:core.entity_view_display.node.events.default'
         - 'config:core.entity_view_display.node.events.teaser'
         - 'config:core.entity_view_display.node.page.default'
@@ -1031,8 +1031,8 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:core.entity_view_display.node.event_model.default'
-        - 'config:core.entity_view_display.node.event_model.teaser'
+        - 'config:core.entity_view_display.node.event.default'
+        - 'config:core.entity_view_display.node.event.teaser'
         - 'config:core.entity_view_display.node.events.default'
         - 'config:core.entity_view_display.node.events.teaser'
         - 'config:core.entity_view_display.node.page.default'
