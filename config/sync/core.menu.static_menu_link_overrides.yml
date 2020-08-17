@@ -71,5 +71,11 @@ definitions:
     parent: ''
     expanded: false
     enabled: true
+  'admin_toolbar_tools__extra_links:node__add__events':
+    menu_name: admin
+    parent: 'admin_toolbar_tools.extra_links:node.add'
+    weight: 0
+    expanded: false
+    enabled: false
 _core:
   default_config_hash: jdY7AU0tU-QsjmiOw3W8vwpYMb-By--_MSFgbqKUTYM
