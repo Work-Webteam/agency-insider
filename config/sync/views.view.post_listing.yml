@@ -1706,6 +1706,7 @@ display:
           replica: false
           query_comment: ''
           query_tags: null
+      enabled: false
     cache_metadata:
       max-age: -1
       contexts:

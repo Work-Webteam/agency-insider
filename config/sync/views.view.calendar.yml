@@ -459,6 +459,7 @@ display:
           plugin_id: rendered_entity
       block_description: 'Calendar Block'
       title: 'Upcoming Events'
+      enabled: false
     cache_metadata:
       max-age: -1
       contexts:
@@ -820,7 +821,7 @@ display:
       defaults:
         fields: false
       display_description: ''
-      enabled: true
+      enabled: false
     cache_metadata:
       max-age: -1
       contexts:

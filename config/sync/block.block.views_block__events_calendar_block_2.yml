@@ -6,6 +6,7 @@ dependencies:
     - views.view.events_calendar
   module:
     - block_class
+    - system
     - views
   theme:
     - agency_theme
@@ -26,4 +27,9 @@ settings:
   views_label: ''
   items_per_page: none
   context_mapping: {  }
-visibility: {  }
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

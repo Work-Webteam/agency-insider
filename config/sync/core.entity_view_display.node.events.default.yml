@@ -39,7 +39,7 @@ content:
     third_party_settings: {  }
   field_event_date:
     weight: 1
-    label: above
+    label: inline
     settings:
       timezone_override: ''
       format: default
