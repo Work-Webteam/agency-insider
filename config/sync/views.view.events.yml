@@ -7,7 +7,6 @@ dependencies:
     - field.storage.node.field_when
     - node.type.event
   module:
-    - add_content_by_bundle
     - node
     - smart_date
     - user
@@ -55,7 +54,7 @@ display:
       pager:
         type: mini
         options:
-          items_per_page: 20
+          items_per_page: 10
           offset: 0
           id: 0
           total_pages: null
@@ -210,21 +209,7 @@ display:
           granularity: second
           plugin_id: '1'
       title: 'Upcoming Events'
-      header:
-        add_content_by_bundle:
-          id: add_content_by_bundle
-          table: views
-          field: add_content_by_bundle
-          relationship: none
-          group_type: group
-          admin_label: ''
-          empty: true
-          bundle: event
-          label: 'Add an Event'
-          class: button
-          target: ''
-          width: 600
-          plugin_id: add_content_by_bundle
+      header: {  }
       footer: {  }
       empty: {  }
       relationships: {  }
@@ -388,6 +373,7 @@ display:
       use_more_text: more
       link_display: page_1
       link_url: ''
+      enabled: true
     cache_metadata:
       max-age: -1
       contexts:

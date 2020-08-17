@@ -2187,18 +2187,18 @@ table.dataTable thead .sorting_desc_disabled:after {
 .page-view-calendar .view-display-id-page_1  {
   padding:0 30px;
 }
-.view-events-calendar .fullcalendar-bottom-btn {
+.view-events-calendar .event-add-button {
   padding-top:5px;
   padding-bottom:5px;
 }
-.view-events-calendar .fullcalendar-bottom-btn a {
+.view-events-calendar .event-add-button a {
   display: block;
   border: solid 1px #D7D7D7;
   width: 100px;
   margin:0 auto;
   text-align: center;
 }
-.view-events-calendar .fullcalendar-bottom-btn a:hover {
+.view-events-calendar .event-add-button a:hover {
   color:white;
   background-color: #003466;
 }
@@ -2249,4 +2249,55 @@ article[class*="node--type-events"] .flag-bookmark {
   font-size: .85em;
   color: #999;
   margin:10px 0;
+}
+
+/* New Event Node Page, Upcoming and Past pages */
+.field--name-field-when.field--type-smartdate .field__items,
+article.node--type-event.node--promoted .field--name-field-event-location .field__item {
+  display:inline;
+}
+body.page-view-events .view-events {
+  margin-left:25px;
+  margin-right:25px;
+}
+body.page-view-events .main-content article header {
+  padding:0!important;
+}
+body.page-view-events .main-content article .node-readmore {
+  padding:0;
+}
+body.page-view-events .main-content article .field__label,
+body.node--type-event .field--type-smartdate .field__label {
+  display: inline-block;
+  font-weight: bold;
+}
+body.node--type-event .field--type-smartdate .field__item,
+body.node--type-event .field--name-field-event-online .field__item {
+  padding-left:25px;
+  padding-right:25px;
+}
+body.node--type-event footer {
+  margin-top:20px;
+}
+body.page-view-events .main-content article .field__label:after {
+  content: ": ";
+}
+body.node--type-event .field--name-field-event-online .field__label {
+  margin-top:15px;
+  font-weight: bold;
+}
+
+/* Calendar Add Event Btn on Calendar page and event nodes */
+.view-events-calendar .view-footer {
+  margin-bottom:20px;
+  text-align: center;
+}
+a.add-event-button {
+  border: solid 1px #CCC;
+  padding: 3px 5px;
+}
+a.add-event-button:hover {
+  background-color: #00336a;
+  color:white;
+  text-decoration: none;
 }
