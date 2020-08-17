@@ -675,13 +675,13 @@ display:
           custom_date_format: d
           timezone: ''
           plugin_id: date
-        field_when_value_2:
-          id: field_when_value_2
+        field_when:
+          id: field_when
           table: node__field_when
-          field: field_when_value
+          field: field_when
           relationship: none
           group_type: group
-          admin_label: 'start:time'
+          admin_label: 'event time'
           label: ''
           exclude: true
           alter:
@@ -723,10 +723,30 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          date_format: custom
-          custom_date_format: 'g:ia'
-          timezone: ''
-          plugin_id: date
+          click_sort_column: value
+          type: smartdate_custom
+          settings:
+            date_format: ''
+            custom_date_format: ''
+            timezone: ''
+            separator: ' - '
+            join: ''
+            time_format: 'g:ia'
+            time_hour_format: 'g:ia'
+            allday_label: 'All day'
+            date_first: '0'
+            ampm_reduce: 1
+          group_column: value
+          group_columns: {  }
+          group_rows: false
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
         type:
           id: type
           table: node_field_data
@@ -933,7 +953,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"fp-event\">\r\n   <aside>\r\n     <div class=\"event-date\">{{field_when_value }}<br>{{ field_when_value_1 }}</div>\r\n   </aside>\r\n   <div class=\"fp-content\">\r\n      <div class=\"announce-title\">{{ title }}</div>\r\n     <div class=\"announce-time\"> <strong>Time: </strong>{{ field_when_value_2 }}<br>\r\n     <div class=\"fp-event-loc\">{{ field_event_location }} </div>\r\n      <div class=\"fp-event-on\">{{ field_event_online }}</div>\r\n</div>\r\n</div>"
+            text: "<div class=\"fp-event\">\r\n   <aside>\r\n     <div class=\"event-date\">{{field_when_value }}<br>{{ field_when_value_1 }}</div>\r\n   </aside>\r\n   <div class=\"fp-content\">\r\n      <div class=\"announce-title\">{{ title }}</div>\r\n     <div class=\"announce-time\"> <strong>Time: </strong>{{ field_when }}<br>\r\n     <div class=\"fp-event-loc\">{{ field_event_location }} </div>\r\n      <div class=\"fp-event-on\">{{ field_event_online }}</div>\r\n</div>\r\n</div>"
             make_link: false
             path: ''
             absolute: false
@@ -1085,6 +1105,7 @@ display:
       tags:
         - 'config:field.storage.node.field_event_location'
         - 'config:field.storage.node.field_event_online'
+        - 'config:field.storage.node.field_when'
   page_1:
     display_plugin: page
     id: page_1
