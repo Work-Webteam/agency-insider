@@ -177,9 +177,12 @@
 	 "drupal/openid_connect": {
 	   "form_state passed as param to authorize method but never used": "https://www.drupal.org/files/issues/2019-12-02/form-state-authorize-method-1.0-beta5.patch"
 	  },
-	 "drupal/smart_date": {
-	   "Patch to integrate smart date with fullcalendar view.": "https://www.drupal.org/files/issues/2020-06-04/smart_date-support_old_and_new_fcv-3145989-3.patch"
-	 }
+	  "drupal/smart_date": {
+	    "Patch to integrate smart date with fullcalendar view.": "https://www.drupal.org/files/issues/2020-06-04/smart_date-support_old_and_new_fcv-3145989-3.patch"
+	  },
+	  "drupal/rules": {
+	    "Patch to address rules issue where options were disappearing from blocks.": "https://www.drupal.org/files/issues/2020-07-23/2927132-15-remove-other-conditions-from-ui.patch"
+	  }  
         },
         "enable-patching": true
     }
