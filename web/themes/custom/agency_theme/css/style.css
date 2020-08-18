@@ -2256,6 +2256,9 @@ article[class*="node--type-events"] .flag-bookmark {
 article.node--type-event.node--promoted .field--name-field-event-location .field__item {
   display:inline;
 }
+body.page-view-events .views-row {
+  width:100%;
+}
 body.page-view-events .view-events {
   margin-left:25px;
   margin-right:25px;
