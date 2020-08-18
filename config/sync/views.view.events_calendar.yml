@@ -1143,14 +1143,13 @@ display:
           updateConfirm: 1
           defaultLanguage: en
           languageSelector: 0
-          dialogWindow: 1
+          dialogWindow: 0
           openEntityInNewTab: 1
           createEventLink: 0
           tax_field: ''
           vocabularies: ''
           color_bundle:
             event: '#6ab7dd'
-            events: '#3a87ad'
             page: '#3a87ad'
             poll: '#3a87ad'
             post: '#3a87ad'
