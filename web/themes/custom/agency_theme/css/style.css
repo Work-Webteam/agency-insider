@@ -2180,7 +2180,7 @@ table.dataTable thead .sorting_desc_disabled:after {
 .view-events-calendar tbody.fc-body tr {
   background-color:transparent;
 }
-.view-calendar .view-content.row > div {
+.view-events-calendar .view-content.row > div {
   width:100%;
 }
 .view-events-calendar .content,
@@ -2272,7 +2272,8 @@ body.node--type-event .field--type-smartdate .field__label {
   font-weight: bold;
 }
 body.node--type-event .field--type-smartdate .field__item,
-body.node--type-event .field--name-field-event-online .field__item {
+body.node--type-event .field--name-field-event-online .field__item,
+body.node--type-event .field--name-field-event-location .field__item {
   padding-left:25px;
   padding-right:25px;
 }
@@ -2282,7 +2283,8 @@ body.node--type-event footer {
 body.page-view-events .main-content article .field__label:after {
   content: ": ";
 }
-body.node--type-event .field--name-field-event-online .field__label {
+body.node--type-event .field--name-field-event-online .field__label,
+body.node--type-event .field--name-field-event-location .field__label {
   margin-top:15px;
   font-weight: bold;
 }
