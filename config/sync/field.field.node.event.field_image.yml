@@ -1,16 +1,16 @@
-uuid: 9e093ce0-adff-4ac1-b2c1-3d85d06e4ae1
+uuid: 7e5f4ca2-28e7-47dc-b39e-447bf197c590
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_image
-    - node.type.events
+    - node.type.event
   module:
     - image
-id: node.events.field_image
+id: node.event.field_image
 field_name: field_image
 entity_type: node
-bundle: events
+bundle: event
 label: 'Event Icon'
 description: 'Use the square images for better user experience, resolution 1:1, like 150 x150 pixels ore more for better quality.'
 required: false

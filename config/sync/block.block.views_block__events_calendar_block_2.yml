@@ -1,9 +1,9 @@
-uuid: bfa03253-73c8-4147-b397-96a3813a8575
+uuid: c10ea201-c100-488c-a371-ce034c8abdc4
 langcode: en
 status: true
 dependencies:
   config:
-    - views.view.post_listing
+    - views.view.events_calendar
   module:
     - block_class
     - system
@@ -13,14 +13,14 @@ dependencies:
 third_party_settings:
   block_class:
     classes: 'col-lg-3 col-md-6 col-sm-12'
-id: views_block__post_listing_fp_events_block
+id: views_block__events_calendar_block_2
 theme: agency_theme
 region: content
 weight: 0
 provider: null
-plugin: 'views_block:post_listing-fp_events_block'
+plugin: 'views_block:events_calendar-block_2'
 settings:
-  id: 'views_block:post_listing-fp_events_block'
+  id: 'views_block:events_calendar-block_2'
   label: ''
   provider: views
   label_display: visible

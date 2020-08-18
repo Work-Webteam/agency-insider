@@ -1,16 +1,18 @@
-uuid: 2e70c41f-f50f-4f9d-bba8-f886cae23437
+uuid: b19afe6b-d287-4b57-a00c-5a35d484e091
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.body
-    - node.type.events
+    - node.type.event
   module:
     - text
-id: node.events.body
+_core:
+  default_config_hash: _-djmcVu3bv-WkyjUTjJABeNbj1zAqrZAFpij-CtEI0
+id: node.event.body
 field_name: body
 entity_type: node
-bundle: events
+bundle: event
 label: 'Event Description'
 description: ''
 required: false

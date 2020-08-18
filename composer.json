@@ -117,10 +117,11 @@
         "drupal/easy_install": "^10.2",
         "drupal/fullcalendar_view": "^5.0",
         "drupal/calendar_datetime": "^1.0@alpha",
-        "kint-php/kint": "^3.3",
         "drupal/devel": "^2.1",
         "drupal/kint": "^2.1",
-        "drupal/recurring_period": "^1.0@alpha"
+        "drupal/recurring_period": "^1.0@alpha",
+        "drupal/smart_date": "^2.8",
+        "drupal/smart_date_calendar_kit": "^1.0"
     },
     "require-dev": {
         "neronmoon/scriptsdev": "^0.1.0",
@@ -173,8 +174,14 @@
            "Call to a member function transformDimensions() on null in template_preprocess": "https://www.drupal.org/files/issues/2018-04-04/2957368_0.patch"
 	  },
 	 "drupal/openid_connect": {
-	    "form_state passed as param to authorize method but never used": "https://www.drupal.org/files/issues/2019-12-02/form-state-authorize-method-1.0-beta5.patch"
-	  }
+	   "form_state passed as param to authorize method but never used": "https://www.drupal.org/files/issues/2019-12-02/form-state-authorize-method-1.0-beta5.patch"
+	  },
+	  "drupal/smart_date": {
+	    "Patch to integrate smart date with fullcalendar view.": "https://www.drupal.org/files/issues/2020-06-04/smart_date-support_old_and_new_fcv-3145989-3.patch"
+	  },
+	  "drupal/rules": {
+	    "Patch to address rules issue where options were disappearing from blocks.": "https://www.drupal.org/files/issues/2020-07-23/2927132-15-remove-other-conditions-from-ui.patch"
+	  }  
         },
         "enable-patching": true
     }

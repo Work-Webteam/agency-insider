@@ -1,17 +1,16 @@
-uuid: 2b22768b-6061-4117-a922-f77df62dc08a
+uuid: 41ebdfee-b33b-4b72-8f9f-496605896b8b
 langcode: en
 status: true
 dependencies:
   module:
-    - datetime
     - node
-id: node.field_event_end_date
-field_name: field_event_end_date
+    - text
+id: node.field_sidebar_text
+field_name: field_sidebar_text
 entity_type: node
-type: datetime
-settings:
-  datetime_type: datetime
-module: datetime
+type: text_long
+settings: {  }
+module: text
 locked: false
 cardinality: 1
 translatable: true

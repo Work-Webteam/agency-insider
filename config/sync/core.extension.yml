@@ -1,4 +1,5 @@
 module:
+  add_content_by_bundle: 0
   address: 0
   addtocalendar: 0
   admin_toolbar: 0
@@ -27,7 +28,6 @@ module:
   ctools_block: 0
   ctools_views: 0
   datetime: 0
-  datetime_range: 0
   dblog: 0
   devel_generate: 0
   ds_switch_view_mode: 0
@@ -67,7 +67,6 @@ module:
   menu_ui: 0
   mimemail: 0
   node: 0
-  optional_end_date: 0
   options: 0
   page_cache: 0
   paragraphs_type_permissions: 0
@@ -95,6 +94,10 @@ module:
   simplenews: 0
   sitemap: 0
   siteminder: 0
+  smart_date: 0
+  smart_date_calendar_kit: 0
+  smart_date_recur: 0
+  smart_date_starter_kit: 0
   state_machine: 0
   statistics: 0
   structure_sync: 0
