@@ -156,3 +156,24 @@ function agency_theme_preprocess_breadcrumb(&$variables) {
     }
   }
 }
+
+
+/**
+ * Implements hook_preprocess_block()
+ *
+ * Double checking if we have any one field with content in it, so we know whether to
+ * print it in the block--views-block--post-sidebar-block-1.html.twig file.
+ */
+function agency_theme_preprocess_block__views_block__post_sidebar_block_1(&$vars) {
+  // Images are processed at the field level, so we need to check prior to our template if we
+  // want to start a draw for the sidebar or not.
+  $vars['has_content'] = false;
+  // If we see content in any of these fields, let the template know.
+  if (($vars['elements']['content']['#view']->field['field_title']->original_value != null) || ($vars['elements']['content']['#view']->field['field_sidebar_text']->original_value != null) || ($vars['elements']['content']['#view']->field['field_sidebar_image']->original_value != null) ) {
+    // Add our own variable that we can check in block--views-block--post-sidebar-block-1.html.twig
+    // to let it know to draw the sidebar.
+    $vars['has_content'] = true;
+    // We also want to kick over the cache here - so we for sure see content on this page.
+    $vars['#cache']['max-age'] = 0;
+  }
+}
