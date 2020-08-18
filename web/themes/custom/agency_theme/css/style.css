@@ -2058,7 +2058,7 @@ div.dataTables_wrapper div.dataTables_paginate ul.pagination li:hover {
 /* Initial column spacing */
 #block-views-block-post-listing-fp-news-block,
 #block-views-block-post-listing-fp-announce-block,
-#block-views-block-post-listing-fp-events-block {
+#block-views-block-events-calendar-block-2 {
   display: flex;
   flex-direction: column;
   flex: auto;
@@ -2068,17 +2068,17 @@ div.dataTables_wrapper div.dataTables_paginate ul.pagination li:hover {
 .path-frontpage .view-post-listing {
   padding-top:0;
 }
-.fp-news, .fp-announcement, .fp-events {
+.fp-news, .fp-announcement {
   margin-bottom:25px;
 }
 
-.fp-news .view-content.row, .fp-announcement .view-content.row, .fp-events .view-content.row {
+.fp-news .view-content.row, .fp-announcement .view-content.row, #block-views-block-events-calendar-block-2 .view-content.row {
   min-height: 365px;
 }
 /* H2 title text adjustments */
 #block-views-block-post-listing-fp-news-block h2,
 #block-views-block-post-listing-fp-announce-block h2,
-#block-views-block-post-listing-fp-events-block h2 {
+#block-views-block-events-calendar-block-2  h2 {
   border-top:solid 1px #999;
   border-bottom:solid 1px #999;
   font-size: 1.15rem;
@@ -2088,7 +2088,7 @@ div.dataTables_wrapper div.dataTables_paginate ul.pagination li:hover {
 /* Number count and date blocks */
 #block-views-block-post-listing-fp-news-block aside,
 #block-views-block-post-listing-fp-announce-block aside,
-#block-views-block-post-listing-fp-events-block aside {
+#block-views-block-events-calendar-block-2 aside {
   float:left;
   font-size: .75rem;
 }
@@ -2103,7 +2103,7 @@ div.dataTables_wrapper div.dataTables_paginate ul.pagination li:hover {
 }
 .fp-news .view-content.row > div li:nth-child(odd) .count,
 .fp-announcement .view-content.row > div li:nth-child(even) .count,
-.fp-events .view-content.row > div li:nth-child(odd) .event-date {
+.view-display-id-block_2 .view-content.row > div li:nth-child(odd) .event-date {
   background-color: #389bb8;
 } 
 
@@ -2180,28 +2180,28 @@ table.dataTable thead .sorting_desc_disabled:after {
 .page-view-calendar .fc-scroller {
   height: auto;
 }
-.view-calendar tbody.fc-body tr {
+.view-events-calendar tbody.fc-body tr {
   background-color:transparent;
 }
-.view-calendar .view-content.row > div {
+.view-events-calendar .view-content.row > div {
   width:100%;
 }
-.view-calendar .content,
+.view-events-calendar .content,
 .page-view-calendar .view-display-id-page_1  {
   padding:0 30px;
 }
-.view-calendar .fullcalendar-bottom-btn {
+.view-events-calendar .event-add-button {
   padding-top:5px;
   padding-bottom:5px;
 }
-.view-calendar .fullcalendar-bottom-btn a {
+.view-events-calendar .event-add-button a {
   display: block;
   border: solid 1px #D7D7D7;
   width: 100px;
   margin:0 auto;
   text-align: center;
 }
-.view-calendar .fullcalendar-bottom-btn a:hover {
+.view-events-calendar .event-add-button a:hover {
   color:white;
   background-color: #003466;
 }
@@ -2231,7 +2231,7 @@ article[class*="node--type-events"] .flag-bookmark {
   left:40px;
 }
 /* Full calendar page view */
-.page-view-calendar .fc-title a {
+.page-view-events-calendar .fc-title a {
   color:white;
 }
 
@@ -2253,6 +2253,7 @@ article[class*="node--type-events"] .flag-bookmark {
   color: #999;
   margin:10px 0;
 }
+<<<<<<< HEAD
 /* Styling changes for sidebar added to post content type */
 body:not(.path-frontpage) #page-sidebar-second #block-views-block-post-sidebar-block-1:[data-content=""] {
   background-color: aqua;
@@ -2272,3 +2273,61 @@ body:not(.path-frontpage) #page-sidebar-second .block h3 {
 body:not(.path-frontpage) #page-sidebar-second .block p {
   margin-top:10px;
 }
+=======
+
+/* New Event Node Page, Upcoming and Past pages */
+.field--name-field-when.field--type-smartdate .field__items,
+article.node--type-event.node--promoted .field--name-field-event-location .field__item {
+  display:inline;
+}
+body.page-view-events .views-row {
+  width:100%;
+}
+body.page-view-events .view-events {
+  margin-left:25px;
+  margin-right:25px;
+}
+body.page-view-events .main-content article header {
+  padding:0!important;
+}
+body.page-view-events .main-content article .node-readmore {
+  padding:0;
+}
+body.page-view-events .main-content article .field__label,
+body.node--type-event .field--type-smartdate .field__label {
+  display: inline-block;
+  font-weight: bold;
+}
+body.node--type-event .field--type-smartdate .field__item,
+body.node--type-event .field--name-field-event-online .field__item,
+body.node--type-event .field--name-field-event-location .field__item {
+  padding-left:25px;
+  padding-right:25px;
+}
+body.node--type-event footer {
+  margin-top:20px;
+}
+body.page-view-events .main-content article .field__label:after {
+  content: ": ";
+}
+body.node--type-event .field--name-field-event-online .field__label,
+body.node--type-event .field--name-field-event-location .field__label {
+  margin-top:15px;
+  font-weight: bold;
+}
+
+/* Calendar Add Event Btn on Calendar page and event nodes */
+.view-events-calendar .view-footer {
+  margin-bottom:20px;
+  text-align: center;
+}
+a.add-event-button {
+  border: solid 1px #CCC;
+  padding: 3px 5px;
+}
+a.add-event-button:hover {
+  background-color: #00336a;
+  color:white;
+  text-decoration: none;
+}
+>>>>>>> INS-41_new_smart_date_test

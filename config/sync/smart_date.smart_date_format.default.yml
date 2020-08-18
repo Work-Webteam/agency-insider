@@ -1,0 +1,16 @@
+uuid: 3d0a7c57-ed71-4beb-9808-22b3dae8ec93
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: ZUIfjN7__7iszd-p53RtBfRhpjL4UVwW10rAYBqnY3Q
+id: default
+label: default
+date_format: 'D, M j Y'
+time_format: 'g:ia'
+time_hour_format: ga
+allday_label: 'All day'
+separator: ' - '
+join: ', '
+ampm_reduce: '1'
+date_first: '1'
