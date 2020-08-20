@@ -142,7 +142,7 @@
       {% endif %}
 
       {# Content #}
-      {% if node.field_sidebar_image.0 is null or node.field_sidebar_text.0 is null or node.field_title.0 is null %}
+      {% if node.field_sidebar_image.0 is null and node.field_sidebar_text.0 is null and node.field_title.0 is null %}
         {% set second_sidebar_content = false %}
       {% else %}
         {% set second_sidebar_content = true %}
