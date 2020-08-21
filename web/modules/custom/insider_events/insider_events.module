@@ -1,0 +1,46 @@
+<?php
+
+/**
+ * Implements hook_preprocess().
+ *
+ * Setting up variables for our events content type - to use in iCal templating work.
+ */
+function insider_events_preprocess(&$variables, $hook) {
+  // Only if this is a page hook, and we have an event style node.
+  if($hook == 'page' && isset($variables['node']) && $variables['node']->getType() == 'event') {
+    // TODO: If boolean for including an iCal is not checked - just get out now.
+    // TODO: If all day event - then lets grab day and times.
+    // TODO: If multi-day event - then lets grab start/end dates and times.
+    // create an event object
+    $this_event = [
+      'description'=>$variables['node']->get('body')->value,
+      'event_title'=>isset($variables['node']->get('title')->value)?$variables['node']->get('title')->value:null,
+      'event_location'=>isset($variables['node']->get('field_event_location')->value)?$variables['node']->get('field_event_location')->value:null,
+      'event_online_link_uri'=>isset($variables['node']->get('field_event_online')->uri)?$variables['node']->get('field_event_online')->uri:null,
+      'event_onine_link_text'=>isset($variables['node']->get('field_event_online')->title)?$variables['node']->get('field_event_online')->title:null
+    ];
+
+    // Use this var to set datetimes sub-array.
+    $times = $variables['node']->get('field_when')->getIterator();
+    // Now check if we have recurring events.
+    if(count($times) > 1) {
+      $this_event['recurring'] = [];
+      foreach($times as $time) {
+        // Grab our date data.
+        $this_event['recurring'][] = $time->getValue();
+      }
+      ksm($this_event);
+      // pop off our first array and grab our original start and end times
+      $first_event = array_shift($this_event['recurring']);
+      $this_event['start_datetime'] = $first_event['value'];
+      $this_event['end_datetime'] = $first_event['end_value'];
+    } else {
+      // No recurrance, just grab start and end times.
+      $this_event['start_datetime'] = $variables['node']->get('field_when')->value;
+      $this_event['end_datetime'] = $variables['node']->get('field_when')->end_value;
+    }
+
+    ksm($this_event);
+
+  }
+}
