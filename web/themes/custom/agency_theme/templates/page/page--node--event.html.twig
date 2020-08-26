@@ -33,6 +33,7 @@
  *   associated with the page and the node ID is the second argument in the
  *   page's path (e.g. node/12345 and node/12345/revisions, but not
  *   comment/reply/12345).
+ * - event: If this is an event node - we will have all content we require to build an ics.
  * Regions:
  * - page.header: Items for the header region.
  * - page.navigation: Items for the navigation region.
@@ -56,10 +57,10 @@
   {% block navbar %}
     {%
       set navbar_classes = [
-        'navbar',
-        theme.settings.navbar_inverse ? 'navbar-inverse' : 'navbar-default',
-        theme.settings.navbar_position ? 'navbar-' ~ theme.settings.navbar_position|clean_class : container,
-      ]
+      'navbar',
+      theme.settings.navbar_inverse ? 'navbar-inverse' : 'navbar-default',
+      theme.settings.navbar_position ? 'navbar-' ~ theme.settings.navbar_position|clean_class : container,
+    ]
     %}
     <header{{ navbar_attributes.addClass(navbar_classes) }} id="navbar" role="banner">
       <div class="row no-gutters">
@@ -144,20 +145,20 @@
       {% if node.bundle() is same as('page') %}
         {%
           set content_classes = [
-            page.sidebar_first ? 'col-lg-6',
-            node.bundle() is same as('page') ? 'col-lg-9',
-            'agency-node-content'
-          ]
+          page.sidebar_first ? 'col-lg-6',
+          node.bundle() is same as('page') ? 'col-lg-9',
+          'agency-node-content'
+        ]
         %}
       {% else %}
         {%
           set content_classes = [
-            page.sidebar_first and page.sidebar_second ? 'col-lg-6',
-            page.sidebar_first and page.sidebar_second is empty ? 'col-lg-9',
-            page.sidebar_second and page.sidebar_first is empty ? 'col-lg-9',
-            page.sidebar_first is empty and page.sidebar_second is empty ? 'col-lg-12 no-sidebars',
-            'agency-node-content'
-          ]
+          page.sidebar_first and page.sidebar_second ? 'col-lg-6',
+          page.sidebar_first and page.sidebar_second is empty ? 'col-lg-9',
+          page.sidebar_second and page.sidebar_first is empty ? 'col-lg-9',
+          page.sidebar_first is empty and page.sidebar_second is empty ? 'col-lg-12 no-sidebars',
+          'agency-node-content'
+        ]
         %}
       {% endif %}
       <section{{ content_attributes.addClass(content_classes) }}>
@@ -183,6 +184,17 @@
           {% endblock %}
         </div>
       </section>
+      {# event link #}
+      {% if(event) %}
+        <div class="ical" id="ical">
+          <div class="'field__label">iCal</div>
+          <div class="field__item">
+            {% set ical_link = 'data:text/calendar;charset=utf8,BEGIN:VCALENDAR%0AVERSION:2.0%0ABEGIN:VEVENT%0ADTSTART:' ~ event.start_datetime|date("Ymd\\THi00\\America/Vancouver") ~ '%0ADTEND:' ~ event.end_datetime|date("Ymd\\THi00\\America/Vancouver") ~ '%0ADTTIMEZONE:' ~ 'America/Vancouver' ~ '%0ADTALLDAY:' ~ '1' ~ '%0ADTRDATE:' ~ event.recurring.value ~ '%0ASUMMARY:' ~ event.event_title ~ '%0ADESCRIPTION:' ~ event.description|striptags ~ '%0ALOCATION:' ~ event.event_location|replace({'<br />': ' ', '<br>': ' ', '<p>': ' ', '</p>': ''}) ~ '%0AEND:VEVENT%0AEND:VCALENDAR' %}
+            <a href="{{ ical_link }}"> Add to calendar </a>
+          </div>
+        </div>
+      {% endif %}
+
       {# Sidebar Second #}
       {% if page.sidebar_second or node.bundle() is same as('page') %}
         {% block sidebar_second %}

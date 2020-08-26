@@ -1,5 +1,11 @@
 <?php
-
+use Liliumdev\ICalendar\ZCiCal; // Uses the iCalendar zapcalendar library - added via composer.
+use Liliumdev\ICalendar\ZCiCalDataNode;
+use Liliumdev\ICalendar\ZCiCalNode;
+use Liliumdev\ICalendar\ZCRecurringDate;
+use Liliumdev\ICalendar\ZCTimeZoneHelper;
+use Liliumdev\ICalendar\ZDateHelper;
+use \Drupal\insider_events\Controller\InsiderEventsController;
 /**
  * Implements hook_preprocess().
  *
@@ -13,23 +19,22 @@ function insider_events_preprocess(&$variables, $hook) {
     // TODO: If multi-day event - then lets grab start/end dates and times.
     // create an event object
     $this_event = [
-      'description'=>$variables['node']->get('body')->value,
-      'event_title'=>isset($variables['node']->get('title')->value)?$variables['node']->get('title')->value:null,
-      'event_location'=>isset($variables['node']->get('field_event_location')->value)?$variables['node']->get('field_event_location')->value:null,
-      'event_online_link_uri'=>isset($variables['node']->get('field_event_online')->uri)?$variables['node']->get('field_event_online')->uri:null,
-      'event_onine_link_text'=>isset($variables['node']->get('field_event_online')->title)?$variables['node']->get('field_event_online')->title:null
+      'description' => $variables['node']->get('body')->value,
+      'event_title' => isset($variables['node']->get('title')->value) ? $variables['node']->get('title')->value : null,
+      'event_location' => isset($variables['node']->get('field_event_location')->value) ? $variables['node']->get('field_event_location')->value : null,
+      'event_online_link_uri' => isset($variables['node']->get('field_event_online')->uri) ? $variables['node']->get('field_event_online')->uri : null,
+      'event_onine_link_text' => isset($variables['node']->get('field_event_online')->title) ? $variables['node']->get('field_event_online')->title : null
     ];
 
     // Use this var to set datetimes sub-array.
     $times = $variables['node']->get('field_when')->getIterator();
     // Now check if we have recurring events.
-    if(count($times) > 1) {
+    if (count($times) > 1) {
       $this_event['recurring'] = [];
-      foreach($times as $time) {
+      foreach ($times as $time) {
         // Grab our date data.
         $this_event['recurring'][] = $time->getValue();
       }
-      ksm($this_event);
       // pop off our first array and grab our original start and end times
       $first_event = array_shift($this_event['recurring']);
       $this_event['start_datetime'] = $first_event['value'];
@@ -39,8 +44,66 @@ function insider_events_preprocess(&$variables, $hook) {
       $this_event['start_datetime'] = $variables['node']->get('field_when')->value;
       $this_event['end_datetime'] = $variables['node']->get('field_when')->end_value;
     }
+    // TODO: get zapcalendar library: https://packagist.org/packages/liliumdev/icalendar via composer.
+    $ical_file = set_up_ical($this_event);
+    // Create a directory for this new file
+    $timestamp = date("m-d-Y");
+    $new_dir = 'public://ical/' . $timestamp;
 
-    ksm($this_event);
+    Try{
+      $dir = file_prepare_directory($new_dir, FILE_CREATE_DIRECTORY);
+      if (!$dir) {
+        throw new \exception("Could not create a directory for the file.");
+      }
+    }
+    catch (Exception $e) {
+    // Generic exception handling if something else gets thrown.
+    \Drupal::logger('insider_event.module')->error($e->getMessage());
+    }
 
+    $variables['event'] = $ical_file;
   }
 }
+
+/**
+ * @param $event
+ *  event bundle pulled from the when field in events.
+ * @return $ical
+ *  file location or null.
+ * //TODO: Probably a lot of this functionality should be moved out to src files.
+ *
+ */
+function set_up_ical($event) {
+
+  // Create the object.
+  $icalobj = new ZCiCal();
+  // Create event within ical obj.
+  $eventobj = new ZCiCalNode("VEVENT", $icalobj->curnode);
+  // add the title.
+  $eventobj->addNode(new ZCiCalDataNode("SUMMARY:" . $event['event_title']));
+  // Start date/time.
+  $eventobj->addNode(new ZCiCalDataNode("DTSTART:" . ZCiCal::fromSqlDateTime($event['start_datetime'])));
+  // End date/time.
+  $eventobj->addNode(new ZCiCalDataNode("DTEND:" . ZCiCal::fromSqlDateTime($event['end_datetime'])));
+  // Create a unique UID for this. UID is required.
+  $uid = date('Y-m-d-H-i-s') .  "@bcpsa.gww.gov.bc.ca";
+  $eventobj->addNode(new ZCiCalDataNode("UID:" . $uid));
+  // DTSTAMP is required.
+  $eventobj->addNode(new ZCiCalDataNode("DTSTAMP:" . ZCiCal::fromSqlDateTime()));
+  // Description.
+  $eventobj->addNode(new ZCiCalDataNode("Description:" . ZCiCal::formatContent(
+    $event['description']
+    )));
+
+  // write iCalendar feed to stdout
+  $ical = $icalobj->export();
+  ksm($ical);
+  $test_ical = new InsiderEventsController($event);
+  $test_ical_object = $test_ical->getIcal();
+  ksm($test_ical_object);
+
+  return $ical;
+}
+
+
+

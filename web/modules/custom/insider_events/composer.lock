@@ -1,0 +1,56 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "4f9f717906038da341f12a3bb478d91e",
+    "packages": [
+        {
+            "name": "liliumdev/icalendar",
+            "version": "0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/liliumdev/icalendar.git",
+                "reference": "0a6bc33fcc6b3f5ddb6a9bd45fe61d1aeef6ba44"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/liliumdev/icalendar/zipball/0a6bc33fcc6b3f5ddb6a9bd45fe61d1aeef6ba44",
+                "reference": "0a6bc33fcc6b3f5ddb6a9bd45fe61d1aeef6ba44",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Liliumdev\\ICalendar\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "ZContent",
+                    "email": "ahmed.popovic@gmail.com"
+                }
+            ],
+            "description": "A Composer package for creating icalendar files (ZContent/icalendar)",
+            "keywords": [
+                "iCalendar",
+                "liliumdev"
+            ],
+            "time": "2017-10-31T16:51:44+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": [],
+    "plugin-api-version": "1.1.0"
+}

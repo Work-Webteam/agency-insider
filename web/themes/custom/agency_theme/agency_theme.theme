@@ -21,7 +21,6 @@ function agency_theme_preprocess_page(&$variables) {
   // Check if landing page has a sidebar content.
   if (!empty($variables['node'])) {
     $node = $variables['node'];
-
     if ($node->getType() == 'page') {
       if (!$node->get('field_landing_sidebar')->isEmpty()) {
         $variables['page']['sidebar_second']['optional_sidebar'] = $node->get('field_landing_sidebar')->view();

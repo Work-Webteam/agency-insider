@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e259842316b9f08aeddfa935b4a3d5c2",
+    "content-hash": "25372f84075c28f88294d8116f902699",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -7956,6 +7956,43 @@
             "time": "2017-05-10T09:20:27+00:00"
         },
         {
+            "name": "liliumdev/icalendar",
+            "version": "0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/liliumdev/icalendar.git",
+                "reference": "0a6bc33fcc6b3f5ddb6a9bd45fe61d1aeef6ba44"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/liliumdev/icalendar/zipball/0a6bc33fcc6b3f5ddb6a9bd45fe61d1aeef6ba44",
+                "reference": "0a6bc33fcc6b3f5ddb6a9bd45fe61d1aeef6ba44",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Liliumdev\\ICalendar\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "ZContent",
+                    "email": "ahmed.popovic@gmail.com"
+                }
+            ],
+            "description": "A Composer package for creating icalendar files (ZContent/icalendar)",
+            "keywords": [
+                "iCalendar",
+                "liliumdev"
+            ],
+            "time": "2017-10-31T16:51:44+00:00"
+        },
+        {
             "name": "masterminds/html5",
             "version": "2.7.3",
             "source": {
@@ -8357,6 +8394,28 @@
                 "exception"
             ],
             "time": "2019-12-10T10:24:42+00:00"
+        },
+        {
+            "name": "pie/insider_events",
+            "version": "dev-INS-47_iCal_integration",
+            "dist": {
+                "type": "path",
+                "url": "web/modules/custom/insider_events",
+                "reference": "bdbd4c8316156929e97a16fdbf30ddd2835baada"
+            },
+            "require": {
+                "liliumdev/icalendar": "^0.1.0"
+            },
+            "type": "library",
+            "authors": [
+                {
+                    "name": "tvwerdal",
+                    "email": "thayne.werdal@gov.bc.ca"
+                }
+            ],
+            "transport-options": {
+                "relative": true
+            }
         },
         {
             "name": "psr/container",
@@ -13624,6 +13683,7 @@
         "drupal/state_machine": 5,
         "drupal/calendar_datetime": 15,
         "drupal/recurring_period": 15,
+        "pie/insider_events": 20,
         "devinci/devinci-behat-extension": 20
     },
     "prefer-stable": true,
