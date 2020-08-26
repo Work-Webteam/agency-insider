@@ -39,22 +39,30 @@ class InsiderEventsController {
 
 
   private function setIcal() {
+    $tzid = "America/Vancouver";
     $event = $this->getEvent();
+    $start_year = gmdate('Y', $event['start_datetime']);
+    $end_year = gmdate('Y', $event['end_datetime']);
     // Create the object.
     $icalobj = new ZCiCal();
+    ZCTimeZoneHelper::getTZNode($start_year,$end_year,$tzid, $icalobj->curnode);
     // Create event within ical obj.
     $eventobj = new ZCiCalNode("VEVENT", $icalobj->curnode);
+    // Set our timezone.
     // add the title.
     $eventobj->addNode(new ZCiCalDataNode("SUMMARY:" . $event['event_title']));
     // Start date/time.
-    $eventobj->addNode(new ZCiCalDataNode("DTSTART:" . ZCiCal::fromSqlDateTime($event['start_datetime'])));
+    // Not sure if Uniq is a typo and will be fixed in any future updates.
+    // We must add the Z to the end to let it know this is a UTC timestamp - or else it assumes local.
+    $eventobj->addNode(new ZCiCalDataNode('DTSTART:' . ZDateHelper::fromUniqDateTimetoiCal($event['start_datetime']) . 'Z'));
     // End date/time.
-    $eventobj->addNode(new ZCiCalDataNode("DTEND:" . ZCiCal::fromSqlDateTime($event['end_datetime'])));
+    $eventobj->addNode(new ZCiCalDataNode('DTEND:' . ZDateHelper::fromUniqDateTimetoiCal($event['end_datetime']) . 'Z'));
+
     // Create a unique UID for this. UID is required.
     $uid = date('Y-m-d-H-i-s') .  "@bcpsa.gww.gov.bc.ca";
     $eventobj->addNode(new ZCiCalDataNode("UID:" . $uid));
     // DTSTAMP is required.
-    $eventobj->addNode(new ZCiCalDataNode("DTSTAMP:" . ZCiCal::fromSqlDateTime()));
+    $eventobj->addNode(new ZCiCalDataNode("DTSTAMP:" . ZDateHelper::fromUniqDateTimetoiCal(time())));
     // Description.
     $eventobj->addNode(new ZCiCalDataNode("Description:" . ZCiCal::formatContent(
         $event['description']
@@ -92,7 +100,7 @@ class InsiderEventsController {
     $this->create_directory();
     if($this->is_dir){
       $event_name = $this->getEvent();
-      $this->iCal_url = file_save_data($this->iCal, 'public://ical/' . $this->timestamp . '/' . $event_name['event_title'] . '.ics');
+      $this->iCal_url = file_save_data($this->iCal, 'public://ical/' . $this->timestamp . '/' . str_replace(' ', '', $event_name['event_title']) . '.ics');
     }
     // Create a file name and make sure it does not exist.
     // save as an .ical file.
