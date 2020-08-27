@@ -1,7 +1,12 @@
 uuid: 0319f6a0-2406-4f3a-beea-88f5334bbd3b
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - menu_trail_by_path
+third_party_settings:
+  menu_trail_by_path:
+    trail_source: ''
 id: header-navigation
 label: 'Header Navigation'
 description: ''

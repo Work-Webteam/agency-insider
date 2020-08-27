@@ -545,7 +545,8 @@ header .row-second {
   width:max-content;
   min-width: 60%;
 }
-#block-headernavigation ul:not(.contextual-links) a {
+#block-headernavigation ul:not(.contextual-links) a,
+#block-headernavigation .sf-depth-1 .sf-with-ul {
   background-color: #1F5792;
   color: white;
   padding: 5px 30px;
