@@ -1,10 +1,5 @@
 <?php
-use Liliumdev\ICalendar\ZCiCal; // Uses the iCalendar zapcalendar library - added via composer.
-use Liliumdev\ICalendar\ZCiCalDataNode;
-use Liliumdev\ICalendar\ZCiCalNode;
-use Liliumdev\ICalendar\ZCRecurringDate;
-use Liliumdev\ICalendar\ZCTimeZoneHelper;
-use Liliumdev\ICalendar\ZDateHelper;
+
 use \Drupal\insider_events\Controller\InsiderEventsController;
 /**
  * Implements hook_preprocess().
@@ -14,16 +9,14 @@ use \Drupal\insider_events\Controller\InsiderEventsController;
 function insider_events_preprocess(&$variables, $hook) {
   // Only if this is a page hook, and we have an event style node.
   if($hook == 'page' && isset($variables['node']) && $variables['node']->getType() == 'event') {
-    // TODO: If boolean for including an iCal is not checked - just get out now.
-    // TODO: If all day event - then lets grab day and times.
-    // TODO: If multi-day event - then lets grab start/end dates and times.
     // create an event object
     $this_event = [
       'description' => $variables['node']->get('body')->value,
       'event_title' => isset($variables['node']->get('title')->value) ? $variables['node']->get('title')->value : null,
       'event_location' => isset($variables['node']->get('field_event_location')->value) ? $variables['node']->get('field_event_location')->value : null,
       'event_online_link_uri' => isset($variables['node']->get('field_event_online')->uri) ? $variables['node']->get('field_event_online')->uri : null,
-      'event_onine_link_text' => isset($variables['node']->get('field_event_online')->title) ? $variables['node']->get('field_event_online')->title : null
+      'event_onine_link_text' => isset($variables['node']->get('field_event_online')->title) ? $variables['node']->get('field_event_online')->title : null,
+      'event_nid' => isset($variables['node']->get('nid')->value) ? $variables['node']->get('nid')->value : null
     ];
 
     // Use this var to set datetimes sub-array.
@@ -46,14 +39,14 @@ function insider_events_preprocess(&$variables, $hook) {
     }
 
     // This uses zapcalendar library: https://packagist.org/packages/liliumdev/icalendar via composer.
+    // Additional functionality and classes built by Thayne.
     $ical_file = new InsiderEventsController($this_event);
-    $ical_url = $ical_file->getIcalUrl();
+    $ical_url = $ical_file->get_ical_url();
     $url = $ical_url->url();
-    ksm($ical_file);
-    ksm($ical_url);
     ksm($url);
+    $variables['event']['url'] = $url;
     // TODO: include a calendar icon.
-    $variables['event'] = $url;
+    $variables['event']['icon'] = '';
   }
 }
 
