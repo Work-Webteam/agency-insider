@@ -7,7 +7,10 @@ use Drupal\Core\File\FileSystemInterface;
 use Exception;
 use RuntimeException;
 
-
+/**
+ * Class InsiderEventsIcalFile
+ * @package Drupal\insider_events
+ */
 class InsiderEventsIcalFile {
   protected $iCal_file;
   protected $iCal_url;
@@ -16,10 +19,16 @@ class InsiderEventsIcalFile {
   protected $node_id;
   protected $this_event;
 
+  /**
+   * InsiderEventsIcalFile constructor.
+   * @param $iCal
+   * @param $event
+   */
   public function __construct($iCal, $event){
     $this->iCal_file = $iCal;
     $this->timestamp = $this->setTimestamp();
     $this->this_event = $event;
+    $this->node_id = $this->setNid();
     $this->create_directory();
     $this->saveIcal();
   }
@@ -32,16 +41,34 @@ class InsiderEventsIcalFile {
     $this->iCal_url = $url;
   }
 
+  /**
+   * @return mixed
+   *   Return the NID for the event - mostly used to sort directories.
+   */
+  private function setNid() {
+    $event = $this->getEvent();
+    return $event['event_nid'];
+  }
+
+
+  private function getIcalFile(){
+    return $this->iCal_file;
+  }
+
+  /**
+   * @return int
+   */
   private function setTimestamp() {
     $timestamp = new DateTime();
     return $timestamp->getTimestamp();
   }
 
+  /**
+   * @return int
+   */
   protected function getTimestamp() {
     return $this->timestamp;
   }
-
-
 
   /**
    * @return mixed
@@ -75,8 +102,7 @@ class InsiderEventsIcalFile {
    *  Getter for Nid field.
    */
   private function getNid() {
-    $event = $this->getEvent();
-    return $event['event_nid'];
+    return $this->node_id;
   }
 
   /**
@@ -85,8 +111,9 @@ class InsiderEventsIcalFile {
   private function saveIcal() {
     // create a directory if it does not exist
     $this->create_directory();
+    dpm($this->is_dir);
     if($this->is_dir){
-      $this->setIcalUrl(file_save_data($this->getEventField('iCal'), 'public://ical/' . $this->getEventField('node_id') . '/' . str_replace(' ', '', $this->getEventField('event_title')) . '.ics', FileSystemInterface::EXISTS_REPLACE));
+      $this->setIcalUrl(file_save_data($this->getIcalFile(), 'public://ical/' . $this->getNid() . '/' . str_replace(' ', '', $this->getEventField('event_title')) . '.ics', FileSystemInterface::EXISTS_REPLACE));
     }
   }
 
@@ -109,5 +136,4 @@ class InsiderEventsIcalFile {
     }
 
   }
-
 }

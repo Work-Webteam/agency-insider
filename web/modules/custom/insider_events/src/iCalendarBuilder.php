@@ -7,19 +7,20 @@ use Liliumdev\ICalendar\ZCiCalNode;
 use Liliumdev\ICalendar\ZCTimeZoneHelper;
 use Liliumdev\ICalendar\ZDateHelper;
 
+/**
+ * Class iCalendarBuilder
+ * @package Drupal\insider_events
+ */
 class iCalendarBuilder {
 
   protected $this_event;
   protected $iCal;
   protected $iCal_file;
   protected $iCal_url;
-  protected $is_dir;
   protected $timestamp;
-  protected $node_id;
 
   public function __construct($event){
     $this->this_event = $this->setEvent($event);
-    $this->node_id = $this->setNid();
     $this->setIcal();
   }
 
@@ -35,30 +36,82 @@ class iCalendarBuilder {
     // Create the object.
     $icalobj = new ZCiCal();
     ZCTimeZoneHelper::getTZNode($start_year,$end_year,$tzid, $icalobj->curnode);
+    // TODO: set up variables for re-used fields here.
+    $title = $event['event_title'];
+    // Timestamp
+    $date_stamp = time();
+    // Description.
+    $desc = strip_tags($event['description']);
+    // Check if there is recurring events.
+    $recur_event = $this->get_recur();
+    if($recur_event) {
+      $i = 0;
+      // Firstly, create one with our current start/end dates
+      $this->createSingleEvent($icalobj, $title, $date_stamp, $desc, $event);
+      // Now add all other events
+      $this->createMultiEvent($icalobj, $title, $date_stamp, $desc, $event);
+      // then we need to split up all event times foreach each instance.
+    } else {
+      // We only have a standard event available.
+      $this->createSingleEvent($icalobj, $title, $date_stamp, $desc, $event);
+    }
+    // write iCalendar feed to stdout
+    $this->iCal = $icalobj->export();
+  }
+
+  private function createSingleEvent(&$icalobj, $title, $date_stamp, $desc, $event) {
+    $uid = date('Y-m-d-H-i-s') . mt_rand(0000000001, 9999999999) . "@bcpsa.gww.gov.bc.ca";
     // Create event within ical obj.
     $eventobj = new ZCiCalNode("VEVENT", $icalobj->curnode);
-    // Set our timezone.
     // add the title.
-    $eventobj->addNode(new ZCiCalDataNode("SUMMARY:" . $event['event_title']));
+    $eventobj->addNode(new ZCiCalDataNode("SUMMARY:" . $title));
     // Start date/time.
     // Not sure if Uniq is a typo and will be fixed in any future updates.
     // We must add the Z to the end to let it know this is a UTC timestamp - or else it assumes local.
-    $eventobj->addNode(new ZCiCalDataNode('DTSTART:' . ZDateHelper::fromUniqDateTimetoiCal($event['start_datetime']) . 'Z'));
+    $eventobj->addNode(new ZCiCalDataNode('DTSTART:' . ZDateHelper::fromUniqDateTimetoiCal(
+        $event['start_datetime']) . 'Z'
+    ));
     // End date/time.
-    $eventobj->addNode(new ZCiCalDataNode('DTEND:' . ZDateHelper::fromUniqDateTimetoiCal($event['end_datetime']) . 'Z'));
+    $eventobj->addNode(new ZCiCalDataNode('DTEND:' . ZDateHelper::fromUniqDateTimetoiCal(
+        $event['end_datetime']) . 'Z'
+    ));
 
-    // Create a unique UID for this. UID is required.
-    $uid = date('Y-m-d-H-i-s') .  "@bcpsa.gww.gov.bc.ca";
     $eventobj->addNode(new ZCiCalDataNode("UID:" . $uid));
     // DTSTAMP is required.
-    $eventobj->addNode(new ZCiCalDataNode("DTSTAMP:" . ZDateHelper::fromUniqDateTimetoiCal(time())));
+    $eventobj->addNode(new ZCiCalDataNode("DTSTAMP:" . ZDateHelper::fromUniqDateTimetoiCal($date_stamp)));
     // Description.
-    $eventobj->addNode(new ZCiCalDataNode("Description:" . ZCiCal::formatContent(
-        $event['description']
-      )));
+    $eventobj->addNode(new ZCiCalDataNode("Description:" . ZCiCal::formatContent( $desc )));
+  }
 
-    // write iCalendar feed to stdout
-    $this->iCal = $icalobj->export();
+  private function createMultiEvent(&$icalobj, $title, $date_stamp, $desc, $event) {
+    $i = 0;
+    $recurring = $event['recurring'];
+
+    // We need to add a node for each event.
+    // The recur tool and smart date module do not work well together.
+    foreach($recurring as $recur) {
+      // Create a unique UID for this. UID is required.
+      $uid = date('Y-m-d-H-i-s') . mt_rand(0000000001, 9999999999) . "@bcpsa.gww.gov.bc.ca";
+      // Create event within ical obj.
+      $eventobj = new ZCiCalNode("VEVENT", $icalobj->curnode);
+      // add the title.
+      $eventobj->addNode(new ZCiCalDataNode("SUMMARY:" . $title));
+      // Start date/time.
+      // Not sure if Uniq is a typo and will be fixed in any future updates.
+      // We must add the Z to the end to let it know this is a UTC timestamp - or else it assumes local.
+      $eventobj->addNode(new ZCiCalDataNode('DTSTART:' . ZDateHelper::fromUniqDateTimetoiCal(
+          $recur['value']) . 'Z'
+      ));
+      // End date/time.
+      $eventobj->addNode(new ZCiCalDataNode('DTEND:' . ZDateHelper::fromUniqDateTimetoiCal(
+          $recur['end_value']) . 'Z'
+      ));
+      $eventobj->addNode(new ZCiCalDataNode("UID:" . $uid));
+      // DTSTAMP is required.
+      $eventobj->addNode(new ZCiCalDataNode("DTSTAMP:" . ZDateHelper::fromUniqDateTimetoiCal($date_stamp)));
+      // Description.
+      $eventobj->addNode(new ZCiCalDataNode("Description:" . ZCiCal::formatContent( $desc )));
+    }
   }
 
   /**
@@ -79,7 +132,9 @@ class iCalendarBuilder {
     return $this->this_event;
   }
 
-
+  private function get_recur() {
+    return isset($this->this_event['recurring']) ? true : false;
+  }
 
   /**
    * @return mixed
@@ -89,22 +144,4 @@ class iCalendarBuilder {
     // For testing
     return $this->iCal;
   }
-
-  /**
-   * @return mixed
-   *   Returns the iCal array/object that will be saved as a file.
-   */
-  public function getIcalFile() {
-    return $this->iCal_file;
-  }
-
-  /**
-   * @return mixed
-   *   Return the NID for the event - mostly used to sort directories.
-   */
-  private function setNid() {
-    $event = $this->getEvent();
-    return $event['event_nid'];
-  }
-
 }
