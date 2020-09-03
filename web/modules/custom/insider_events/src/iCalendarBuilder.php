@@ -84,12 +84,15 @@ class iCalendarBuilder {
   }
 
   private function createMultiEvent(&$icalobj, $title, $date_stamp, $desc, $event) {
-    $i = 0;
-    $recurring = $event['recurring'];
 
+    $recurring = $event['recurring'];
+    //ksm($event['recurring']);
     // We need to add a node for each event.
     // The recur tool and smart date module do not work well together.
     foreach($recurring as $recur) {
+      if(empty($recur)) {
+        continue;
+      }
       // Create a unique UID for this. UID is required.
       $uid = date('Y-m-d-H-i-s') . mt_rand(0000000001, 9999999999) . "@bcpsa.gww.gov.bc.ca";
       // Create event within ical obj.

@@ -111,7 +111,6 @@ class InsiderEventsIcalFile {
   private function saveIcal() {
     // create a directory if it does not exist
     $this->create_directory();
-    dpm($this->is_dir);
     if($this->is_dir){
       $this->setIcalUrl(file_save_data($this->getIcalFile(), 'public://ical/' . $this->getNid() . '/' . str_replace(' ', '', $this->getEventField('event_title')) . '.ics', FileSystemInterface::EXISTS_REPLACE));
     }

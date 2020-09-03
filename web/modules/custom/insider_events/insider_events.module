@@ -20,6 +20,7 @@ function insider_events_preprocess(&$variables, $hook) {
     ];
 
     // Use this var to set datetimes sub-array.
+    //ksm($variables);
     $times = $variables['node']->get('field_when')->getIterator();
     // Now check if we have recurring events.
     if (count($times) > 1) {
@@ -43,7 +44,6 @@ function insider_events_preprocess(&$variables, $hook) {
     $ical_file = new InsiderEventsController($this_event);
     $ical_url = $ical_file->get_ical_url();
     $url = $ical_url->url();
-    ksm($url);
     $variables['event']['url'] = $url;
     // TODO: include a calendar icon.
     $variables['event']['icon'] = '';
@@ -51,4 +51,57 @@ function insider_events_preprocess(&$variables, $hook) {
 }
 
 
+/**
+ * Implements hook_form_BASE_FORM_ID_alter().
+ */
+function insider_events_form_node_event_edit_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  $form['actions']['submit']['#submit'][] = 'insider_events_set_rrule';
+}
 
+/**
+ * Submit handler to collect true rrules from DB.
+ * Strangely, smart date does not seem to have an API method for this.
+ * If we have a rrule, then we can gen an iCal file, and save teh location
+ * in a text field we have hidden.
+ * @param $form
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ */
+function insider_events_set_rrule(&$form, \Drupal\Core\Form\FormStateInterface $form_state) {
+  //ksm($form);
+  $rule = insider_events_get_rrules($form_state);
+  if(is_null($rule)) {
+    // No rrule for this event.
+    return;
+  }
+  ksm($rule);
+  //TODO: Collect fields to pass to iCal gen.
+  //TODO: Save iCal location into a text field.
+  //
+
+}
+
+/**
+ * Helper function to pull rrule from DB.
+ * @param $form_state
+ * @return string|null
+ */
+function insider_events_get_rrules($form_state) {
+  $smart_date = $form_state->getFormObject()->getEntity()->get('field_when')->getValue();
+  // Check if we have an rrule.
+  if(!isset($smart_date[0]['rrule'])) {
+    return null;
+  }
+  // Extract the rid.
+  $rid = $smart_date[0]['rrule'];
+  // Query our rrule
+  $database = \Drupal::database();
+  $query = $database->select('smart_date_rule', 'sd')
+    ->condition('sd.rid', $rid, '=')
+    ->fields('sd', ['rule']);
+  $result = $query->execute();
+  if(isset($result)) {
+    // Fetch and return just the rule value.
+    return $result->fetchField();
+  }
+  return null;
+}

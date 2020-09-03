@@ -40,7 +40,6 @@ class InsiderEventsController
   {
     $ical = new iCalendarBuilder($event);
     $ical_file = $ical->getIcal();
-    ksm($ical_file);
     $this->ical_save = new InsiderEventsIcalFile($ical_file, $event);
     $this->set_ical_url();
   }
