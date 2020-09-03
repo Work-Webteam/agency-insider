@@ -41,12 +41,12 @@ function insider_events_preprocess(&$variables, $hook) {
 
     // This uses zapcalendar library: https://packagist.org/packages/liliumdev/icalendar via composer.
     // Additional functionality and classes built by Thayne.
-    $ical_file = new InsiderEventsController($this_event);
-    $ical_url = $ical_file->get_ical_url();
-    $url = $ical_url->url();
-    $variables['event']['url'] = $url;
+    //$ical_file = new InsiderEventsController($this_event);
+    //$ical_url = $ical_file->get_ical_url();
+    //$url = $ical_url->url();
+    //$variables['event']['url'] = $url;
     // TODO: include a calendar icon.
-    $variables['event']['icon'] = '';
+    //$variables['event']['icon'] = '';
   }
 }
 
@@ -67,13 +67,32 @@ function insider_events_form_node_event_edit_form_alter(&$form, \Drupal\Core\For
  * @param \Drupal\Core\Form\FormStateInterface $form_state
  */
 function insider_events_set_rrule(&$form, \Drupal\Core\Form\FormStateInterface $form_state) {
-  //ksm($form);
+  // Gather fields.
+  $event_fields = $form_state->getFormObject()->getEntity();
+  // Call to get the rule.
   $rule = insider_events_get_rrules($form_state);
-  if(is_null($rule)) {
-    // No rrule for this event.
-    return;
-  }
-  ksm($rule);
+
+  // create an event object.
+  // Collect fields to pass to iCal gen.
+  $this_event = [
+    'description' => $event_fields->get('body')->value,
+    'event_title' => $event_fields->get('title')->value,
+    'event_location' => $event_fields->get('field_event_location')->value,
+    'event_online_link_uri' => $event_fields->get('field_event_online')->uri,
+    'event_onine_link_text' => $event_fields->get('field_event_online')->title,
+    'event_nid' => $event_fields->get('nid')->value,
+    'start_datetime' => $event_fields->get('field_when')->value,
+    'end_datetime' => $event_fields->get('field_when')->end_value,
+    'recurring' => $rule
+  ];
+
+  // This uses zapcalendar library: https://packagist.org/packages/liliumdev/icalendar via composer.
+  // Additional functionality and classes built by Thayne.
+  $ical_file = new InsiderEventsController($this_event);
+  $ical_url = $ical_file->get_ical_url();
+  $url = $ical_url->url();
+  ksm($url);
+  //ksm($form_state);
   //TODO: Collect fields to pass to iCal gen.
   //TODO: Save iCal location into a text field.
   //
@@ -84,6 +103,7 @@ function insider_events_set_rrule(&$form, \Drupal\Core\Form\FormStateInterface $
  * Helper function to pull rrule from DB.
  * @param $form_state
  * @return string|null
+ * TODO: Should this be moved to the controller? Or it's own class?
  */
 function insider_events_get_rrules($form_state) {
   $smart_date = $form_state->getFormObject()->getEntity()->get('field_when')->getValue();
