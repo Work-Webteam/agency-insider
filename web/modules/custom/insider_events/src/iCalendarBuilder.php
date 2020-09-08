@@ -111,6 +111,6 @@ class iCalendarBuilder {
     if(isset($event['event_online_link_uri']) && !is_null($event['event_online_link_uri'])) {
       $eventobj->addnode(new ZCiCalDataNode("URI:" . $event['event_online_link_uri']));
     }
-    return icalobj;
+    return $icalobj;
   }
 }

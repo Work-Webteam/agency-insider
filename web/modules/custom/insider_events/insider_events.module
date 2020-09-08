@@ -1,10 +1,13 @@
 <?php
 
 use \Drupal\insider_events\Controller\InsiderEventsController;
+
 /**
  * Implements hook_preprocess().
  *
  * Setting up variables for our events content type - to use in iCal templating work.
+ * @param $variables
+ * @param $hook
  */
 function insider_events_preprocess(&$variables, $hook) {
   // Only if this is a page hook, and we have an event style node.
@@ -15,11 +18,11 @@ function insider_events_preprocess(&$variables, $hook) {
       'event_title' => isset($variables['node']->get('title')->value) ? $variables['node']->get('title')->value : null,
       'event_location' => isset($variables['node']->get('field_event_location')->value) ? $variables['node']->get('field_event_location')->value : null,
       'event_online_link_uri' => isset($variables['node']->get('field_event_online')->uri) ? $variables['node']->get('field_event_online')->uri : null,
-      'event_onine_link_text' => isset($variables['node']->get('field_event_online')->title) ? $variables['node']->get('field_event_online')->title : null,
+      'event_online_link_text' => isset($variables['node']->get('field_event_online')->title) ? $variables['node']->get('field_event_online')->title : null,
       'event_nid' => isset($variables['node']->get('nid')->value) ? $variables['node']->get('nid')->value : null
     ];
-
-    // Use this var to set datetimes sub-array.
+    //ksm($variables['node']);
+    // Use this var to set date times sub-array.
     //ksm($variables);
     $times = $variables['node']->get('field_when')->getIterator();
     // Now check if we have recurring events.
@@ -34,7 +37,7 @@ function insider_events_preprocess(&$variables, $hook) {
       $this_event['start_datetime'] = $first_event['value'];
       $this_event['end_datetime'] = $first_event['end_value'];
     } else {
-      // No recurrance, just grab start and end times.
+      // No recurrence, just grab start and end times.
       $this_event['start_datetime'] = $variables['node']->get('field_when')->value;
       $this_event['end_datetime'] = $variables['node']->get('field_when')->end_value;
     }
@@ -53,9 +56,12 @@ function insider_events_preprocess(&$variables, $hook) {
 
 /**
  * Implements hook_form_BASE_FORM_ID_alter().
+ * @param $form
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ * @param $form_id
  */
 function insider_events_form_node_event_edit_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
-  $form['actions']['submit']['#submit'][] = 'insider_events_set_rrule';
+  array_unshift($form['actions']['submit']['#submit'], 'insider_events_set_rrule');
 }
 
 /**
@@ -69,8 +75,18 @@ function insider_events_form_node_event_edit_form_alter(&$form, \Drupal\Core\For
 function insider_events_set_rrule(&$form, \Drupal\Core\Form\FormStateInterface $form_state) {
   // Gather fields.
   $event_fields = $form_state->getFormObject()->getEntity();
+  // check if we have an rrule.
+  $rrule = get_first_rrule($event_fields);
+
   // Call to get the rule.
-  $rule = insider_events_get_rrules($form_state);
+  if(isset($rrule) && $rrule['rrule'] !== null) {
+    $rule = insider_events_get_rrules($event_fields);
+  } else {
+    $rule = null;
+  }
+
+  // Gather any and all extra rules that are not recurring.
+  $rdate = insider_events_get_extra_dates($event_fields);
 
   // create an event object.
   // Collect fields to pass to iCal gen.
@@ -79,42 +95,42 @@ function insider_events_set_rrule(&$form, \Drupal\Core\Form\FormStateInterface $
     'event_title' => $event_fields->get('title')->value,
     'event_location' => $event_fields->get('field_event_location')->value,
     'event_online_link_uri' => $event_fields->get('field_event_online')->uri,
-    'event_onine_link_text' => $event_fields->get('field_event_online')->title,
+    'event_online_link_text' => $event_fields->get('field_event_online')->title,
     'event_nid' => $event_fields->get('nid')->value,
-    'start_datetime' => $event_fields->get('field_when')->value,
-    'end_datetime' => $event_fields->get('field_when')->end_value,
-    'recurring' => $rule
+    'start_datetime' => isset($rrule['start']) ? $rrule['start'] : $event_fields->get('field_when')->value,
+    'end_datetime' => isset($rrule['end']) ? $rrule['end'] : $event_fields->get('field_when')->end_value,
+    'recurring' => $rule,
+    'rdate' => $rdate
   ];
+  ksm($this_event);
 
   // This uses zapcalendar library: https://packagist.org/packages/liliumdev/icalendar via composer.
   // Additional functionality and classes built by Thayne.
   $ical_file = new InsiderEventsController($this_event);
   $ical_url = $ical_file->get_ical_url();
   $url = $ical_url->url();
-  ksm($url);
   //ksm($form_state);
-  //TODO: Collect fields to pass to iCal gen.
   //TODO: Save iCal location into a text field.
-  //
+  $form_state->setValue('field_event_ical_path', [['value'=>$url]]);
 
 }
 
 /**
  * Helper function to pull rrule from DB.
- * @param $form_state
+ * @param $event_fields
  * @return string|null
  * TODO: Should this be moved to the controller? Or it's own class?
  */
-function insider_events_get_rrules($form_state) {
-  $smart_date = $form_state->getFormObject()->getEntity()->get('field_when')->getValue();
+function insider_events_get_rrules($event_fields) {
   // Check if we have an rrule.
-  if(!isset($smart_date[0]['rrule'])) {
+  $rrule = get_first_rrule($event_fields);
+  $rid = $rrule['rrule'];
+  // Return null if no rrule.
+  if($rid === null) {
     return null;
   }
-  // Extract the rid.
-  $rid = $smart_date[0]['rrule'];
   // Query our rrule
-  $database = \Drupal::database();
+    $database = \Drupal::database();
   $query = $database->select('smart_date_rule', 'sd')
     ->condition('sd.rid', $rid, '=')
     ->fields('sd', ['rule']);
@@ -124,4 +140,65 @@ function insider_events_get_rrules($form_state) {
     return $result->fetchField();
   }
   return null;
+}
+
+/**
+ * @param $event_fields
+ * @return array|null
+ */
+function insider_events_get_extra_dates($event_fields) {
+  // Grab our iterator.
+  $events = $event_fields->get('field_when')->getIterator();
+  // Have multiple dates, so lets see if we need any rdates.
+  $rules = [];
+  $rrule = get_first_rrule($event_fields);
+  $rrule_key = $rrule['rrule'];
+    // Go through our iterator.
+  foreach($events as $event) {
+    $values = $event->getValue();
+    // If we already have an rrule, then continue to next iterator.
+    if($rrule_key !== null && isset($values['rrule']) && $rrule_key == $values['rrule']){
+      continue;
+    }
+    // Next check if we have and rrule, and if it is a different rule than our initial one.
+    if($rrule_key !== null && isset($values['rrule']) && $rrule_key != $values['rrule']) {
+      $rules[] = [
+        'start' => $values['value'],
+        'end' => $values['end_value']
+        ];
+    }
+    // If we don't have an rrule - we still want the start and end if they exist.
+    // This field is set as "Null" in the case of no rule.
+    if(isset($values['value'], $values['end_value']) && $values['rrule'] === null) {
+      $rules[] = [
+        'start' => $values['value'],
+        'end' => $values['end_value']
+      ];
+    }
+  }
+  // Return an array of additional rules if it exists.
+  if(!empty($rules)) {
+    return $rules;
+  }
+  // We didn't get a hit on rrules, return null.
+  return null;
+}
+
+/**
+ * @param $event_fields
+ * @return mixed|null
+ */
+function get_first_rrule($event_fields){
+  $rrule['rrule'] = null;
+  $events = $event_fields->get('field_when')->getIterator();
+  foreach($events as $event) {
+    $values = $event->getValue();
+    if(isset($values['rrule']) && $values['rrule'] !== null) {
+      $rrule['rrule'] = $values['rrule'];
+      $rrule['start'] = $values['value'];
+      $rrule['end'] = $values['end_value'];
+      break;
+    }
+  }
+  return $rrule;
 }
