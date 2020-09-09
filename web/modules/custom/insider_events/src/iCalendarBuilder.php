@@ -11,14 +11,16 @@ use Liliumdev\ICalendar\ZDateHelper;
  * Class iCalendarBuilder
  * @package Drupal\insider_events
  */
-class iCalendarBuilder {
+class iCalendarBuilder
+{
 
   protected $this_event;
   protected $iCal;
   protected $iCal_file;
   protected $iCal_url;
 
-  public function __construct($event){
+  public function __construct($event)
+  {
     $this->this_event = $this->setEvent($event);
     $this->setIcal();
   }
@@ -27,7 +29,8 @@ class iCalendarBuilder {
   /**
    * Create an iCal file from event data.
    */
-  private function setIcal() {
+  private function setIcal()
+  {
     // Build ical object.
     $icalobj = $this->buildiCal();
     // write iCalendar feed to stdout.
@@ -39,7 +42,8 @@ class iCalendarBuilder {
    * @param $event
    * @return mixed
    */
-  protected function setEvent($event) {
+  protected function setEvent($event)
+  {
     return $event;
   }
 
@@ -48,7 +52,8 @@ class iCalendarBuilder {
    * @return mixed
    *   Return the event array for parsing in various methods.
    */
-  private function getEvent() {
+  private function getEvent()
+  {
     return $this->this_event;
   }
 
@@ -56,7 +61,8 @@ class iCalendarBuilder {
    * @return mixed
    *   Getter for the iCal object itself.
    */
-  public function getIcal() {
+  public function getIcal()
+  {
     // For testing
     return $this->iCal;
   }
@@ -65,14 +71,15 @@ class iCalendarBuilder {
    * Helper function to build ical object for setter.
    * @return mixed
    */
-  private function buildiCal() {
+  private function buildiCal()
+  {
     $tzid = "America/Vancouver";
     $event = $this->getEvent();
     $start_year = gmdate('Y', $event['start_datetime']);
     $end_year = gmdate('Y', $event['end_datetime']);
     // Create the object.
     $icalobj = new ZCiCal();
-    ZCTimeZoneHelper::getTZNode($start_year,$end_year,$tzid, $icalobj->curnode);
+    ZCTimeZoneHelper::getTZNode($start_year, $end_year, $tzid, $icalobj->curnode);
     // TODO: set up variables for re-used fields here.
     // Timestamp
     $date_stamp = time();
@@ -94,22 +101,72 @@ class iCalendarBuilder {
 
     $eventobj->addNode(new ZCiCalDataNode("UID:" . $uid));
     // DTSTAMP is required.
-    $eventobj->addNode(new ZCiCalDataNode("DTSTAMP:" . ZDateHelper::fromUniqDateTimetoiCal($date_stamp)));
+    $eventobj->addNode(new ZCiCalDataNode("DTSTAMP:" . ZDateHelper::fromUniqDateTimetoiCal(
+        $date_stamp
+      )));
     // Description.
     $eventobj->addNode(new ZCiCalDataNode("Description:" . ZCiCal::formatContent(
         strip_tags($event['description'])
       )));
     // Recur rules.
-    if(isset($event['recurring']) && !is_null($event['recurring'])) {
+    if (isset($event['recurring']) && !is_null($event['recurring'])) {
       $eventobj->addnode(new ZCiCalDataNode($event['recurring']));
     }
     // Location.
-    if(isset($event['event_location']) && !is_null($event['event_location'])) {
+    if (isset($event['event_location']) && !is_null($event['event_location'])) {
       $eventobj->addnode(new ZCiCalDataNode("LOCATION:" . $event['event_location']));
     }
     // URL
-    if(isset($event['event_online_link_uri']) && !is_null($event['event_online_link_uri'])) {
+    if (isset($event['event_online_link_uri']) && !is_null($event['event_online_link_uri'])) {
       $eventobj->addnode(new ZCiCalDataNode("URI:" . $event['event_online_link_uri']));
+    }
+
+    // RDATE does not work with outlook - so we need to add a sequence id and build a new event on this object for each
+    // rdate.
+    if (isset($event['rdate']) && !is_null($event['rdate'])) {
+      $rdate = 0;
+      // Set a sequence number - 0 for all.
+      $eventobj->addnode(new ZCiCalDataNode("SEQUENCE:0"));
+      foreach ($event['rdate'] as $date) {
+        // Create a new eventobj in the iCal obj for this one rdate.
+        $recurr_rdate = 'event' . $rdate;
+        $$recurr_rdate = new ZCiCalNode("VEVENT", $icalobj->curnode);
+        // add the title.
+        $$recurr_rdate->addNode(new ZCiCalDataNode("SUMMARY:" . $event['event_title']));
+        // Start date/time.
+        // Not sure if Uniq is a typo and will be fixed in any future updates.
+        // We must add the Z to the end to let it know this is a UTC timestamp - or else it assumes local.
+        $$recurr_rdate->addNode(new ZCiCalDataNode('DTSTART:' . ZDateHelper::fromUniqDateTimetoiCal(
+            $date['start']) . 'Z'
+        ));
+        // End date/time.
+        $$recurr_rdate->addNode(new ZCiCalDataNode('DTEND:' . ZDateHelper::fromUniqDateTimetoiCal(
+            $date['end']) . 'Z'
+        ));
+        // Add the same UID
+        $$recurr_rdate->addNode(new ZCiCalDataNode("UID:" . $uid));
+        // DTSTAMP is required.
+        $$recurr_rdate->addNode(new ZCiCalDataNode("DTSTAMP:" . ZDateHelper::fromUniqDateTimetoiCal($date_stamp)));
+        // Description.
+        $$recurr_rdate->addNode(new ZCiCalDataNode("Description:" . ZCiCal::formatContent(
+            strip_tags($event['description'])
+          )));
+        // Location.
+        if (isset($event['event_location']) && !is_null($event['event_location'])) {
+          $$recurr_rdate->addnode(new ZCiCalDataNode("LOCATION:" . $event['event_location']));
+        }
+        // URL
+        if (isset($event['event_online_link_uri']) && !is_null($event['event_online_link_uri'])) {
+          $$recurr_rdate->addnode(new ZCiCalDataNode("URI:" . $event['event_online_link_uri']));
+        }
+        // Add in our Sequence #.
+        $$recurr_rdate->addnode(new ZCiCalDataNode("SEQUENCE:0"));
+        // Finally - add in our Recurrence id
+        $$recurr_rdate->addNode(new ZCiCalDataNode('RECURRENCE-ID:' . ZDateHelper::fromUniqDateTimetoiCal(
+            $date['start']) . 'Z'
+        ));
+        $rdate++;
+      }
     }
     return $icalobj;
   }

@@ -1,6 +1,7 @@
 <?php
 
 use \Drupal\insider_events\Controller\InsiderEventsController;
+use Liliumdev\ICalendar\ZDateHelper;
 
 /**
  * Implements hook_preprocess().
@@ -54,6 +55,12 @@ function insider_events_preprocess(&$variables, $hook) {
 }
 
 
+
+function insider_events_form_node_event_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  $form['#attached']['library'][] = 'insider_events/insider_events';
+  array_unshift($form['actions']['submit']['#submit'], 'insider_events_set_rrule');
+}
+
 /**
  * Implements hook_form_BASE_FORM_ID_alter().
  * @param $form
@@ -61,6 +68,7 @@ function insider_events_preprocess(&$variables, $hook) {
  * @param $form_id
  */
 function insider_events_form_node_event_edit_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  $form['#attached']['library'][] = 'insider_events/insider_events';
   array_unshift($form['actions']['submit']['#submit'], 'insider_events_set_rrule');
 }
 
@@ -81,6 +89,10 @@ function insider_events_set_rrule(&$form, \Drupal\Core\Form\FormStateInterface $
   // Call to get the rule.
   if(isset($rrule) && $rrule['rrule'] !== null) {
     $rule = insider_events_get_rrules($event_fields);
+    if(strpos($rule, 'UNTIL') !== false) {
+      ksm($rule);
+      $rule = parse_rule_string($rule);
+    }
   } else {
     $rule = null;
   }
@@ -102,7 +114,6 @@ function insider_events_set_rrule(&$form, \Drupal\Core\Form\FormStateInterface $
     'recurring' => $rule,
     'rdate' => $rdate
   ];
-  ksm($this_event);
 
   // This uses zapcalendar library: https://packagist.org/packages/liliumdev/icalendar via composer.
   // Additional functionality and classes built by Thayne.
@@ -110,6 +121,7 @@ function insider_events_set_rrule(&$form, \Drupal\Core\Form\FormStateInterface $
   $ical_url = $ical_file->get_ical_url();
   $url = $ical_url->url();
   //ksm($form_state);
+  ksm($url);
   //TODO: Save iCal location into a text field.
   $form_state->setValue('field_event_ical_path', [['value'=>$url]]);
 
@@ -201,4 +213,42 @@ function get_first_rrule($event_fields){
     }
   }
   return $rrule;
+}
+
+/**
+ * @param $rule
+ * @return false|int|null
+ *
+ * Our rules are saved with a static human readable date - we cannot use these with ZapCalendar
+ * library, so here we convert that value into a unix timestamp.
+ */
+function parse_rule_string($rule) {
+  $rules = explode(';', $rule);
+  $return_date = null;
+  foreach($rules as $k=>$v) {
+    if(strpos($v, 'UNTIL') !== false) {
+      $date = explode('=', $v);
+      $new_date = update_date($date[1]);
+      // Get rid of the bad formatting.
+      array_pop($date);
+      $date[] = $new_date;
+      $v = implode('=', $date);
+      $rules[$k]=$v;
+    }
+  }
+  $return_date = implode(';', $rules);
+  ksm($return_date);
+  return $return_date;
+}
+
+/**
+ * @param $date
+ * @return false|int
+ */
+function update_date($date) {
+  // Switch to unix timestamp.
+  $date = strtotime($date);
+  // Use ZapCalendar library to make this a proper ical date.
+  $date = ZDateHelper::fromUniqDateTimetoiCal($date) . 'Z';
+  return $date;
 }
