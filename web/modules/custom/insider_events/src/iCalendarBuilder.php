@@ -105,9 +105,15 @@ class iCalendarBuilder
         $date_stamp
       )));
     // Description.
-    $eventobj->addNode(new ZCiCalDataNode("Description:" . ZCiCal::formatContent(
+    if(isset($event['event_online_link_uri']) && !is_null($event['event_online_link_uri'])) {
+      $html_description = '<!DOCTYPE HTML PUBLIC ""-//W3C//DTD HTML 3.2//EN""><HTML><BODY>' . $event['description'] . "\n\n<a href='" . $event['event_online_link_uri'] . "'>" . $event['event_online_link_text'] . "</a></BODY></HTML>";
+    }
+    $eventobj->addNode(new ZCiCalDataNode('Description:' . ZCiCal::formatContent(
         strip_tags($event['description'])
       )));
+    if(isset($html_description)) {
+      $eventobj->addNode(new ZCiCalDataNode('X-ALT-DESC;FMTTYPE=text/html:' . $html_description));
+    }
     // Recur rules.
     if (isset($event['recurring']) && !is_null($event['recurring'])) {
       $eventobj->addnode(new ZCiCalDataNode($event['recurring']));
@@ -147,9 +153,14 @@ class iCalendarBuilder
         $$recurr_rdate->addNode(new ZCiCalDataNode("UID:" . $uid));
         // DTSTAMP is required.
         $$recurr_rdate->addNode(new ZCiCalDataNode("DTSTAMP:" . ZDateHelper::fromUniqDateTimetoiCal($date_stamp)));
-        // Description.
+        // Description, we want to wrap the link up here as well if we have one.
+        if(isset($event['event_online_link_uri']) && !is_null($event['event_online_link_uri'])) {
+          $description = strip_tags($event['description']) . "\n\n<a href='" . $event['event_online_link_uri'] . "'>" . $event['event_online_link_text'] . "</a>";
+        } else {
+          $description = strip_tags($event['description']);
+        }
         $$recurr_rdate->addNode(new ZCiCalDataNode("Description:" . ZCiCal::formatContent(
-            strip_tags($event['description'])
+          $description
           )));
         // Location.
         if (isset($event['event_location']) && !is_null($event['event_location'])) {

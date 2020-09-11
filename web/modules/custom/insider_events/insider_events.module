@@ -22,9 +22,7 @@ function insider_events_preprocess(&$variables, $hook) {
       'event_online_link_text' => isset($variables['node']->get('field_event_online')->title) ? $variables['node']->get('field_event_online')->title : null,
       'event_nid' => isset($variables['node']->get('nid')->value) ? $variables['node']->get('nid')->value : null
     ];
-    //ksm($variables['node']);
     // Use this var to set date times sub-array.
-    //ksm($variables);
     $times = $variables['node']->get('field_when')->getIterator();
     // Now check if we have recurring events.
     if (count($times) > 1) {
@@ -58,7 +56,7 @@ function insider_events_preprocess(&$variables, $hook) {
 
 function insider_events_form_node_event_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
   $form['#attached']['library'][] = 'insider_events/insider_events';
-  array_unshift($form['actions']['submit']['#submit'], 'insider_events_set_rrule');
+  $form['actions']['submit']['#submit'][] = 'insider_events_set_rrule';
 }
 
 /**
@@ -69,7 +67,7 @@ function insider_events_form_node_event_form_alter(&$form, \Drupal\Core\Form\For
  */
 function insider_events_form_node_event_edit_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
   $form['#attached']['library'][] = 'insider_events/insider_events';
-  array_unshift($form['actions']['submit']['#submit'], 'insider_events_set_rrule');
+  $form['actions']['submit']['#submit'][] = 'insider_events_set_rrule';
 }
 
 /**
@@ -83,6 +81,10 @@ function insider_events_form_node_event_edit_form_alter(&$form, \Drupal\Core\For
 function insider_events_set_rrule(&$form, \Drupal\Core\Form\FormStateInterface $form_state) {
   // Gather fields.
   $event_fields = $form_state->getFormObject()->getEntity();
+  // If user has not selected to generate an iCal we can eject.
+  if( $event_fields->get('field_add_ical')->value == 0 ) {
+    return;
+  }
   // check if we have an rrule.
   $rrule = get_first_rrule($event_fields);
 
@@ -90,7 +92,6 @@ function insider_events_set_rrule(&$form, \Drupal\Core\Form\FormStateInterface $
   if(isset($rrule) && $rrule['rrule'] !== null) {
     $rule = insider_events_get_rrules($event_fields);
     if(strpos($rule, 'UNTIL') !== false) {
-      ksm($rule);
       $rule = parse_rule_string($rule);
     }
   } else {
@@ -120,11 +121,11 @@ function insider_events_set_rrule(&$form, \Drupal\Core\Form\FormStateInterface $
   $ical_file = new InsiderEventsController($this_event);
   $ical_url = $ical_file->get_ical_url();
   $url = $ical_url->url();
-  //ksm($form_state);
   ksm($url);
   //TODO: Save iCal location into a text field.
   $form_state->setValue('field_event_ical_path', [['value'=>$url]]);
-
+  $event_fields->set('field_event_ical_path', [['value'=>$url]]);
+  $event_fields->save();
 }
 
 /**
@@ -181,7 +182,7 @@ function insider_events_get_extra_dates($event_fields) {
     }
     // If we don't have an rrule - we still want the start and end if they exist.
     // This field is set as "Null" in the case of no rule.
-    if(isset($values['value'], $values['end_value']) && $values['rrule'] === null) {
+    if(isset($values['value'], $values['end_value'], $values['rrule']) && $values['rrule'] === null) {
       $rules[] = [
         'start' => $values['value'],
         'end' => $values['end_value']
@@ -237,7 +238,6 @@ function parse_rule_string($rule) {
     }
   }
   $return_date = implode(';', $rules);
-  ksm($return_date);
   return $return_date;
 }
 
