@@ -104,13 +104,17 @@ class iCalendarBuilder
     $eventobj->addNode(new ZCiCalDataNode("DTSTAMP:" . ZDateHelper::fromUniqDateTimetoiCal(
         $date_stamp
       )));
-    // Description.
+    // Outlook can use an HTML Description, but it has to be built in a specific way.
+    // We only really need this if we have a link to send.
+    // TODO: Perhaps we should always send an HTML version so we can include anything in the body field.
     if(isset($event['event_online_link_uri']) && !is_null($event['event_online_link_uri'])) {
       $html_description = '<!DOCTYPE HTML PUBLIC ""-//W3C//DTD HTML 3.2//EN""><HTML><BODY>' . $event['description'] . "\n\n<a href='" . $event['event_online_link_uri'] . "'>" . $event['event_online_link_text'] . "</a></BODY></HTML>";
     }
+    // General/fallback description.
     $eventobj->addNode(new ZCiCalDataNode('Description:' . ZCiCal::formatContent(
         strip_tags($event['description'])
       )));
+    // HTML description.
     if(isset($html_description)) {
       $eventobj->addNode(new ZCiCalDataNode('X-ALT-DESC;FMTTYPE=text/html:' . $html_description));
     }

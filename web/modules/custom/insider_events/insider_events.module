@@ -13,42 +13,7 @@ use Liliumdev\ICalendar\ZDateHelper;
 function insider_events_preprocess(&$variables, $hook) {
   // Only if this is a page hook, and we have an event style node.
   if($hook == 'page' && isset($variables['node']) && $variables['node']->getType() == 'event') {
-    // create an event object
-    $this_event = [
-      'description' => $variables['node']->get('body')->value,
-      'event_title' => isset($variables['node']->get('title')->value) ? $variables['node']->get('title')->value : null,
-      'event_location' => isset($variables['node']->get('field_event_location')->value) ? $variables['node']->get('field_event_location')->value : null,
-      'event_online_link_uri' => isset($variables['node']->get('field_event_online')->uri) ? $variables['node']->get('field_event_online')->uri : null,
-      'event_online_link_text' => isset($variables['node']->get('field_event_online')->title) ? $variables['node']->get('field_event_online')->title : null,
-      'event_nid' => isset($variables['node']->get('nid')->value) ? $variables['node']->get('nid')->value : null
-    ];
-    // Use this var to set date times sub-array.
-    $times = $variables['node']->get('field_when')->getIterator();
-    // Now check if we have recurring events.
-    if (count($times) > 1) {
-      $this_event['recurring'] = [];
-      foreach ($times as $time) {
-        // Grab our date data.
-        $this_event['recurring'][] = $time->getValue();
-      }
-      // pop off our first array and grab our original start and end times
-      $first_event = array_shift($this_event['recurring']);
-      $this_event['start_datetime'] = $first_event['value'];
-      $this_event['end_datetime'] = $first_event['end_value'];
-    } else {
-      // No recurrence, just grab start and end times.
-      $this_event['start_datetime'] = $variables['node']->get('field_when')->value;
-      $this_event['end_datetime'] = $variables['node']->get('field_when')->end_value;
-    }
 
-    // This uses zapcalendar library: https://packagist.org/packages/liliumdev/icalendar via composer.
-    // Additional functionality and classes built by Thayne.
-    //$ical_file = new InsiderEventsController($this_event);
-    //$ical_url = $ical_file->get_ical_url();
-    //$url = $ical_url->url();
-    //$variables['event']['url'] = $url;
-    // TODO: include a calendar icon.
-    //$variables['event']['icon'] = '';
   }
 }
 
@@ -121,7 +86,6 @@ function insider_events_set_rrule(&$form, \Drupal\Core\Form\FormStateInterface $
   $ical_file = new InsiderEventsController($this_event);
   $ical_url = $ical_file->get_ical_url();
   $url = $ical_url->url();
-  ksm($url);
   //TODO: Save iCal location into a text field.
   $form_state->setValue('field_event_ical_path', [['value'=>$url]]);
   $event_fields->set('field_event_ical_path', [['value'=>$url]]);
