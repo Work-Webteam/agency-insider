@@ -545,7 +545,8 @@ header .row-second {
   width:max-content;
   min-width: 60%;
 }
-#block-headernavigation ul:not(.contextual-links) a {
+#block-headernavigation ul:not(.contextual-links) a,
+#block-headernavigation .sf-depth-1 .sf-with-ul {
   background-color: #1F5792;
   color: white;
   padding: 5px 30px;
@@ -646,6 +647,9 @@ ul.sf-menu.sf-navbar.sf-shadow ul ul li {
 #page-sidebar-second .block .content {
   padding-left: 0;
 }
+#page-sidebar-second .block .content .views-row {
+  width:100%;
+}
 #page-sidebar-second .block .view .item-list,
 #page-sidebar-first .block .view .item-list {
   width: 100%;
@@ -680,16 +684,19 @@ ul.sf-menu.sf-navbar.sf-shadow ul ul li {
   padding:0;
 }
 .path-node #page-sidebar-second .field--name-field-landing-sidebar h5 {
-  font-size:1.35rem;
-  margin: 25px 0 0;
+  font-size:1.5rem;
+  padding-bottom: 10px;
+  border-bottom: solid 5px #1F5792;
 }
 
 #page-sidebar-second .field--name-field-landing-sidebar ul {
   padding:0;
   margin:0;
 }
+#page-sidebar-second .field--name-field-landing-sidebar ul li {
+  margin-bottom:12px;
+}
 #page-sidebar-second .block ul li,
-#page-sidebar-second .field--name-field-landing-sidebar ul li,
 #page-sidebar-first .block ul li {
   width:100%;
   display: block;
@@ -2052,6 +2059,11 @@ div.dataTables_wrapper div.dataTables_paginate ul.pagination li:hover {
 .dataTables_wrapper:last-of-type {
   margin-bottom: 25px;
 }
+#agency-datatable > tbody > tr > td > ul {
+  margin: 0;
+  padding: 0 0 0 15px;
+  list-style-type: circle;
+}
 
 /* Front page News / Employee Announcement / Events Columns */
 
@@ -2255,14 +2267,7 @@ article[class*="node--type-events"] .flag-bookmark {
 }
 <<<<<<< HEAD
 /* Styling changes for sidebar added to post content type */
-body:not(.path-frontpage) #page-sidebar-second #block-views-block-post-sidebar-block-1:[data-content=""] {
-  background-color: aqua;
-}
-@media(min-width:992px) {
-  body:not(.path-frontpage) #page-sidebar-second {
-    margin-top:135px;
-  }
-}
+
 body:not(.path-frontpage) #page-sidebar-second .block {
   border-color: #ced4da;
 }
@@ -2273,6 +2278,7 @@ body:not(.path-frontpage) #page-sidebar-second .block h3 {
 body:not(.path-frontpage) #page-sidebar-second .block p {
   margin-top:10px;
 }
+
 =======
 
 /* New Event Node Page, Upcoming and Past pages */
@@ -2315,7 +2321,15 @@ body.node--type-event .field--name-field-event-location .field__label {
   margin-top:15px;
   font-weight: bold;
 }
-
+body.node--type-event #block-agency-theme-content > div > article > div.node__content > p {
+  margin-top:25px;
+}
+body.node--type-event #block-agency-theme-content > div > article > div.node__content > p > a:before {
+  content:url("images/add-calendar.png");
+  display:block;
+  float:left;
+  width:30px;
+}
 /* Calendar Add Event Btn on Calendar page and event nodes */
 .view-events-calendar .view-footer {
   margin-bottom:20px;
