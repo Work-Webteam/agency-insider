@@ -66,6 +66,7 @@ class AtworkIdirAddUpdate extends AtworkIdirGUID {
       // because we can't duplicate this.
       // If this was the user script, we can simply
       // append them to the add script which will run last.
+
       if (empty($update_uid)) {
         // Need to check if idir is in user -
         // we cannot have two users with the same idir and different GUID's.
@@ -88,6 +89,7 @@ class AtworkIdirAddUpdate extends AtworkIdirGUID {
         // Need to check if idir is in user -
         // we cannot have two users with the same idir and different GUID's.
         $match_uid = $this->getUserName($row[$this->inputMatrix['name']]);
+
         if (isset($match_uid[0]) && $match_uid[0] != $update_uid[0]) {
           // Remove user that already has this idir
           // but a different GUID.
