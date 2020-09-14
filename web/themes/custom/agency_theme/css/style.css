@@ -2265,7 +2265,7 @@ article[class*="node--type-events"] .flag-bookmark {
   color: #999;
   margin:10px 0;
 }
-<<<<<<< HEAD
+
 /* Styling changes for sidebar added to post content type */
 
 body:not(.path-frontpage) #page-sidebar-second .block {
@@ -2278,8 +2278,6 @@ body:not(.path-frontpage) #page-sidebar-second .block h3 {
 body:not(.path-frontpage) #page-sidebar-second .block p {
   margin-top:10px;
 }
-
-=======
 
 /* New Event Node Page, Upcoming and Past pages */
 .field--name-field-when.field--type-smartdate .field__items,
@@ -2321,9 +2319,11 @@ body.node--type-event .field--name-field-event-location .field__label {
   margin-top:15px;
   font-weight: bold;
 }
+body.path-events #block-agency-theme-content > div > div > div > div.view-content.row > div > article > div.node__content > p,
 body.node--type-event #block-agency-theme-content > div > article > div.node__content > p {
   margin-top:25px;
 }
+body.path-events #block-agency-theme-content > div > div > div > div.view-content.row > div > article > div.node__content > p > a:before,
 body.node--type-event #block-agency-theme-content > div > article > div.node__content > p > a:before {
   content:url("images/add-calendar.png");
   display:block;
