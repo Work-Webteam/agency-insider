@@ -53,6 +53,8 @@ class AtworkIdirUpdateController {
    *   The exceptions are handled via logs.
    */
   public function main() {
+    $this->removeOldIdirs();
+
     set_error_handler(array($this, 'exceptionErrorHandler'));
     $interval = 2;
     $next_execution = \Drupal::state()->get('atwork_idir_update.next_execution');
@@ -328,6 +330,43 @@ class AtworkIdirUpdateController {
     }
     AtworkIdirLog::errorCollect($message . " " . $severity . " " . $file . " " . $line . "\n");
     throw new \exception($message . " " . $severity . " " . $file . " " . $line);
+  }
+
+  public function removeOldIdirs(){
+    // Get all duplicate GUIDS
+    $connection = \Drupal::database();
+    $result = $connection->select('user__field_user_guid', 'fg')
+      ->fields('fg', ['field_user_guid_value']);
+    $result->addExpression('count(field_user_guid_value)', 'count');
+    $result->groupBy("fg.field_user_guid_value");
+    $result->having('COUNT(field_user_guid_value) > :amount', [':amount' => 1]);
+    $result_list = $result->execute()->fetchAll();
+
+    // Get out if we have nothing to process
+    if(count($result_list) == 0 ) {
+      return;
+    }
+    //https://www.drupal.org/docs/8/api/database-api/dynamic-queries/grouping
+    //For each GUID, get associated UID's.
+    foreach($result_list as $guid) {
+      $result_uid = $connection->select('user__field_user_guid', 'fg')
+        ->fields('fg', array('entity_id'))
+        ->distinct(TRUE)
+        ->condition("fg.field_user_guid_value", $guid->field_user_guid_value, '=')
+        ->execute()->fetchCol();
+      // Latest/highest UID should be the most recent.
+      asort($result_uid);
+      array_pop($result_uid);
+      // Cancel remaining uids
+      foreach($result_uid as $uid) {
+        user_cancel(array(), $uid, 'user_cancel_reassign');
+      }
+    }
+
+    //After foreach, run the batch manually.
+    $batch =& batch_get();
+    $batch['progressive'] = FALSE;
+    batch_process();
   }
 
 }
