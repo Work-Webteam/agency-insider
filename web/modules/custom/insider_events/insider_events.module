@@ -90,7 +90,7 @@ function insider_events_set_rrule(&$form, \Drupal\Core\Form\FormStateInterface $
   } else {
     $url = '';
     Drupal::logger('insider_event')->error('Could not generate an iCal file.');
-    Drupal::messenger()->addMessage('Sorry, an iCal file could not be generated. Please try saving the event again. If this issue persists, contanct an administrator.', 'warning');
+    Drupal::messenger()->addMessage('Sorry, an iCal file could not be generated. Please try saving the event again. If this issue persists, contact an administrator.', 'warning');
 
   }
   //TODO: Save iCal location into a text field.
