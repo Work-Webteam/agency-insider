@@ -1,5 +1,5 @@
 <?php
-
+namespace Drupal\insider_events;
 use \Drupal\insider_events\Controller\InsiderEventsController;
 use Liliumdev\ICalendar\ZDateHelper;
 
