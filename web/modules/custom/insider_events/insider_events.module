@@ -85,7 +85,14 @@ function insider_events_set_rrule(&$form, \Drupal\Core\Form\FormStateInterface $
   // Additional functionality and classes built by Thayne.
   $ical_file = new InsiderEventsController($this_event);
   $ical_url = $ical_file->get_ical_url();
-  $url = $ical_url->url();
+  if(isset($ical_url) && property_exists($ical_url, 'values')) {
+    $url = $ical_url->url();
+  } else {
+    $url = '';
+    Drupal::logger('insider_event')->error('Could not generate an iCal file.');
+    Drupal::messenger()->addMessage('Sorry, an iCal file could not be generated. Please try saving the event again. If this issue persists, contanct an administrator.', 'warning');
+
+  }
   //TODO: Save iCal location into a text field.
   $form_state->setValue('field_event_ical_path', [['value'=>$url]]);
   $event_fields->set('field_event_ical_path', [['value'=>$url]]);
