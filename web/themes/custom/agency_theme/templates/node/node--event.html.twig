@@ -104,10 +104,11 @@
     {% endif %}
   </header>
   <div{{ content_attributes.addClass('node__content', 'clearfix') }}>
-    {{ content|without('field_subtitle', 'field_event_ical_path') }}
+    {{ content|without('field_subtitle', 'field_event_ical_path', 'field_add_ical') }}
   </div>
-
-  <div {{ content_attributes.addClass('node__content', 'clearfix') }} >
-    <p><a href="{{ content.field_event_ical_path.0  }}"> Add to Calendar</a></p>
-  </div>
+  {%  if content.field_add_ical.0['#markup'] == "On"  %}
+    <div {{ content_attributes.addClass('node__content', 'clearfix') }} >
+      <p><a href="{{ content.field_event_ical_path.0  }}"> Add to Calendar</a></p>
+    </div>
+  {% endif %}
 </article>
