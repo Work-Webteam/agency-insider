@@ -1,0 +1,5 @@
+name: 'Insider Events'
+type: module
+description: 'Preprocessing event data for twig files.'
+core: 8.x
+package: 'Custom'

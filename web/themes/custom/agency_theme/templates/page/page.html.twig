@@ -33,7 +33,6 @@
  *   associated with the page and the node ID is the second argument in the
  *   page's path (e.g. node/12345 and node/12345/revisions, but not
  *   comment/reply/12345).
- *
  * Regions:
  * - page.header: Items for the header region.
  * - page.navigation: Items for the navigation region.
@@ -184,7 +183,6 @@
           {% endblock %}
         </div>
       </section>
-
       {# Sidebar Second #}
       {% if page.sidebar_second or node.bundle() is same as('page') %}
         {% block sidebar_second %}

@@ -37,7 +37,11 @@
                     "type": "zip"
                 }
             }
-        }
+        },
+	{
+	  "type": "path",
+	  "url": "web/modules/custom/insider_events"
+	}
     ],
     "require": {
         "composer/installers": "^1.0",
@@ -121,7 +125,10 @@
         "drupal/kint": "^2.1",
         "drupal/recurring_period": "^1.0@alpha",
         "drupal/smart_date": "^2.8",
-        "drupal/smart_date_calendar_kit": "^1.0"
+        "drupal/smart_date_calendar_kit": "^1.0",
+        "drupal/addtocal": "^1.0",
+        "liliumdev/icalendar": "^0.1.0",
+        "pie/insider_events": "dev-INS-47_iCal_integration"
     },
     "require-dev": {
         "neronmoon/scriptsdev": "^0.1.0",

@@ -1,0 +1,19 @@
+uuid: 3712bddd-f8b1-43e1-a754-5088b25bc08d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_event_ical_path
+    - node.type.event
+id: node.event.field_event_ical_path
+field_name: field_event_ical_path
+entity_type: node
+bundle: event
+label: 'Event iCal Path'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

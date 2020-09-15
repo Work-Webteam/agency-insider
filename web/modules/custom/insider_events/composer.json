@@ -1,0 +1,13 @@
+{
+    "name": "pie/insider_events",
+    "description": "Handles ical integration with views calendar",
+    "require": {
+        "liliumdev/icalendar": "^0.1.0"
+    },
+    "authors": [
+        {
+            "name": "tvwerdal",
+            "email": "thayne.werdal@gov.bc.ca"
+        }
+    ]
+}

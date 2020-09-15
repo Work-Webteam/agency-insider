@@ -1,0 +1,18 @@
+uuid: f4943797-2014-41dc-baf4-37e142f6774a
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_add_ical
+field_name: field_add_ical
+entity_type: node
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
