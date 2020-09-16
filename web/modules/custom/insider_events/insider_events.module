@@ -1,22 +1,6 @@
 <?php
-namespace Drupal\insider_events;
 use \Drupal\insider_events\Controller\InsiderEventsController;
 use Liliumdev\ICalendar\ZDateHelper;
-
-/**
- * Implements hook_preprocess().
- *
- * Setting up variables for our events content type - to use in iCal templating work.
- * @param $variables
- * @param $hook
- */
-function insider_events_preprocess(&$variables, $hook) {
-  // Only if this is a page hook, and we have an event style node.
-  if($hook == 'page' && isset($variables['node']) && $variables['node']->getType() == 'event') {
-
-  }
-}
-
 
 
 function insider_events_form_node_event_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
