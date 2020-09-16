@@ -5,6 +5,8 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.event.body
+    - field.field.node.event.field_add_ical
+    - field.field.node.event.field_event_ical_path
     - field.field.node.event.field_event_location
     - field.field.node.event.field_event_online
     - field.field.node.event.field_image
@@ -46,6 +48,8 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
+  field_add_ical: true
+  field_event_ical_path: true
   field_event_location: true
   field_event_online: true
   field_image: true

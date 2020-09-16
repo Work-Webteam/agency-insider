@@ -1,0 +1,9 @@
+#insider_events.libraries.yml
+insider_events:
+  version: 1.x
+  js:
+    js/insider_events.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - core/drupalSettings

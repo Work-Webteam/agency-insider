@@ -4,6 +4,8 @@ status: true
 dependencies:
   config:
     - field.field.node.event.body
+    - field.field.node.event.field_add_ical
+    - field.field.node.event.field_event_ical_path
     - field.field.node.event.field_event_location
     - field.field.node.event.field_event_online
     - field.field.node.event.field_image
@@ -26,7 +28,7 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 13
+    weight: 12
     settings:
       rows: 9
       summary_rows: 3
@@ -40,8 +42,15 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_add_ical:
+    weight: 26
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
   field_event_location:
-    weight: 14
+    weight: 13
     settings:
       size: 60
       placeholder: ''
@@ -49,7 +58,7 @@ content:
     type: string_textfield
     region: content
   field_event_online:
-    weight: 15
+    weight: 14
     settings:
       placeholder_url: ''
       placeholder_title: ''
@@ -58,7 +67,7 @@ content:
     region: content
   field_media_event_icon:
     type: media_library_widget
-    weight: 12
+    weight: 11
     region: content
     settings:
       media_types: {  }
@@ -133,4 +142,5 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
+  field_event_ical_path: true
   field_image: true

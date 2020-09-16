@@ -4,6 +4,8 @@ status: true
 dependencies:
   config:
     - field.field.node.event.body
+    - field.field.node.event.field_add_ical
+    - field.field.node.event.field_event_ical_path
     - field.field.node.event.field_event_location
     - field.field.node.event.field_event_online
     - field.field.node.event.field_image
@@ -29,6 +31,13 @@ content:
     settings: {  }
     third_party_settings: {  }
     region: content
+  field_event_ical_path:
+    type: basic_string
+    weight: 5
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
   field_event_location:
     weight: 2
     label: above
@@ -61,10 +70,11 @@ content:
     type: smartdate_default
     region: content
   links:
-    weight: 5
+    weight: 4
     region: content
     settings: {  }
     third_party_settings: {  }
 hidden:
+  field_add_ical: true
   field_image: true
   field_media_event_icon: true
