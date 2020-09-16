@@ -104,7 +104,7 @@ class AtworkIdirAddUpdate extends AtworkIdirGUID {
           foreach ($this->inputMatrix as $key => $value) {
             $this->newFields[$value] = $row[$value];
           }
-          $result = $this->addUser($row);
+          $result = $this->updateSystemUser('update', $update_uid[0], $this->newFields);
           if ($result) {
             AtworkIdirLog::success($result);
           }
@@ -116,7 +116,7 @@ class AtworkIdirAddUpdate extends AtworkIdirGUID {
           unset($this->newFields);
           // Here we need to get all userfields,
           // and map back the values in the proper row #.
-          // TODO: We need to set this up so that the new field numbers
+          // We need to set this up so that the new field numbers
           // point to the column numbers.
           foreach ($this->inputMatrix as $key => $value) {
             $this->newFields[$value] = $row[$value];
@@ -130,6 +130,8 @@ class AtworkIdirAddUpdate extends AtworkIdirGUID {
       // Log this transaction.
       if ($result) {
         AtworkIdirLog::success($result);
+      } else {
+        AtworkIdirLog::errorCollect($result);
       }
     }
     return "success";
