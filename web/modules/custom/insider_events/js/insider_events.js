@@ -19,7 +19,6 @@
         $("#field-when-values > tbody:last").children('tr:not(:first)').remove();
         $(".button.button--small.manage-instances").remove();
         $(".field-add-more-submit.button.js-form-submit.form-submit").remove();
-        console.log('attached');
       } );
     }
   };
