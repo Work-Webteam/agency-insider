@@ -67,7 +67,7 @@ function insider_events_set_rrule(&$form, \Drupal\Core\Form\FormStateInterface $
 
   // This uses zapcalendar library: https://packagist.org/packages/liliumdev/icalendar via composer.
   // Additional functionality and classes built by Thayne.
-  $ical_file = new \Drupal\insider_events\Controller\InsiderEventsController($this_event);
+  $ical_file = new InsiderEventsController($this_event);
   $ical_url = $ical_file->get_ical_url();
   if(isset($ical_url) && property_exists($ical_url, 'values')) {
     $url = $ical_url->url();
