@@ -3,7 +3,6 @@
 namespace Drupal\atwork_idir_update;
 
 use Drupal\Database\Core\Database\Database;
-use Drupal\AtworkIdirUpdateInputMatrix;
 use Drupal\user\Entity\User;
 
 /**
@@ -232,6 +231,11 @@ class AtworkIdirAddUpdate extends AtworkIdirGUID {
     return $result;
   }
 
+
+  /**
+   * @param $uids
+   * @return mixed
+   */
   private function pruneOldGuids($uids) {
     // We don't want to remove the most recent uid, which will be the highest number.
     asort($uids);

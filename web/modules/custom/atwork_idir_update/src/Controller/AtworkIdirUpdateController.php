@@ -53,7 +53,8 @@ class AtworkIdirUpdateController {
    *   The exceptions are handled via logs.
    */
   public function main() {
-    $this->removeOldIdirs();
+    // Added to fix an issue that occurred where users had multiple accounts.
+    // $this->removeOldIdirs();
 
     set_error_handler(array($this, 'exceptionErrorHandler'));
     $interval = 2;
@@ -332,7 +333,10 @@ class AtworkIdirUpdateController {
     throw new \exception($message . " " . $severity . " " . $file . " " . $line);
   }
 
-  public function removeOldIdirs(){
+  /**
+   *  Used to gather and remove duplicate uids.
+   */
+  private function removeOldIdirs(){
     // Get all duplicate GUIDS
     $connection = \Drupal::database();
     $result = $connection->select('user__field_user_guid', 'fg')
