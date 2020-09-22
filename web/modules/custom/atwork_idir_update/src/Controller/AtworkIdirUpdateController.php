@@ -54,7 +54,7 @@ class AtworkIdirUpdateController {
    */
   public function main() {
     // Added to fix an issue that occurred where users had multiple accounts.
-    // $this->removeOldIdirs();
+    $this->removeOldIdirs();
 
     set_error_handler(array($this, 'exceptionErrorHandler'));
     $interval = 2;
@@ -370,7 +370,13 @@ class AtworkIdirUpdateController {
     //After foreach, run the batch manually.
     $batch =& batch_get();
     $batch['progressive'] = FALSE;
-    batch_process();
+    if (PHP_SAPI === 'cli' && function_exists('drush_backend_batch_process')) {
+      drush_backend_batch_process();
+    }
+    else {
+      batch_process();
+    }
+
   }
 
 }
