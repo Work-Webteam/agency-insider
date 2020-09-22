@@ -61,7 +61,7 @@
         "drupal/blazy": "^2.0",
         "drupal/bootstrap_layouts": "^5.1",
         "drupal/ctools": "^3.2",
-        "drupal/ds": "^3.8",
+        "drupal/ds": "^3.9",
         "drupal/flag": "^4.0@alpha",
         "drupal/hierarchical_taxonomy_menu": "^1.40",
         "drupal/libraries": "^3.0@alpha",
