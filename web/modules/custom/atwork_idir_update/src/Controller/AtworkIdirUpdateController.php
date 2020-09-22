@@ -54,9 +54,8 @@ class AtworkIdirUpdateController {
    */
   public function main() {
     // Added to fix an issue that occurred where users had multiple accounts.
-    $this->removeOldIdirs();
-
-    set_error_handler(array($this, 'exceptionErrorHandler'));
+    // $this->removeOldIdirs();
+    set_error_handler([$this, 'exceptionErrorHandler']);
     $interval = 2;
     $next_execution = \Drupal::state()->get('atwork_idir_update.next_execution');
     $next_execution = !empty($next_execution) ? $next_execution : 0;
@@ -85,10 +84,10 @@ class AtworkIdirUpdateController {
     }
     isset($run_cron)?:$run_cron = "Could not download ftp";
     isset($split_list)?:$split_list = "Could not divide list";
-    return array(
+    return [
       '#type' => 'markup',
       '#markup' => '<p>Cron run status: <h1>' . $run_cron . '.</h1></p>',
-    );
+    ];
   }
 
   /**
