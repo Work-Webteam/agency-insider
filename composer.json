@@ -48,7 +48,7 @@
         "drupal-composer/drupal-scaffold": "^2.0.0",
         "cweagans/composer-patches": "^1.5.0",
         "wikimedia/composer-merge-plugin": "^1.4",
-        "drupal/core": "8.*",
+        "drupal/core": "8.x",
         "drupal/flags": "^1.0@beta",
         "drupal/flags_ui": "^1.0@beta",
         "drupal/interval": "^1.7",
