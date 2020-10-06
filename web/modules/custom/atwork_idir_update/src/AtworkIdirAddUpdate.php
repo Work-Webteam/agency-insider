@@ -3,7 +3,6 @@
 namespace Drupal\atwork_idir_update;
 
 use Drupal\Database\Core\Database\Database;
-use Drupal\AtworkIdirUpdateInputMatrix;
 use Drupal\user\Entity\User;
 
 /**
@@ -59,6 +58,10 @@ class AtworkIdirAddUpdate extends AtworkIdirGUID {
       // this will return either an empty set or a user entity number.
       $update_uid = $this->getGUIDField($row[$this->inputMatrix['field_user_guid']]);
 
+      // We should never have more than on e of these.
+      if(count($update_uid) > 1){
+        $update_uid = $this->pruneOldGuids($update_uid);
+      }
       // If we are returned an empty set,
       // we know this user is not in our current db,
       // and in fact needs to be added.
@@ -66,6 +69,7 @@ class AtworkIdirAddUpdate extends AtworkIdirGUID {
       // because we can't duplicate this.
       // If this was the user script, we can simply
       // append them to the add script which will run last.
+
       if (empty($update_uid)) {
         // Need to check if idir is in user -
         // we cannot have two users with the same idir and different GUID's.
@@ -88,6 +92,7 @@ class AtworkIdirAddUpdate extends AtworkIdirGUID {
         // Need to check if idir is in user -
         // we cannot have two users with the same idir and different GUID's.
         $match_uid = $this->getUserName($row[$this->inputMatrix['name']]);
+        // Compare the user uid we have from idir (match_uid) to the user uid we get from guid (update_uid).
         if (isset($match_uid[0]) && $match_uid[0] != $update_uid[0]) {
           // Remove user that already has this idir
           // but a different GUID.
@@ -98,19 +103,19 @@ class AtworkIdirAddUpdate extends AtworkIdirGUID {
           foreach ($this->inputMatrix as $key => $value) {
             $this->newFields[$value] = $row[$value];
           }
-          $result = $this->addUser($row);
+          $result = $this->updateSystemUser('update', $update_uid[0], $this->newFields);
           if ($result) {
             AtworkIdirLog::success($result);
           }
           continue;
         }
         else {
-          // Set the fields to update the new user with
+          // Set the fields to update the new user with.
           // Make sure we are starting fresh first.
           unset($this->newFields);
           // Here we need to get all userfields,
           // and map back the values in the proper row #.
-          // TODO: We need to set this up so that the new field numbers
+          // We need to set this up so that the new field numbers
           // point to the column numbers.
           foreach ($this->inputMatrix as $key => $value) {
             $this->newFields[$value] = $row[$value];
@@ -124,6 +129,8 @@ class AtworkIdirAddUpdate extends AtworkIdirGUID {
       // Log this transaction.
       if ($result) {
         AtworkIdirLog::success($result);
+      } else {
+        AtworkIdirLog::errorCollect($result);
       }
     }
     return "success";
@@ -224,4 +231,24 @@ class AtworkIdirAddUpdate extends AtworkIdirGUID {
     return $result;
   }
 
+
+  /**
+   * @param $uids
+   * @return mixed
+   */
+  private function pruneOldGuids($uids) {
+    // We don't want to remove the most recent uid, which will be the highest number.
+    asort($uids);
+    // Remove that record to send back as the only uid
+    $main_uid = array_pop($uids);
+    // Remove all other records that should not be there.
+    foreach($uids as $key=>$value){
+      user_cancel(array(), $value, 'user_cancel_reassign');
+    }
+    // user_cancel is batched, so kickstart the batch
+    $batch =& batch_get();
+    $batch['progressive'] = FALSE;
+    batch_process();
+    return $main_uid;
+  }
 }
