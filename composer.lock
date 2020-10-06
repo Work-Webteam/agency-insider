@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "25372f84075c28f88294d8116f902699",
+    "content-hash": "946b48ea6be92d2951523d60e68c8fc3",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -2222,6 +2222,7 @@
                 "GPL-2.0-or-later"
             ],
             "description": "Composer Plugin for updating the Drupal scaffold files when using drupal/core",
+            "abandoned": "drupal/core-composer-scaffold",
             "time": "2019-03-30T10:41:38+00:00"
         },
         {
@@ -2698,17 +2699,17 @@
         },
         {
             "name": "drupal/backup_migrate",
-            "version": "5.0.0-rc1",
+            "version": "5.0.0-rc2",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/backup_migrate.git",
-                "reference": "5.0.0-rc1"
+                "reference": "5.0.0-rc2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/backup_migrate-5.0.0-rc1.zip",
-                "reference": "5.0.0-rc1",
-                "shasum": "8a20a97a6115acf8573d0abfafc34ae83940794e"
+                "url": "https://ftp.drupal.org/files/projects/backup_migrate-5.0.0-rc2.zip",
+                "reference": "5.0.0-rc2",
+                "shasum": "b8c4f5117d9455f4ca652e70135ddc2964fdceef"
             },
             "require": {
                 "drupal/core": "^8.7.7 || ^9"
@@ -2719,8 +2720,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "5.0.0-rc1",
-                    "datestamp": "1591984755",
+                    "version": "5.0.0-rc2",
+                    "datestamp": "1601316516",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "RC releases are not covered by Drupal security advisories."
@@ -6428,29 +6429,26 @@
         },
         {
             "name": "drupal/structure_sync",
-            "version": "1.16.0",
+            "version": "2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/structure_sync.git",
-                "reference": "8.x-1.16"
+                "reference": "2.0.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/structure_sync-8.x-1.16.zip",
-                "reference": "8.x-1.16",
-                "shasum": "b700c424503fa2d7285e972b1042ca6917ec0888"
+                "url": "https://ftp.drupal.org/files/projects/structure_sync-2.0.0.zip",
+                "reference": "2.0.0",
+                "shasum": "ecdabb8ca29c1298d2ff66a0ab3382cc74de806f"
             },
             "require": {
-                "drupal/core": "*"
+                "drupal/core": "^8 || ^9"
             },
             "type": "drupal-module",
             "extra": {
-                "branch-alias": {
-                    "dev-1.x": "1.x-dev"
-                },
                 "drupal": {
-                    "version": "8.x-1.16",
-                    "datestamp": "1546851780",
+                    "version": "2.0.0",
+                    "datestamp": "1601503992",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -6463,16 +6461,20 @@
             ],
             "authors": [
                 {
-                    "name": "fidodido06",
+                    "name": "colan",
+                    "homepage": "https://www.drupal.org/user/58704"
+                },
+                {
+                    "name": "fidovdbos",
                     "homepage": "https://www.drupal.org/user/1494332"
+                },
+                {
+                    "name": "joachim",
+                    "homepage": "https://www.drupal.org/user/107701"
                 },
                 {
                     "name": "legolasbo",
                     "homepage": "https://www.drupal.org/user/2480548"
-                },
-                {
-                    "name": "pdenooijer",
-                    "homepage": "https://www.drupal.org/user/3175437"
                 },
                 {
                     "name": "timKruijsen",
@@ -6773,38 +6775,40 @@
         },
         {
             "name": "drupal/ultimate_cron",
-            "version": "2.0.0-alpha4",
+            "version": "2.0.0-alpha5",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/ultimate_cron.git",
-                "reference": "8.x-2.0-alpha4"
+                "reference": "8.x-2.0-alpha5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/ultimate_cron-8.x-2.0-alpha4.zip",
-                "reference": "8.x-2.0-alpha4",
-                "shasum": "50cdadd061f1f6fadb961b04ed04348bcc4719d3"
+                "url": "https://ftp.drupal.org/files/projects/ultimate_cron-8.x-2.0-alpha5.zip",
+                "reference": "8.x-2.0-alpha5",
+                "shasum": "0f10464fff29eca89024e7afa5b6d8d07bd52f75"
             },
             "require": {
-                "drupal/core": "~8.0"
+                "drupal/core": "^8.7.7 || ^9"
             },
             "type": "drupal-module",
             "extra": {
-                "branch-alias": {
-                    "dev-2.x": "2.x-dev"
-                },
                 "drupal": {
-                    "version": "8.x-2.0-alpha4",
-                    "datestamp": "1527925385",
+                    "version": "8.x-2.0-alpha5",
+                    "datestamp": "1600928948",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Alpha releases are not covered by Drupal security advisories."
+                    }
+                },
+                "drush": {
+                    "services": {
+                        "drush.services.yml": "^9 || ^10"
                     }
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
             "license": [
-                "GPL-2.0-or-later"
+                "GPL-2.0+"
             ],
             "authors": [
                 {
@@ -6814,6 +6818,10 @@
                 {
                     "name": "Dane Powell",
                     "homepage": "https://www.drupal.org/user/339326"
+                },
+                {
+                    "name": "Primsi",
+                    "homepage": "https://www.drupal.org/user/282629"
                 },
                 {
                     "name": "arnested",
@@ -6828,7 +6836,7 @@
                     "homepage": "https://www.drupal.org/user/227761"
                 }
             ],
-            "description": "Cron",
+            "description": "Ultimate cron",
             "homepage": "https://www.drupal.org/project/ultimate_cron",
             "support": {
                 "source": "https://git.drupalcode.org/project/ultimate_cron"
