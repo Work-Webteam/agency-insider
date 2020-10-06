@@ -54,7 +54,7 @@ class AtworkIdirUpdateController {
    */
   public function main() {
     // Added to fix an issue that occurred where users had multiple accounts.
-    $this->removeOldIdirs();
+    // $this->removeOldIdirs();
     set_error_handler([$this, 'exceptionErrorHandler']);
     $interval = 2;
     $next_execution = \Drupal::state()->get('atwork_idir_update.next_execution');
