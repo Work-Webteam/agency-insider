@@ -44,10 +44,37 @@ class InitSubscriber implements EventSubscriberInterface {
   }
 
   /**
+   * @param \Symfony\Component\HttpKernel\Event\GetResponseEvent $event
+   *
+   * Helper function that is used to save the initial access url.
+   * This will allow us to redirect user to the initial request url instead of
+   * redirecting to the homepage on every authentication.
+   */
+  public function saveRequestUri(GetResponseEvent $event) {
+    // Only do this if the user has not been authenticated -
+    // no sense updating this over and over for no reason.
+    $logged_in = \Drupal::currentUser()->isAnonymous();
+    if($logged_in) {
+      return;
+    }
+    // Grab the path request.
+    $path = \Drupal::service('path.current')->getPath();
+    // We don't want to overwrite the initial access url when users
+    // are redirected.
+    if($path != '/siteminder_login' && $path != '/' ) {
+      // Grab our config settings.
+      $config = \Drupal::service('config.factory')->getEditable('siteminder.settings');
+      // Set the config variable so we can pick it up again in Controller after auth.
+      $config->set('user_initial_url', $path)->save();
+    }
+  }
+
+  /**
    * {@inheritdoc}
    */
   public static function getSubscribedEvents() {
-    $events[KernelEvents::REQUEST][] = array('loginSiteminder', 100);
+    $events[KernelEvents::REQUEST][] = ['saveRequestUri', 400];
+    $events[KernelEvents::REQUEST][] = ['loginSiteminder', 100];
     return $events;
   }
 

@@ -118,17 +118,27 @@ class SiteminderController extends ControllerBase implements ContainerInjectionI
       }
     }
 
-    // If connected as a Drupal user via Siteminder, go to the homepage with a success message
+    // If connected as a Drupal user via Siteminder,
+    // go to the homepage with a success message.
     if ($account) {
-      // The user account is waiting for validation
+      // The user account is waiting for validation.
       if (!$account->isActive()) {
         return $this->redirect('siteminder.pending_validation');
       } else {
         drupal_set_message('Connected as ' . $account->getDisplayName(), 'status');
-        return $this->redirect('<front>');
+        // We need to rebuild the original URL here.
+        // We saved this in the InitSubscriber class.
+        $config = \Drupal::config('siteminder.settings');
+        ksm($config->get('user_initial_url'));
+        $url = $config->get('user_initial_url');
+        if (empty($url)) {
+          return $this->redirect('<front>');
+        }
+        return $this->redirect($url);
       }
     }
-    // Else, the user is redirected to the access denied page with the error messages
+    // Else, the user is redirected to the access denied page
+    // with the error messages.
     else {
       return $this->redirect('siteminder.access_denied');
     }

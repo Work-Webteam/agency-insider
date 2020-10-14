@@ -108,7 +108,9 @@ function siteminder_form_alter(&$form, FormStateInterface $form_state, $form_id)
  */
 function siteminder_user_form_submit($form, FormStateInterface $form_state) {
   // Set redirect to login form.
-  $form_state->setRedirect('<front>');
+  $current_path = \Drupal::request()->getRequestUri();
+  ksm($current_path);
+  $form_state->setRedirect($current_path);
 }
 
 /**
@@ -126,3 +128,5 @@ function siteminder_user_format_name_alter(&$name, $account){
     }
   }
 }
+
+

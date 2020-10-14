@@ -16,16 +16,16 @@ siteminder.settings:
       mapping:
         username_mapping:
           type: string
-          label: 'Siteminder variable to be used as user name'		  
+          label: 'Siteminder variable to be used as user name'
         prefix_strip:
           type: boolean
-          label: 'Siteminder configuration adds a prefix to the username and you do not want it used in the username'		  
+          label: 'Siteminder configuration adds a prefix to the username and you do not want it used in the username'
         domain_strip:
           type: boolean
-          label: 'Siteminder configuration adds a domain to the username and you do not want it used in the username'	 	  
+          label: 'Siteminder configuration adds a domain to the username and you do not want it used in the username'
         mail_mapping:
           type: string
-          label: 'Siteminder variable to be used as email address for the user'	  
+          label: 'Siteminder variable to be used as email address for the user'
         role_mapping:
           type: string
           label: 'Automatic role population from siteminder variables'
@@ -40,3 +40,6 @@ siteminder.settings:
     user_register_original:
       type: string
       label: 'Original user register status'
+    user_initial_url:
+      type: string
+      label: 'Initial access uri for redirect'
