@@ -8,7 +8,6 @@
 
 namespace Drupal\siteminder\Controller;
 
-use Drupal\Component\Utility\UrlHelper;
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\DependencyInjection\ContainerInjectionInterface;
 use Drupal\Core\Session\AccountInterface;
@@ -17,7 +16,6 @@ use Drupal\siteminder\Service\SiteminderDrupalAuthentication;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\Core\Config\ConfigFactoryInterface;
-use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
 
 /**
  * Controller for register/login Siteminder variables.
@@ -88,27 +86,30 @@ class SiteminderController extends ControllerBase implements ContainerInjectionI
    */
   public function authenticate() {
 
-    // Checking if all the SM HTTP header variables are present
-    If ($this->siteminder->manageErrorCases()) {
+    // Checking if all the SM HTTP header variables are present.
+    if ($this->siteminder->manageErrorCases()) {
       return $this->redirect('siteminder.access_denied');
     }
 
-    // Get the GUID from the HTTP header
+    // Get the GUID from the HTTP header.
     $id = $this->siteminder->getId();
 
-    // Check if the GUID matches an UID database record
+    // Check if the GUID matches an UID database record.
     $uid = $this->siteminder->getUid($id);
 
     if ($uid) {
-      // User logged into Siteminder Agent and we got the unique identifier, so try to log into Drupal.
-      // Check to see whether the external user exists in Drupal. If they do not exist, set a message and an error 404 page.
+      // User logged into Siteminder Agent and we got the unique
+      // identifier, so try to log into Drupal.
+      // Check to see whether the external user exists in Drupal.
+      // If they do not exist, set a message and an error 404 page.
       $account = $this->siteminderDrupalauth->externalLoginRegister($id);
     }
     // The ID is not yet in the database
     // Create a new user.
     else {
       $account = $this->siteminderDrupalauth->externalRegister($id);
-      // If the option has been enabled, the user is redirected to a form to manually enter information
+      // If the option has been enabled, the user is redirected
+      // to a form to manually enter information.
       if ($this->config->get('user.username_form')) {
         $route_parameters = [
           'user' => \Drupal::currentUser()->id(),
@@ -129,12 +130,14 @@ class SiteminderController extends ControllerBase implements ContainerInjectionI
         // We need to rebuild the original URL here.
         // We saved this in the InitSubscriber class.
         $config = \Drupal::config('siteminder.settings');
-        ksm($config->get('user_initial_url'));
         $url = $config->get('user_initial_url');
         if (empty($url)) {
+          // If we never had a url, then send them to homepage.
           return $this->redirect('<front>');
         }
-        return $this->redirect($url);
+        // Redirect the User to their requested page.
+        $response = new RedirectResponse($url, RedirectResponse::HTTP_FOUND);
+        return $response;
       }
     }
     // Else, the user is redirected to the access denied page
@@ -145,7 +148,7 @@ class SiteminderController extends ControllerBase implements ContainerInjectionI
   }
 
   /**
-   * Access denied page
+   * Access denied page.
    *
    * @return array
    *   A render array containing the message to display for error pages.
@@ -157,10 +160,11 @@ class SiteminderController extends ControllerBase implements ContainerInjectionI
   }
 
   /**
-   * Pending validation page
+   * Pending validation page.
    *
    * @return array
-   *   A render array containing the message to display for pending validation user.
+   *   A render array containing the message to display
+   *   for pending validation user.
    */
   public function pending() {
     drupal_set_message('Thank you for confirming your user information. Your account will be disabled until an Administrator approves it.', 'warning');
