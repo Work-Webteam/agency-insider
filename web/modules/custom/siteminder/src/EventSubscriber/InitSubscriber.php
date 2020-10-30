@@ -56,7 +56,6 @@ class InitSubscriber implements EventSubscriberInterface {
     // If the user is NOT already logged in and the
     // HTTP header is sending a siteminder ID, login.
     if (!\Drupal::currentUser()->isAuthenticated()) {
-      \Drupal::service('page_cache_kill_switch')->trigger();
       $current_path = \Drupal::service('path.current')->getPath();
       if ($current_path != '/siteminder_login' && $current_path != '/user/login' && $current_path != '/user/logout') {
         // We want to save the original URL
