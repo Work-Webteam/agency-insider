@@ -31,10 +31,6 @@ class InitSubscriber implements EventSubscriberInterface {
     // Check if the current domain is not excluded from Siteminder.
     if ($this->siteminder->checkAuthDomain()) {
       $current_path = \Drupal::service('path.current')->getPath();
-      if ($current_path == NULL) {
-        $request = $event->getRequest();
-        $current_path = $request->get('_route');
-      }
       // Check if a new user wants to edit his profile.
       $new_user = ($event->getRequest()->query->get('status') == "new_user") ? true : false;
       if ($current_path != '/siteminder_login' && $current_path != '/user/login' && $current_path != '/access_denied' && $current_path != '/pending_validation' && $current_path != '/user/logout' && !$new_user) {
