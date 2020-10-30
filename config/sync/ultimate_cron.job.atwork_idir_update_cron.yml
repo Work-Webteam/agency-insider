@@ -10,10 +10,11 @@ weight: 0
 module: atwork_idir_update
 callback: atwork_idir_update_cron
 scheduler:
-  id: simple
+  id: crontab
   configuration:
     rules:
-      - '0+@ 0 * * *'
+      - '0 7 * * *'
+    catch_up: 7200
 launcher:
   id: serial
   configuration:
