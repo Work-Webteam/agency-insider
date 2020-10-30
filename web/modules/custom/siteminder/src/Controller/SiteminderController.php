@@ -74,7 +74,7 @@ class SiteminderController extends ControllerBase implements ContainerInjectionI
    */
   public static function create(ContainerInterface $container) {
     return new static(
-            $container->get('siteminder.siteminderhelper'), $container->get('siteminder.drupalauthentication'), $container->get('current_user'), $container->get('config.factory')
+      $container->get('siteminder.siteminderhelper'), $container->get('siteminder.drupalauthentication'), $container->get('current_user'), $container->get('config.factory')
     );
   }
 
@@ -131,7 +131,9 @@ class SiteminderController extends ControllerBase implements ContainerInjectionI
         // We saved this in the InitSubscriber class.
         $config = \Drupal::config('siteminder.settings');
         $url = $config->get('user_initial_url');
-        if (empty($url)) {
+        $update_config = \Drupal::service('config.factory')->getEditable('siteminder.settings');
+        $update_config->clear('user_initial_url')->save();
+        if (empty($url) || $url === null) {
           // If we never had a url, then send them to homepage.
           return $this->redirect('<front>');
         }
