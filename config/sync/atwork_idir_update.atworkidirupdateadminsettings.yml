@@ -1,9 +1,9 @@
 idir_ftp_location: ftp.dir.gov.bc.ca
-idir_login_name: psa
-idir_login_password: Men@W0rk
+idir_login_name: pseciweb
+idir_login_password: 131422oct29tHU
 idir_filename: idir.tsv
-form_build_id: form--ebd1SsaLnmGX4o0Vw2XUpgqGexabvCFVsX4St3Oizo
-form_token: jDhLxr8lHvro8hMUN3eniGoWbHL05rg2xjcT32cYuEY
+form_build_id: form-yirD_JaJ00mwFnzxCA7LygABv0jla4f1_7OFeqdmMs0
+form_token: 3nHOmdMrB4eROdvXyy9fxDJsqZBdN2pzDFsR3_9-Fk4
 form_id: atwork_idir_update_admin_settings_form
 op: 'Save configuration'
 action: TransactionType
