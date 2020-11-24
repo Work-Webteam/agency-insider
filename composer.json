@@ -129,7 +129,8 @@
         "drupal/addtocal": "^1.0",
         "liliumdev/icalendar": "^0.1.0",
         "pie/insider_events": "dev-INS-47_iCal_integration",
-        "drupal/smart_date_starter_kit": "^2.0"
+        "drupal/smart_date_starter_kit": "^2.0",
+        "drupal/media_entity_file_replace": "^1.0@beta"
     },
     "require-dev": {
         "neronmoon/scriptsdev": "^0.1.0",
