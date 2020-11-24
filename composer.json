@@ -124,11 +124,12 @@
         "drupal/devel": "^2.1",
         "drupal/kint": "^2.1",
         "drupal/recurring_period": "^1.0@alpha",
-        "drupal/smart_date": "^2.8",
-        "drupal/smart_date_calendar_kit": "^1.0",
+        "drupal/smart_date": "^3.1",
+        "drupal/smart_date_calendar_kit": "^2.0",
         "drupal/addtocal": "^1.0",
         "liliumdev/icalendar": "^0.1.0",
-        "pie/insider_events": "dev-INS-47_iCal_integration"
+        "pie/insider_events": "dev-INS-47_iCal_integration",
+        "drupal/smart_date_starter_kit": "^2.0"
     },
     "require-dev": {
         "neronmoon/scriptsdev": "^0.1.0",
