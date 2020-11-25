@@ -5,7 +5,10 @@ dependencies:
   config:
     - media.type.event_icon
 id: media_type_event_icon
+entity_type_id: media_type
+entity_id: event_icon
 action: display_page
 allow_override: 1
 redirect: ''
 redirect_code: 301
+redirect_fallback_action: access_denied

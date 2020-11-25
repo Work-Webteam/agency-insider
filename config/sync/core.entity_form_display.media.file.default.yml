@@ -18,7 +18,7 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 4
+    weight: 5
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -27,7 +27,7 @@ content:
       progress_indicator: throbber
     third_party_settings: {  }
     type: file_generic
-    weight: 2
+    weight: 3
     region: content
   field_media_folder:
     weight: 1
@@ -45,7 +45,12 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 5
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  replace_file:
+    weight: 2
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -53,12 +58,12 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 6
+    weight: 7
     region: content
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 3
+    weight: 4
     settings:
       match_operator: CONTAINS
       size: 60
