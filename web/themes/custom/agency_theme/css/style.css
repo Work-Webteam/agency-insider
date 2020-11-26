@@ -629,7 +629,8 @@ ul.sf-menu.sf-navbar.sf-shadow ul ul li {
 }
 #page-sidebar-second .block,
 #page-sidebar-second .field--name-field-landing-sidebar,
-#page-sidebar-first .block {
+#page-sidebar-first .block,
+#page-sidebar-second .block-views-blockpost-sidebar-block-1 {
   background: transparent;
   display: block;
   width: 100%;
@@ -683,7 +684,13 @@ ul.sf-menu.sf-navbar.sf-shadow ul ul li {
   list-style-type: none;
   padding:0;
 }
-.path-node #page-sidebar-second .field--name-field-landing-sidebar h5 {
+
+#page-sidebar-second .block-views-blockpost-sidebar-block-1 img {
+  margin-bottom:10px;
+}
+
+.path-node #page-sidebar-second .field--name-field-landing-sidebar h5,
+#page-sidebar-second .block-views-blockpost-sidebar-block-1 h5 {
   font-size:1.5rem;
   padding-bottom: 10px;
   border-bottom: solid 5px #1F5792;
@@ -692,6 +699,9 @@ ul.sf-menu.sf-navbar.sf-shadow ul ul li {
 #page-sidebar-second .field--name-field-landing-sidebar ul {
   padding:0;
   margin:0;
+}
+#page-sidebar-second .block-views-blockpost-sidebar-block-1 ul {
+  display: contents;
 }
 #page-sidebar-second .field--name-field-landing-sidebar ul li {
   margin-bottom:12px;
@@ -734,7 +744,8 @@ ul.sf-menu.sf-navbar.sf-shadow ul ul li {
 .path-frontpage #page-sidebar-second .block ul:not(.contextual-links) li a,
 .path-posts #page-sidebar-second .block ul:not(.contextual-links) li a,
 .path-events #page-sidebar-second .block ul:not(.contextual-links) li a,
-#page-sidebar-second .field--name-field-landing-sidebar ul:not(.contextual-links) li a {
+#page-sidebar-second .field--name-field-landing-sidebar ul:not(.contextual-links) li a,
+#page-sidebar-second .block-views-blockpost-sidebar-block-1 ul:not(.contextual-links) li a {
   padding: 0.75em 1em 0.25em 5px;
   /*color: white;
   margin: 5px;*/
@@ -746,7 +757,8 @@ ul.sf-menu.sf-navbar.sf-shadow ul ul li {
 .path-frontpage #page-sidebar-second .block ul:not(.contextual-links) li a:hover,
 .path-posts #page-sidebar-second .block ul:not(.contextual-links) li a:hover,
 .path-events #page-sidebar-second .block ul:not(.contextual-links) li a:hover,
-#page-sidebar-second .field--name-field-landing-sidebar ul:not(.contextual-links) li a:hover {
+#page-sidebar-second .field--name-field-landing-sidebar ul:not(.contextual-links) li a:hover,
+#page-sidebar-second .block-views-blockpost-sidebar-block-1 ul:not(.contextual-links) li a:hover {
   color: white;
   background: #2261a4;
   text-decoration: none;
@@ -1408,7 +1420,8 @@ body:not(.path-frontpage) #page-sidebar-second {
   #block-headernavigation .content>ul>li+li {
     border-left: 1px solid #fff;
   }
-  #page-sidebar-second .field--name-field-landing-sidebar {
+  #page-sidebar-second .field--name-field-landing-sidebar,
+  #page-sidebar-second .block-views-blockpost-sidebar-block-1 {
     margin-top: 100px;
   }
   #block-views-block-article-categories-article-categories {
@@ -2268,9 +2281,10 @@ article[class*="node--type-events"] .flag-bookmark {
 
 /* Styling changes for sidebar added to post content type */
 
-body:not(.path-frontpage) #page-sidebar-second .block {
+/*body:not(.path-frontpage) #page-sidebar-second .block {
   border-color: #ced4da;
 }
+*/
 body:not(.path-frontpage) #page-sidebar-second .block h3 {
   font-size: 1.25rem;
   margin-bottom: 10px;
