@@ -2130,7 +2130,7 @@ div.dataTables_wrapper div.dataTables_paginate ul.pagination li:hover {
 .fp-announcement .view-content.row > div li:nth-child(even) .count,
 .view-display-id-block_2 .view-content.row > div li:nth-child(odd) .event-date {
   background-color: #389bb8;
-} 
+}
 
 /* fp content blocks sizing*/
 .path-frontpage .fp-content {
@@ -2158,7 +2158,7 @@ div.dataTables_wrapper div.dataTables_paginate ul.pagination li:hover {
 }
 
 /* Search results page */
-/* Adjust the margins and spacing */ 
+/* Adjust the margins and spacing */
 
 body.path-search form#search-form {
   margin-left:25px;
@@ -2358,4 +2358,3 @@ a.add-event-button:hover {
   color:white;
   text-decoration: none;
 }
->>>>>>> INS-41_new_smart_date_test
