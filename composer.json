@@ -96,7 +96,7 @@
         "drupal/rabbit_hole": "^1.0",
         "drupal/editor_advanced_link": "^1.7",
         "drupal/menu_link_attributes": "^1.0",
-        "drupal/entity": "^1.0",
+        "drupal/entity": "^1.2",
         "drupal/profile": "^1.0",
         "drupal/inline_entity_form": "^1.0@RC",
         "drupal/focal_point": "^1.2",
