@@ -1,11 +1,11 @@
 {
-    "name": "optasy/drupal8-boilerplate",
-    "description": "optasy template for Drupal 8 projects with composer-based workflow",
+    "name": "agency-insider/core-composer-scaffold",
+    "description": "agency insider based on drupal/core-composer-scaffold template for Drupal 8 projects with composer-based workflow",
     "type": "project",
     "license": "GPL-2.0-or-later",
     "authors": [
         {
-            "name": "optasy",
+            "name": "@work team",
             "role": ""
         }
     ],
@@ -45,10 +45,8 @@
     ],
     "require": {
         "composer/installers": "^1.0",
-        "drupal-composer/drupal-scaffold": "^2.0.0",
         "cweagans/composer-patches": "^1.5.0",
         "wikimedia/composer-merge-plugin": "^1.4",
-        "drupal/core": "^8",
         "drupal/flags": "^1.0@beta",
         "drupal/flags_ui": "^1.0@beta",
         "drupal/interval": "^1.7",
@@ -130,7 +128,9 @@
         "pie/insider_events": "dev-INS-47_iCal_integration",
         "drupal/smart_date_starter_kit": "^2.0",
         "drupal/media_entity_file_replace": "^1.0@beta",
-        "drupal/devel_kint_extras": "^1.0"
+        "drupal/devel_kint_extras": "^1.0",
+        "drupal/core-composer-scaffold": "^8",
+        "roave/better-reflection": "^4.11"
     },
     "require-dev": {
         "neronmoon/scriptsdev": "^0.1.0",
@@ -152,23 +152,14 @@
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
-    "scripts": {
-        "post-install-cmd": [
-          "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
-          "sh ./scripts/composer/post-install.sh"
-        ],
-        "post-update-cmd": [
-          "DrupalComposer\\DrupalScaffold\\Plugin::scaffold"
-        ]
-    },
     "config": {
       "bin-dir": "vendor/bin/"
     },
     "extra": {
-        "scripts-dev": {
-            "post-install-cmd": [
-              "sh ./scripts/tools/setup.sh"
-            ]
+        "drupal-scaffold": {
+            "locations": {
+                "web-root": "./web"
+            }
         },
         "installer-paths": {
             "web/core": ["type:drupal-core"],
@@ -176,7 +167,8 @@
             "web/profiles/contrib/{$name}": ["type:drupal-profile"],
             "web/themes/contrib/{$name}": ["type:drupal-theme"],
             "web/libraries/{$name}": ["type:drupal-library"],
-            "drush/contrib/{$name}": ["type:drupal-drush"]
+            "drush/contrib/{$name}": ["type:drupal-drush"],
+	        "web": ["type:web-root"]
         },
         "patches": {
           "drupal/core": {
@@ -190,7 +182,7 @@
 	  },
 	  "drupal/rules": {
 	    "Patch to address rules issue where options were disappearing from blocks.": "https://www.drupal.org/files/issues/2020-07-23/2927132-15-remove-other-conditions-from-ui.patch"
-	  }  
+	  }
         },
         "enable-patching": true
     }
