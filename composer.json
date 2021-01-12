@@ -129,7 +129,8 @@
         "drupal/media_entity_file_replace": "^1.0@beta",
         "drupal/core-composer-scaffold": "^8",
         "drupal/devel": "^2.11",
-        "drupal/kint": "^2.1"
+        "drupal/kint": "^2.1",
+        "drupal/webform": "^6.0"
     },
     "require-dev": {
         "neronmoon/scriptsdev": "^0.1.0",
