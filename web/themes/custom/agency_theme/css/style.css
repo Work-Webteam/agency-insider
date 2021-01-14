@@ -2369,7 +2369,7 @@ body.path-webform .main-container {
   padding-left:5%;
   padding-right:5%;
 }
-body.node--type-webform .main-container.form-required:before,
+body.node--type-webform .main-container .form-required:before,
 body.path-webform .main-container .form-required:before {
   content:"* ";
   color:red;
