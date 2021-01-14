@@ -1602,6 +1602,7 @@ body:not(.path-frontpage) #page-sidebar-second {
   }
 
   .node--type-post .main-container,
+  .node--type-webform .main-container,
   .node--type-events .main-container,
   .node--type-page:not(.path-frontpage) .main-container {
     padding-left: 5%;
@@ -2358,4 +2359,87 @@ a.add-event-button:hover {
   color:white;
   text-decoration: none;
 }
->>>>>>> INS-41_new_smart_date_test
+/* Webform specific styles */
+/* Includes styling for webform build/creation page */
+
+body.node--type-webform .main-container div.date {
+  display:none;
+}
+body.path-webform .main-container {
+  padding-left:5%;
+  padding-right:5%;
+}
+body.node--type-webform .main-container.form-required:before,
+body.path-webform .main-container .form-required:before {
+  content:"* ";
+  color:red;
+}
+body.node--type-webform .main-container .webform-required,
+body.path-webform .main-container .webform-required {
+  margin-bottom: 15px;
+  font-size: .85em;
+}
+body.node--type-webform .main-container form,
+body.path-webform .main-container form {
+  min-width: 700px;
+  margin:0 auto;
+}
+body.node--type-webform .main-container textarea,
+body.path-webform .main-container textarea {
+  width:100%;
+}
+body.node--type-webform .main-container fieldset,
+body.path-webform .main-container fieldset {
+  border-bottom: solid 2px #ccc;
+  padding-bottom:10px;
+}
+body.node--type-webform .main-container label.form-required,
+body.node--type-webform .main-container legend,
+body.path-webform .main-container label.form-required,
+body.path-webform .main-container legend {
+  font-weight: bold;
+  font-size: 1em;
+}
+body.node--type-webform .main-container .form-type-datelist select,
+body.node--type-webform .main-container button.tabledrag-toggle-weight,
+body.path-webform .main-container .form-type-datelist select,
+body.path-webform .main-container button.tabledrag-toggle-weight {
+  font-size:.9em;
+  margin-right:5px;
+}
+body.node--type-webform .main-container .webform-multiple-table fieldset,
+body.path-webform .main-container .webform-multiple-table fieldset {
+  border-bottom:none;
+}
+body.node--type-webform .main-container .webform-multiple-table td.webform-multiple-table--operations,
+body.path-webform .main-container .webform-multiple-table td.webform-multiple-table--operations {
+  padding:inherit;
+}
+body.node--type-webform .main-container .webform-multiple-table td input[type="image"],
+body.path-webform .main-container .webform-multiple-table td input[type="image"] {
+  margin-bottom:5px;
+}
+body.node--type-webform .main-container .webform-multiple-table table .handle,
+body.path-webform .main-container .webform-multiple-table table .handle {
+  width:25px;
+  height:25px;
+}
+body.node--type-webform .main-container .webform-multiple-add,
+body.path-webform .main-container .webform-multiple-add {
+  display: inline-flex;
+}
+body.node--type-webform .main-container .webform-multiple-add fieldset,
+body.path-webform .main-container .webform-multiple-add fieldset {
+  border-bottom: none;
+}
+body.node--type-webform .main-container .webform-multiple-add fieldset .input-group input,
+body.path-webform .main-container .webform-multiple-add fieldset .input-group input {
+  width:60px;
+  margin-left:10px;
+  margin-right:10px;
+  display: inherit;
+}
+body.node--type-webform .main-container .fieldset-wrapper label,
+body.path-webform .main-container .fieldset-wrapper label {
+  font-size: .85em;
+}
