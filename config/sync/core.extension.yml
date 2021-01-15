@@ -28,8 +28,6 @@ module:
   ctools_views: 0
   datetime: 0
   dblog: 0
-  devel: 0
-  devel_generate: 0
   ds_switch_view_mode: 0
   dynamic_page_cache: 0
   easy_breadcrumb: 0
@@ -123,7 +121,6 @@ module:
   views_ui: 0
   webform: 0
   webform_attachment: 0
-  webform_devel: 0
   webform_node: 0
   webform_options_custom: 0
   webform_options_limit: 0

@@ -1,7 +1,12 @@
 uuid: 7f137a71-cd69-4c08-a656-d769de2fb119
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - menu_trail_by_path
+third_party_settings:
+  menu_trail_by_path:
+    trail_source: ''
 id: quick-links
 label: 'Quick Links'
 description: ''

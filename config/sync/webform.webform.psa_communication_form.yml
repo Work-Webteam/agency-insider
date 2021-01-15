@@ -212,7 +212,7 @@ handlers:
     settings:
       states:
         - completed
-      to_mail: thayne.werdal@gov.bc.ca
+      to_mail: BCPSA.Internal.Communications@gov.bc.ca
       to_options: {  }
       cc_mail: ''
       cc_options: {  }
