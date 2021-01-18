@@ -2443,3 +2443,17 @@ body.node--type-webform .main-container .fieldset-wrapper label,
 body.path-webform .main-container .fieldset-wrapper label {
   font-size: .85em;
 }
+
+body.node--type-webform .main-container .webform-multiple-add .input-group-text,
+body.path-webform .main-container .webform-multiple-add .input-group-text {
+  background: none;
+  border: none;
+  padding: initial;
+}
+
+.ui-dialog-titlebar .ui-dialog-titlebar-close:before {
+  content: "X";
+  height: 30px;
+  display: block;
+  margin-top: -5px;
+}
