@@ -2457,3 +2457,16 @@ body.path-webform .main-container .webform-multiple-add .input-group-text {
   display: block;
   margin-top: -5px;
 }
+
+.ui-dialog-titlebar button:focus {
+  outline:none;
+}
+
+body.node--type-webform .main-container table tr th,
+body.node--type-webform .main-container .table-striped tbody tr:nth-of-type(odd),
+body.path-webform .main-container table tr th,
+body.path-webform .main-container .table-striped tbody tr:nth-of-type(odd) {
+  background:white!important;
+  color: black;
+  border-top:none;
+}
