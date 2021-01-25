@@ -20,7 +20,6 @@ dependencies:
     - 'taxonomy_term:post_category:70e260ba-fcde-44b1-87a0-3a2c63f62203'
   module:
     - flag
-    - link
     - media
     - node
     - taxonomy
@@ -832,7 +831,7 @@ display:
           type: timestamp
           settings:
             date_format: custom
-            custom_date_format: 'F d, yy'
+            custom_date_format: 'F d, Y'
             timezone: ''
           group_column: value
           group_columns: {  }
