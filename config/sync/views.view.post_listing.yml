@@ -1411,7 +1411,7 @@ display:
           type: timestamp
           settings:
             date_format: custom
-            custom_date_format: 'F d, yy'
+            custom_date_format: 'F d, Y'
             timezone: ''
           group_column: value
           group_columns: {  }
