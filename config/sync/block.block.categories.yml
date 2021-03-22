@@ -30,6 +30,6 @@ settings:
 visibility:
   request_path:
     id: request_path
-    pages: "/posts\r\n/posts/news-articles\r\n/posts/employee-announcements\r\n/posts/career-spotlights\r\n/posts/executive-messages"
+    pages: "/posts\r\n/posts/news-articles\r\n/posts/employee-announcements\r\n/posts/career-spotlights\r\n/posts/executive-messages\r\n/posts/executive-blog"
     negate: false
     context_mapping: {  }

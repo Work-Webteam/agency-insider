@@ -9,7 +9,7 @@ _core:
 id: agency_theme_local_tasks
 theme: agency_theme
 region: content
-weight: -13
+weight: -14
 provider: null
 plugin: local_tasks_block
 settings:

@@ -117,9 +117,6 @@ h1.js-quickedit-page-title,
   color: #416eac;
   font-size: 16px;
 }
-.path-node .node--type-post .node__meta span .author {
-  display: none;
-}
 .path-taxonomy .content img {
   width: 100%;
   height: auto;
