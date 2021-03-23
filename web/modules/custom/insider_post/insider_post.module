@@ -1,0 +1,42 @@
+<?php
+
+/**
+ * @file
+ * Contains insider_post.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function insider_post_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the insider_post module.
+    case 'help.page.insider_post':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Manages post content custom alterations.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+
+/**
+ * Implements hook_form_BASE_FORM_ID_alter().
+ *
+ * We want to force a selection and hide the options for bloggers in this content type.
+ */
+function insider_post_form_node_post_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  $current_user_roles = \Drupal::currentUser()->getRoles();
+  if (in_array('executive_blogger', $current_user_roles, false)) {
+    // '28' is the taxonomy key for Executive Blog.
+    $form['field_post_category']['widget']['#default_value'] = '28';
+    // Hide the ability to change this.
+    $form['field_post_category']['#access'] = false;
+  }
+}
+
+

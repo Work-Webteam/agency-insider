@@ -1,0 +1,5 @@
+name: 'insider_post'
+type: module
+description: 'Manages post content custom alterations.'
+core: 8.x
+package: 'Insider'
