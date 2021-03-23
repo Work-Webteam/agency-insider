@@ -8,13 +8,10 @@ dependencies:
     - field.field.node.post.field_carousel_photo
     - field.field.node.post.field_comments
     - field.field.node.post.field_content
-    - field.field.node.post.field_introduction
     - field.field.node.post.field_media_featured_photo
-    - field.field.node.post.field_media_post_thumbnail
     - field.field.node.post.field_post_category
     - field.field.node.post.field_sidebar_image
     - field.field.node.post.field_sidebar_text
-    - field.field.node.post.field_subtitle
     - field.field.node.post.field_title
     - node.type.post
   module:
@@ -51,21 +48,6 @@ content:
     third_party_settings: {  }
     type: text_default
     region: content
-  field_introduction:
-    weight: 1
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    type: text_default
-    region: content
-  field_subtitle:
-    weight: 0
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
-    region: content
   field_title:
     type: string
     weight: 11
@@ -88,7 +70,6 @@ hidden:
   field_carousel_photo: true
   field_image: true
   field_media_featured_photo: true
-  field_media_post_thumbnail: true
   field_post_category: true
   field_sidebar_image: true
   field_sidebar_text: true
