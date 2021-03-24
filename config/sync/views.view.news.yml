@@ -11,6 +11,7 @@ dependencies:
     - taxonomy.vocabulary.post_category
   content:
     - 'taxonomy_term:post_category:24824316-19d3-4724-b9b1-8a48bbbc8fa6'
+    - 'taxonomy_term:post_category:3c6c4bcd-6b13-482a-a19b-e28d29361c7d'
     - 'taxonomy_term:post_category:65c78a32-1660-4ae5-8536-dc82f92b0907'
     - 'taxonomy_term:post_category:ab73bbe2-30ee-40a8-badc-7363f9144140'
   module:
@@ -756,6 +757,7 @@ display:
           admin_label: ''
           operator: or
           value:
+            28: 28
             17: 17
             9: 9
             11: 11

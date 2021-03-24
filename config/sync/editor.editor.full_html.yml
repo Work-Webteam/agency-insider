@@ -34,8 +34,9 @@ settings:
         -
           name: Linking
           items:
-            - DrupalLink
-            - DrupalUnlink
+            - Link
+            - Unlink
+            - Anchor
             - Styles
         -
           name: Lists

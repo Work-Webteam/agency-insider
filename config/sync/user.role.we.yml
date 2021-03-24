@@ -39,3 +39,4 @@ permissions:
   - 'view page revisions'
   - 'view post access counter'
   - 'view terms in division'
+  - 'view the administration theme'

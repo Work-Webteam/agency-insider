@@ -1,0 +1,14 @@
+uuid: d491dea9-d08b-42b5-8540-df605b06df6a
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.executive_blogger
+  module:
+    - user
+id: user_remove_role_action.executive_blogger
+label: 'Remove the Executive Blogger role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: executive_blogger

@@ -28,3 +28,4 @@ user_register_original: admin_only
 debug: false
 _core:
   default_config_hash: fPCoBRYteR1ap65-uyiOnDqj3D7BwiPs9gIncXm48NM
+user_initial_url: /sites/default/files/PSA_Insider_Intranet_Banner_2.jpg
