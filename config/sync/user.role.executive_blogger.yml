@@ -1,0 +1,14 @@
+uuid: 4edc95b2-652a-4783-b535-d13b31c01548
+langcode: en
+status: true
+dependencies: {  }
+id: executive_blogger
+label: 'Executive Blogger'
+weight: 5
+is_admin: null
+permissions:
+  - 'access toolbar'
+  - 'create post content'
+  - 'edit own post content'
+  - 'use text format full_html'
+  - 'view the administration theme'
