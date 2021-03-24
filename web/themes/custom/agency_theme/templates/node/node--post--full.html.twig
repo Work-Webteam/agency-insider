@@ -93,7 +93,8 @@
             <div class="author">
               {# We only show authors for blogs. #}
               {% if node.field_post_category and node.field_post_category.value.0.target_id == "28" %}
-                {% trans %}by {{ author_name }}{% endtrans %}
+                {% set idir = node.getOwner.name.value %}
+                {% trans %}by <a href="/executive-team#{{ idir }}">{{ node.getOwner.field_full_name.value }}</a>{% endtrans %}
               {% endif %}
             </div>
             <div class="date">

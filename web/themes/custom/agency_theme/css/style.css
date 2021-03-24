@@ -1,3 +1,13 @@
+/* Fade effect */
+@keyframes bluefade {
+  from {
+    background: cornflowerblue;
+  }
+  to {
+    background: transparent;
+  }
+}
+
 /*Structure*/
 ul.sf-menu a,
 ul.sf-menu span.nolink {
@@ -8,6 +18,15 @@ a {
 }
 a:hover {
   color: #1663b4;
+}
+a:not([tabindex]):not([href]) {
+  display: block;
+  position: relative;
+  top: -250px;
+  visibility: hidden;
+}
+.animate-h5 {
+  animation: bluefade 2s;
 }
 img {
   max-width: 100%;
@@ -1139,10 +1158,9 @@ ul.sf-menu.sf-navbar.sf-shadow ul ul li {
   margin: 18px;
 }
 .views-field-field-full-name a {
-  color:#666666;
-  display:block;
-  width:15
-  0px;
+  color: #666666;
+  display: block;
+  width: 150px;
   text-align: center;
 }
 #slick-views-news-block-1-1-slider .slick__slide .slide__caption {

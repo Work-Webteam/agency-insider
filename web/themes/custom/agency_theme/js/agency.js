@@ -18,7 +18,7 @@
     }
   };
 
-  // Create interaction between Bottstrap and superfish menus.
+  // Create interaction between Bootstrap and superfish menus.
   $('#navigation-trigger').click(function () {
     $('#superfish-header-navigation-toggle').trigger('click');
   });
@@ -75,6 +75,11 @@
       $(this).css('height', height + 'px');
     });
 
+    // Want to highlight element if anchor tag is present.
+    let thisId = window.location.hash.substr(1);
+    if (thisId.length > 0) {
+      $("#" + thisId).closest('h5').addClass('animate-h5');
+    }
   });
 
   $(window).resize(function() {
