@@ -59,6 +59,12 @@ settings:
           items:
             - ShowBlocks
             - Source
+        -
+          name: Paste
+          items:
+            - PasteText
+            - Paste
+            - PasteFromWord
   plugins:
     drupallink:
       linkit_enabled: true

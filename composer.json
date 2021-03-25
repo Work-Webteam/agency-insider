@@ -9,12 +9,354 @@
             "role": ""
         }
     ],
-    "repositories": [
-        {
+    "repositories": {
+        "0": {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
         },
-        {
+        "algolia.places": {
+            "_webform": true,
+            "type": "package",
+            "package": {
+                "name": "algolia/places",
+                "version": "1.19.0",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "algolia.places"
+                },
+                "dist": {
+                    "url": "https://registry.npmjs.org/places.js/-/places.js-1.19.0.tgz",
+                    "type": "tar"
+                },
+                "require": {
+                    "composer/installers": "~1.0"
+                }
+            }
+        },
+        "ckeditor.autogrow": {
+            "_webform": true,
+            "type": "package",
+            "package": {
+                "name": "ckeditor/autogrow",
+                "version": "4.14.1",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "ckeditor.autogrow"
+                },
+                "dist": {
+                    "url": "https://download.ckeditor.com/autogrow/releases/autogrow_4.14.1.zip",
+                    "type": "zip"
+                },
+                "require": {
+                    "composer/installers": "~1.0"
+                }
+            }
+        },
+        "ckeditor.codemirror": {
+            "_webform": true,
+            "type": "package",
+            "package": {
+                "name": "ckeditor/codemirror",
+                "version": "v1.17.12",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "ckeditor.codemirror"
+                },
+                "dist": {
+                    "url": "https://github.com/w8tcha/CKEditor-CodeMirror-Plugin/releases/download/v1.17.12/CKEditor-CodeMirror-Plugin.zip",
+                    "type": "zip"
+                },
+                "require": {
+                    "composer/installers": "~1.0"
+                }
+            }
+        },
+        "ckeditor.fakeobjects": {
+            "_webform": true,
+            "type": "package",
+            "package": {
+                "name": "ckeditor/fakeobjects",
+                "version": "4.14.1",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "ckeditor.fakeobjects"
+                },
+                "dist": {
+                    "url": "https://download.ckeditor.com/fakeobjects/releases/fakeobjects_4.14.1.zip",
+                    "type": "zip"
+                },
+                "require": {
+                    "composer/installers": "~1.0"
+                }
+            }
+        },
+        "ckeditor.image": {
+            "_webform": true,
+            "type": "package",
+            "package": {
+                "name": "ckeditor/image",
+                "version": "4.14.1",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "ckeditor.image"
+                },
+                "dist": {
+                    "url": "https://download.ckeditor.com/image/releases/image_4.14.1.zip",
+                    "type": "zip"
+                },
+                "require": {
+                    "composer/installers": "~1.0"
+                }
+            }
+        },
+        "ckeditor.link": {
+            "_webform": true,
+            "type": "package",
+            "package": {
+                "name": "ckeditor/link",
+                "version": "4.14.1",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "ckeditor.link"
+                },
+                "dist": {
+                    "url": "https://download.ckeditor.com/link/releases/link_4.14.1.zip",
+                    "type": "zip"
+                },
+                "require": {
+                    "composer/installers": "~1.0"
+                }
+            }
+        },
+        "codemirror": {
+            "_webform": true,
+            "type": "package",
+            "package": {
+                "name": "codemirror/codemirror",
+                "version": "5.53.2",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "codemirror"
+                },
+                "dist": {
+                    "url": "https://github.com/components/codemirror/archive/5.53.2.zip",
+                    "type": "zip"
+                },
+                "require": {
+                    "composer/installers": "~1.0"
+                }
+            }
+        },
+        "jquery.inputmask": {
+            "_webform": true,
+            "type": "package",
+            "package": {
+                "name": "jquery/inputmask",
+                "version": "5.0.5",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "jquery.inputmask"
+                },
+                "dist": {
+                    "url": "https://github.com/RobinHerbots/jquery.inputmask/archive/5.0.5.zip",
+                    "type": "zip"
+                },
+                "require": {
+                    "composer/installers": "~1.0"
+                }
+            }
+        },
+        "jquery.intl-tel-input": {
+            "_webform": true,
+            "type": "package",
+            "package": {
+                "name": "jquery/intl-tel-input",
+                "version": "16.1.0",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "jquery.intl-tel-input"
+                },
+                "dist": {
+                    "url": "https://github.com/jackocnr/intl-tel-input/archive/v16.1.0.zip",
+                    "type": "zip"
+                },
+                "require": {
+                    "composer/installers": "~1.0"
+                }
+            }
+        },
+        "jquery.rateit": {
+            "_webform": true,
+            "type": "package",
+            "package": {
+                "name": "jquery/rateit",
+                "version": "1.1.3",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "jquery.rateit"
+                },
+                "dist": {
+                    "url": "https://github.com/gjunge/rateit.js/archive/1.1.3.zip",
+                    "type": "zip"
+                },
+                "require": {
+                    "composer/installers": "~1.0"
+                }
+            }
+        },
+        "jquery.select2": {
+            "_webform": true,
+            "type": "package",
+            "package": {
+                "name": "jquery/select2",
+                "version": "4.0.13",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "jquery.select2"
+                },
+                "dist": {
+                    "url": "https://github.com/select2/select2/archive/4.0.13.zip",
+                    "type": "zip"
+                },
+                "require": {
+                    "composer/installers": "~1.0"
+                }
+            }
+        },
+        "jquery.textcounter": {
+            "_webform": true,
+            "type": "package",
+            "package": {
+                "name": "jquery/textcounter",
+                "version": "0.9.0",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "jquery.textcounter"
+                },
+                "dist": {
+                    "url": "https://github.com/ractoon/jQuery-Text-Counter/archive/0.9.0.zip",
+                    "type": "zip"
+                },
+                "require": {
+                    "composer/installers": "~1.0"
+                }
+            }
+        },
+        "jquery.timepicker": {
+            "_webform": true,
+            "type": "package",
+            "package": {
+                "name": "jquery/timepicker",
+                "version": "1.13.14",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "jquery.timepicker"
+                },
+                "dist": {
+                    "url": "https://github.com/jonthornton/jquery-timepicker/archive/1.13.14.zip",
+                    "type": "zip"
+                },
+                "require": {
+                    "composer/installers": "~1.0"
+                }
+            }
+        },
+        "progress-tracker": {
+            "_webform": true,
+            "type": "package",
+            "package": {
+                "name": "progress-tracker/progress-tracker",
+                "version": "2.0.6",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "progress-tracker"
+                },
+                "dist": {
+                    "url": "https://github.com/NigelOToole/progress-tracker/archive/2.0.6.zip",
+                    "type": "zip"
+                },
+                "require": {
+                    "composer/installers": "~1.0"
+                }
+            }
+        },
+        "signature_pad": {
+            "_webform": true,
+            "type": "package",
+            "package": {
+                "name": "signature_pad/signature_pad",
+                "version": "2.3.0",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "signature_pad"
+                },
+                "dist": {
+                    "url": "https://github.com/szimek/signature_pad/archive/v2.3.0.zip",
+                    "type": "zip"
+                },
+                "require": {
+                    "composer/installers": "~1.0"
+                }
+            }
+        },
+        "svg-pan-zoom": {
+            "_webform": true,
+            "type": "package",
+            "package": {
+                "name": "svg-pan-zoom/svg-pan-zoom",
+                "version": "3.6.1",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "svg-pan-zoom"
+                },
+                "dist": {
+                    "url": "https://github.com/ariutta/svg-pan-zoom/archive/3.6.1.zip",
+                    "type": "zip"
+                },
+                "require": {
+                    "composer/installers": "~1.0"
+                }
+            }
+        },
+        "tabby": {
+            "_webform": true,
+            "type": "package",
+            "package": {
+                "name": "tabby/tabby",
+                "version": "12.0.3",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "tabby"
+                },
+                "dist": {
+                    "url": "https://github.com/cferdinandi/tabby/archive/v12.0.3.zip",
+                    "type": "zip"
+                },
+                "require": {
+                    "composer/installers": "~1.0"
+                }
+            }
+        },
+        "tippyjs/5.x": {
+            "_webform": true,
+            "type": "package",
+            "package": {
+                "name": "tippyjs/5.x",
+                "version": "5.2.1",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "tippyjs/5.x"
+                },
+                "dist": {
+                    "url": "https://unpkg.com/tippy.js@5.2.1/dist/tippy-bundle.iife.min.js",
+                    "type": "file"
+                },
+                "require": {
+                    "composer/installers": "~1.0"
+                }
+            }
+        },
+        "1": {
             "type": "package",
             "package": {
                 "name": "dinbror/blazy",
@@ -26,7 +368,7 @@
                 }
             }
         },
-        {
+        "2": {
             "type": "package",
             "package": {
                 "name": "kenwheeler/slick",
@@ -38,101 +380,119 @@
                 }
             }
         },
-	{
-	  "type": "path",
-	  "url": "web/modules/custom/insider_events"
-	}
-    ],
+        "3": {
+            "type": "path",
+            "url": "web/modules/custom/insider_events"
+        }
+    },
     "require": {
+        "algolia/places": "*",
+        "ckeditor/autogrow": "*",
+        "ckeditor/codemirror": "*",
+        "ckeditor/fakeobjects": "*",
+        "ckeditor/image": "*",
+        "ckeditor/link": "*",
+        "codemirror/codemirror": "*",
         "composer/installers": "^1.0",
         "cweagans/composer-patches": "^1.5.0",
-        "wikimedia/composer-merge-plugin": "^1.4",
-        "drupal/flags": "^1.0@beta",
-        "drupal/flags_ui": "^1.0@beta",
-        "drupal/interval": "^1.7",
+        "dinbror/blazy": "1.8.2",
         "drupal/address": "^1.7",
-        "drupal/bootstrap": "^3.20",
-        "drupal/bootstrap_library": "^1.11",
-        "drupal/adminimal_theme": "^1.5",
+        "drupal/addtocal": "^1.0",
         "drupal/addtocalendar": "^3.1",
+        "drupal/admin_toolbar": "^2.0",
+        "drupal/adminimal_admin_toolbar": "^1.11",
+        "drupal/adminimal_theme": "^1.5",
+        "drupal/anchor_link": "^2.5",
+        "drupal/asset_injector": "^2.4",
         "drupal/backup_migrate": "^5.0",
         "drupal/blazy": "^2.0",
+        "drupal/block_class": "^1.2",
+        "drupal/bootstrap": "^3.20",
+        "drupal/bootstrap_barrio": "4.x-dev",
         "drupal/bootstrap_layouts": "^5.1",
+        "drupal/bootstrap_library": "^1.11",
+        "drupal/calendar_datetime": "^1.0@alpha",
+        "drupal/console": "^1.9",
+        "drupal/core-composer-scaffold": "^8",
         "drupal/ctools": "^3.2",
+        "drupal/devel": "^2.11",
         "drupal/ds": "^3.8",
+        "drupal/easy_breadcrumb": "^1.12",
+        "drupal/easy_install": "^10.2",
+        "drupal/editor_advanced_link": "^1.7",
+        "drupal/entity": "^1.2",
+        "drupal/externalauth": "^1.3",
         "drupal/flag": "^4.0@alpha",
+        "drupal/flags": "^1.0@beta",
+        "drupal/flags_ui": "^1.0@beta",
+        "drupal/focal_point": "^1.2",
+        "drupal/fullcalendar_view": "^5.0",
         "drupal/hierarchical_taxonomy_menu": "^1.40",
+        "drupal/inline_entity_form": "^1.0@RC",
+        "drupal/interval": "^1.7",
+        "drupal/kint": "^2.1",
         "drupal/libraries": "^3.0@alpha",
+        "drupal/linkit": "^6.0",
+        "drupal/media_entity_file_replace": "^1.0@beta",
         "drupal/menu_block": "^1.6",
+        "drupal/menu_link_attributes": "^1.0",
         "drupal/menu_trail_by_path": "^1.1",
+        "drupal/mimemail": "^1.0",
+        "drupal/optional_end_date": "^1.1",
         "drupal/paragraphs": "^1.9",
         "drupal/pathauto": "^1.8",
+        "drupal/poll": "^1.2",
+        "drupal/postal_code": "1.x-dev",
+        "drupal/profile": "^1.0",
+        "drupal/rabbit_hole": "^1.0",
+        "drupal/recurring_period": "^1.0@alpha",
         "drupal/redirect": "^1.4",
         "drupal/rules": "^3.0",
+        "drupal/scheduler": "^1.1",
         "drupal/shortcutperrole": "^1.0@RC",
+        "drupal/simple_sitemap": "^3.4",
+        "drupal/simplenews": "^2.0",
+        "drupal/sitemap": "^1.5",
+        "drupal/smart_date": "^3.1",
+        "drupal/smart_date_calendar_kit": "^2.0",
+        "drupal/smart_date_starter_kit": "^2.0",
+        "drupal/state_machine": "^1.0@RC",
+        "drupal/structure_sync": "^2.0",
         "drupal/superfish": "^1.3",
         "drupal/taxonomy_access_fix": "^3.0",
         "drupal/taxonomy_menu": "^3.4",
         "drupal/token": "^1.7",
+        "drupal/twig_tweak": "^2.9",
         "drupal/typed_data": "^1.0",
-        "drupal/views_extras": "^1.1",
-        "drupal/views_templates": "^1.0@alpha",
-        "drupal/admin_toolbar": "^2.0",
-        "dinbror/blazy": "1.8.2",
-        "drupal/adminimal_admin_toolbar": "^1.11",
-        "drupal/structure_sync": "^2.0",
-        "drupal/poll": "^1.2",
-        "drupal/scheduler": "^1.1",
-        "drupal/views_bootstrap": "^4.1",
-        "drupal/bootstrap_barrio": "4.x-dev",
-        "drupal/block_class": "^1.2",
-        "drupal/easy_breadcrumb": "^1.12",
-        "drupal/views_taxonomy_term_name_into_id": "^1.0",
-        "drupal/simplenews": "^2.0",
-        "drupal/mimemail": "^1.0",
-        "drupal/optional_end_date": "^1.1",
-        "drupal/rabbit_hole": "^1.0",
-        "drupal/editor_advanced_link": "^1.7",
-        "drupal/menu_link_attributes": "^1.0",
-        "drupal/entity": "^1.2",
-        "drupal/profile": "^1.0",
-        "drupal/inline_entity_form": "^1.0@RC",
-        "drupal/focal_point": "^1.2",
-        "drupal/linkit": "^6.0",
-        "drupal/simple_sitemap": "^3.4",
-        "drupal/sitemap": "^1.5",
-        "drupal/asset_injector": "^2.4",
         "drupal/ultimate_cron": "^2.0",
-        "drupal/postal_code": "1.x-dev",
-        "drupal/externalauth": "^1.3",
-        "symfony/debug": "3.4.9",
+        "drupal/views_bootstrap": "^4.1",
+        "drupal/views_extras": "^1.1",
+        "drupal/views_taxonomy_term_name_into_id": "^1.0",
+        "drupal/views_templates": "^1.0@alpha",
+        "drupal/webform": "^6.0",
         "drush/drush": "9.x",
-        "symfony/filesystem": "~3.0",
-        "symfony/config": "3.4.9",
-        "symfony/dom-crawler": "^3.4",
-        "drupal/console": "^1.9",
+        "jquery/inputmask": "*",
+        "jquery/intl-tel-input": "*",
+        "jquery/rateit": "*",
+        "jquery/select2": "*",
+        "jquery/textcounter": "*",
+        "jquery/timepicker": "*",
         "laminas/laminas-diactoros": "^1.8",
         "laminas/laminas-escaper": "^2.6",
         "laminas/laminas-feed": "^2.12",
         "laminas/laminas-stdlib": "^3.2",
-        "drupal/state_machine": "^1.0@RC",
-        "drupal/easy_install": "^10.2",
-        "drupal/fullcalendar_view": "^5.0",
-        "drupal/calendar_datetime": "^1.0@alpha",
-        "drupal/recurring_period": "^1.0@alpha",
-        "drupal/smart_date": "^3.1",
-        "drupal/smart_date_calendar_kit": "^2.0",
-        "drupal/addtocal": "^1.0",
         "liliumdev/icalendar": "^0.1.0",
         "pie/insider_events": "dev-INS-47_iCal_integration",
-        "drupal/smart_date_starter_kit": "^2.0",
-        "drupal/media_entity_file_replace": "^1.0@beta",
-        "drupal/core-composer-scaffold": "^8",
-        "drupal/devel": "^2.11",
-        "drupal/kint": "^2.1",
-        "drupal/webform": "^6.0",
-        "drupal/twig_tweak": "^2.9",
-        "drupal/anchor_link": "^2.5"
+        "progress-tracker/progress-tracker": "*",
+        "signature_pad/signature_pad": "*",
+        "svg-pan-zoom/svg-pan-zoom": "*",
+        "symfony/config": "3.4.9",
+        "symfony/debug": "3.4.9",
+        "symfony/dom-crawler": "^3.4",
+        "symfony/filesystem": "~3.0",
+        "tabby/tabby": "*",
+        "tippyjs/5.x": "*",
+        "wikimedia/composer-merge-plugin": "^1.4"
     },
     "require-dev": {
         "neronmoon/scriptsdev": "^0.1.0",
@@ -155,10 +515,10 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "config": {
-      "bin-dir": "vendor/bin/",
-      "platform": {
-        "php": "7.2.19"
-      }
+        "bin-dir": "vendor/bin/",
+        "platform": {
+            "php": "7.2.19"
+        }
     },
     "extra": {
         "drupal-scaffold": {
@@ -167,27 +527,41 @@
             }
         },
         "installer-paths": {
-            "web/core": ["type:drupal-core"],
-            "web/modules/contrib/{$name}": ["type:drupal-module"],
-            "web/profiles/contrib/{$name}": ["type:drupal-profile"],
-            "web/themes/contrib/{$name}": ["type:drupal-theme"],
-            "web/libraries/{$name}": ["type:drupal-library"],
-            "drush/contrib/{$name}": ["type:drupal-drush"],
-	        "web": ["type:web-root"]
+            "web/core": [
+                "type:drupal-core"
+            ],
+            "web/modules/contrib/{$name}": [
+                "type:drupal-module"
+            ],
+            "web/profiles/contrib/{$name}": [
+                "type:drupal-profile"
+            ],
+            "web/themes/contrib/{$name}": [
+                "type:drupal-theme"
+            ],
+            "web/libraries/{$name}": [
+                "type:drupal-library"
+            ],
+            "drush/contrib/{$name}": [
+                "type:drupal-drush"
+            ],
+            "web": [
+                "type:web-root"
+            ]
         },
         "patches": {
-          "drupal/core": {
-           "Call to a member function transformDimensions() on null in template_preprocess": "https://www.drupal.org/files/issues/2018-04-04/2957368_0.patch"
-	  },
-	 "drupal/openid_connect": {
-	   "form_state passed as param to authorize method but never used": "https://www.drupal.org/files/issues/2019-12-02/form-state-authorize-method-1.0-beta5.patch"
-	  },
-	  "drupal/smart_date": {
-	    "Patch to integrate smart date with fullcalendar view.": "https://www.drupal.org/files/issues/2020-06-04/smart_date-support_old_and_new_fcv-3145989-3.patch"
-	  },
-	  "drupal/rules": {
-	    "Patch to address rules issue where options were disappearing from blocks.": "https://www.drupal.org/files/issues/2020-07-23/2927132-15-remove-other-conditions-from-ui.patch"
-	  }
+            "drupal/core": {
+                "Call to a member function transformDimensions() on null in template_preprocess": "https://www.drupal.org/files/issues/2018-04-04/2957368_0.patch"
+            },
+            "drupal/openid_connect": {
+                "form_state passed as param to authorize method but never used": "https://www.drupal.org/files/issues/2019-12-02/form-state-authorize-method-1.0-beta5.patch"
+            },
+            "drupal/smart_date": {
+                "Patch to integrate smart date with fullcalendar view.": "https://www.drupal.org/files/issues/2020-06-04/smart_date-support_old_and_new_fcv-3145989-3.patch"
+            },
+            "drupal/rules": {
+                "Patch to address rules issue where options were disappearing from blocks.": "https://www.drupal.org/files/issues/2020-07-23/2927132-15-remove-other-conditions-from-ui.patch"
+            }
         },
         "enable-patching": true
     }

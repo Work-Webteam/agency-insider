@@ -12,12 +12,10 @@ dependencies:
     - field.field.node.post.field_sidebar_image
     - field.field.node.post.field_sidebar_text
     - field.field.node.post.field_title
-    - image.style.thumbnail
     - node.type.post
   module:
     - comment
     - file
-    - image
     - media_library
     - path
     - scheduler
@@ -29,12 +27,12 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 14
+    weight: 11
     region: content
     settings: {  }
     third_party_settings: {  }
   field_attachments:
-    weight: 11
+    weight: 8
     settings:
       progress_indicator: throbber
     third_party_settings: {  }
@@ -42,19 +40,19 @@ content:
     region: content
   field_carousel_photo:
     type: media_library_widget
-    weight: 7
+    weight: 4
     settings:
       media_types: {  }
     third_party_settings: {  }
     region: content
   field_comments:
-    weight: 12
+    weight: 9
     settings: {  }
     third_party_settings: {  }
     type: comment_default
     region: content
   field_content:
-    weight: 3
+    weight: 1
     settings:
       rows: 5
       placeholder: ''
@@ -62,28 +60,27 @@ content:
     type: text_textarea
     region: content
   field_media_featured_photo:
-    weight: 5
+    weight: 3
     settings:
       media_types: {  }
     third_party_settings: {  }
     type: media_library_widget
     region: content
   field_post_category:
-    weight: 4
+    weight: 2
     settings: {  }
     third_party_settings: {  }
     type: options_buttons
     region: content
   field_sidebar_image:
-    weight: 10
+    type: media_library_widget
+    weight: 7
     settings:
-      progress_indicator: throbber
-      preview_image_style: thumbnail
+      media_types: {  }
     third_party_settings: {  }
-    type: image_image
     region: content
   field_sidebar_text:
-    weight: 9
+    weight: 6
     settings:
       rows: 5
       placeholder: ''
@@ -91,7 +88,7 @@ content:
     type: text_textarea
     region: content
   field_title:
-    weight: 8
+    weight: 5
     settings:
       size: 60
       placeholder: ''
@@ -99,13 +96,13 @@ content:
     type: string_textfield
     region: content
   flag:
-    weight: 16
+    weight: 13
     region: content
     settings: {  }
     third_party_settings: {  }
   path:
     type: path
-    weight: 18
+    weight: 15
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -113,12 +110,12 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 15
+    weight: 12
     region: content
     third_party_settings: {  }
   publish_on:
     type: datetime_timestamp_no_default
-    weight: 22
+    weight: 19
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -126,14 +123,14 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 20
+    weight: 17
     region: content
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 17
+    weight: 14
     region: content
     third_party_settings: {  }
   title:
@@ -146,7 +143,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 13
+    weight: 10
     settings:
       match_operator: CONTAINS
       size: 60
@@ -156,17 +153,14 @@ content:
     third_party_settings: {  }
   unpublish_on:
     type: datetime_timestamp_no_default
-    weight: 21
+    weight: 18
     region: content
     settings: {  }
     third_party_settings: {  }
   url_redirects:
-    weight: 19
+    weight: 16
     region: content
     settings: {  }
     third_party_settings: {  }
 hidden:
   field_image: true
-  field_sidebar_image: true
-  field_sidebar_text: true
-  field_title: true

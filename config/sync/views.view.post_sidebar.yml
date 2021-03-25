@@ -6,11 +6,11 @@ dependencies:
     - field.storage.node.field_sidebar_image
     - field.storage.node.field_sidebar_text
     - field.storage.node.field_title
+    - image.style.max_325x325
     - node.type.post
-    - responsive_image.styles.narrow
   module:
+    - media
     - node
-    - responsive_image
     - text
     - user
 id: post_sidebar
@@ -170,15 +170,15 @@ display:
           element_wrapper_class: ''
           element_default_classes: true
           empty: ''
-          hide_empty: true
+          hide_empty: false
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: target_id
-          type: responsive_image
+          type: media_thumbnail
           settings:
-            responsive_image_style: narrow
+            image_style: max_325x325
             image_link: ''
-          group_column: ''
+          group_column: target_id
           group_columns: {  }
           group_rows: true
           delta_limit: 0
