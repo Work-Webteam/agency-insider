@@ -2466,3 +2466,11 @@ body.path-webform .main-container .webform-multiple-add .input-group-text {
   display: block;
   margin-top: -5px;
 }
+
+header#navbar-main.navbar {
+  display: flow-root;
+}
+.row {
+  margin-left: 0px;
+  margin-right: 0px;
+}
