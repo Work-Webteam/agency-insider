@@ -61,6 +61,14 @@ footer .region-footer {
   width: 100%;
   margin: 0;
 }
+footer.footer.container-fluid {
+  position: relative;
+}
+footer.footer.container-fluid #block-footerimage {
+  position: absolute;
+  right: 15px;
+  bottom: 0px;
+}
 
 body {
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#65e4f2+0,2989d8+70,207cca+89,1e5799+100,1e5799+100 */
