@@ -38,7 +38,6 @@ permissions:
   - 'subscribe to newsletters'
   - 'update any media'
   - 'use text format basic_html'
-  - 'use text format full_html'
   - 'view media'
   - 'view paragraph content landing_page_sidebar'
   - 'view terms in division'

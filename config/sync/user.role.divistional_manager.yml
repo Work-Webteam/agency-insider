@@ -15,5 +15,6 @@ permissions:
   - 'delete media'
   - 'edit terms in division'
   - 'update any media'
+  - 'use text format basic_html'
   - 'use text format full_html'
   - 'view terms in division'

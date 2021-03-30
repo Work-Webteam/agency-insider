@@ -32,6 +32,7 @@ permissions:
   - 'revert events revisions'
   - 'revert page revisions'
   - 'update any media'
+  - 'use text format basic_html'
   - 'use text format full_html'
   - 'use text format raw_code'
   - 'view article revisions'
