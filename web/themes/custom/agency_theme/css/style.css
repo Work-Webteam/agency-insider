@@ -2474,3 +2474,6 @@ header#navbar-main.navbar {
   margin-left: 0px;
   margin-right: 0px;
 }
+.block-superfish {
+  width: auto;
+}
