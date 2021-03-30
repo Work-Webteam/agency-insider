@@ -2468,7 +2468,7 @@ body.path-webform .main-container .webform-multiple-add .input-group-text {
 }
 
 header#navbar-main.navbar {
-  display: flow-root;
+  display: inline;
 }
 .row {
   margin-left: 0px;
