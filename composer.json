@@ -492,7 +492,8 @@
         "symfony/filesystem": "~3.0",
         "tabby/tabby": "*",
         "tippyjs/5.x": "*",
-        "wikimedia/composer-merge-plugin": "^1.4"
+        "wikimedia/composer-merge-plugin": "^1.4",
+        "drupal/maxlength": "^1.0@RC"
     },
     "require-dev": {
         "neronmoon/scriptsdev": "^0.1.0",
