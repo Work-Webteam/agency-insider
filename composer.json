@@ -493,7 +493,8 @@
         "tabby/tabby": "*",
         "tippyjs/5.x": "*",
         "wikimedia/composer-merge-plugin": "^1.4",
-        "drupal/maxlength": "^1.0@RC"
+        "drupal/maxlength": "^1.0@RC",
+        "drupal/exif_orientation": "^1.1"
     },
     "require-dev": {
         "neronmoon/scriptsdev": "^0.1.0",

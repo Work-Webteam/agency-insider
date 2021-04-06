@@ -36,6 +36,7 @@ module:
   editor_advanced_link: 0
   entity: 0
   entity_reference_revisions: 0
+  exif_orientation: 0
   fakeobjects: 0
   field: 0
   field_ui: 0
