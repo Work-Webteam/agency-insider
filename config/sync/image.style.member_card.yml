@@ -1,7 +1,9 @@
 uuid: 75bd3ef4-8022-45f1-859a-8de6ec3c2351
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - image_effects
 name: member_card
 label: 'Member Card'
 effects:
@@ -13,3 +15,9 @@ effects:
       width: 360
       height: 360
       anchor: center-center
+  146c5f2d-2295-4038-a3b1-847267433cea:
+    uuid: 146c5f2d-2295-4038-a3b1-847267433cea
+    id: image_effects_auto_orient
+    weight: 2
+    data:
+      scan_exif: true

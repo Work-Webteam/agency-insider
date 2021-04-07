@@ -5,6 +5,8 @@ dependencies:
   enforced:
     module:
       - responsive_image
+  module:
+    - image_effects
 _core:
   default_config_hash: M-7xzqSFQjuAiL0BP9rHC3DbUi2HnaoD538wlFWsoc4
 name: max_2600x2600
@@ -18,3 +20,9 @@ effects:
       width: 2600
       height: 2600
       upscale: false
+  1bab7dc0-8bfe-4d9e-880d-c4beaf4b8a54:
+    uuid: 1bab7dc0-8bfe-4d9e-880d-c4beaf4b8a54
+    id: image_effects_auto_orient
+    weight: 2
+    data:
+      scan_exif: true

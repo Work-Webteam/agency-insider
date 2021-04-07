@@ -1,7 +1,9 @@
 uuid: a5fc97de-b11b-4784-940e-d94492e5fa5b
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - image_effects
 name: post
 label: Post
 effects:
@@ -13,3 +15,15 @@ effects:
       width: 240
       height: 240
       anchor: center-center
+  78b5e534-a07e-414a-8bab-21fe77fc702c:
+    uuid: 78b5e534-a07e-414a-8bab-21fe77fc702c
+    id: image_effects_auto_orient
+    weight: 2
+    data:
+      scan_exif: true
+  06876aca-9d43-466b-9c23-b901595d3c9a:
+    uuid: 06876aca-9d43-466b-9c23-b901595d3c9a
+    id: image_effects_auto_orient
+    weight: 3
+    data:
+      scan_exif: true

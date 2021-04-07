@@ -10,5 +10,6 @@ permissions:
   - 'access toolbar'
   - 'create post content'
   - 'edit own post content'
+  - 'rotate images'
   - 'use text format basic_html'
   - 'view the administration theme'

@@ -1,7 +1,9 @@
 uuid: b1d73f41-9d2d-4999-bedb-f49cebf28782
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - image_effects
 name: home_news
 label: 'Home News'
 effects:
@@ -21,3 +23,9 @@ effects:
       width: 1300
       height: 400
       anchor: center-center
+  dfdc6f1b-4e79-4a6e-bcab-e84f0366af78:
+    uuid: dfdc6f1b-4e79-4a6e-bcab-e84f0366af78
+    id: image_effects_auto_orient
+    weight: 3
+    data:
+      scan_exif: true

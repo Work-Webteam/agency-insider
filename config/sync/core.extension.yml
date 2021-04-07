@@ -36,11 +36,13 @@ module:
   editor_advanced_link: 0
   entity: 0
   entity_reference_revisions: 0
-  exif_orientation: 0
   fakeobjects: 0
   field: 0
   field_ui: 0
   file: 0
+  file_mdm: 0
+  file_mdm_exif: 0
+  file_mdm_font: 0
   filter: 0
   flag: 0
   flag_bookmark: 0
@@ -52,6 +54,7 @@ module:
   hierarchical_taxonomy_menu: 0
   history: 0
   image: 0
+  image_effects: 0
   inline_entity_form: 0
   insider_datatables: 0
   insider_events: 0

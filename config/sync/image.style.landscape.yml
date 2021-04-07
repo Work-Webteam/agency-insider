@@ -1,7 +1,9 @@
 uuid: 565c7609-c156-41d4-b7a6-db9e112ce6f3
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - image_effects
 name: landscape
 label: 'Landscape (1200×600)'
 effects:
@@ -13,3 +15,9 @@ effects:
       width: 1200
       height: 600
       anchor: center-center
+  f9ccd09c-f22d-4d9e-8f96-e16610e33921:
+    uuid: f9ccd09c-f22d-4d9e-8f96-e16610e33921
+    id: image_effects_auto_orient
+    weight: 2
+    data:
+      scan_exif: true

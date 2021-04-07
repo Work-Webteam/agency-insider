@@ -1,7 +1,9 @@
 uuid: ac696df5-706b-4501-97a8-970706ec55d5
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - image_effects
 _core:
   default_config_hash: CMuvuRCfGZ5k3XgsXmkEc54rI8etDY1Qz2JP7JzKL-g
 name: linkit_result_thumbnail
@@ -15,3 +17,9 @@ effects:
       width: 50
       height: 50
       anchor: center-center
+  230ad63d-c4e8-4801-9dfe-1d9309ca6b54:
+    uuid: 230ad63d-c4e8-4801-9dfe-1d9309ca6b54
+    id: image_effects_auto_orient
+    weight: 2
+    data:
+      scan_exif: true

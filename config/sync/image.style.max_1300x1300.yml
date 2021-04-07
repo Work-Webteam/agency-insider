@@ -5,6 +5,8 @@ dependencies:
   enforced:
     module:
       - responsive_image
+  module:
+    - image_effects
 _core:
   default_config_hash: xW1ApqbWjK7oCBCl8jVHA42u2MekQDq4gry3xfZzdWY
 name: max_1300x1300
@@ -18,3 +20,9 @@ effects:
       width: 1300
       height: 1300
       upscale: false
+  63b6e2c8-5a48-483e-bf03-cb35547376c9:
+    uuid: 63b6e2c8-5a48-483e-bf03-cb35547376c9
+    id: image_effects_auto_orient
+    weight: 2
+    data:
+      scan_exif: true

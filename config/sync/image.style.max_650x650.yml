@@ -5,6 +5,8 @@ dependencies:
   enforced:
     module:
       - responsive_image
+  module:
+    - image_effects
 _core:
   default_config_hash: MIWUEhKenWK-3vEZNN_FJwpmqggIZtfJ9LOLYryTqHI
 name: max_650x650
@@ -18,3 +20,9 @@ effects:
       width: 650
       height: 650
       upscale: false
+  f7681f47-882a-45fd-a462-57764d799600:
+    uuid: f7681f47-882a-45fd-a462-57764d799600
+    id: image_effects_auto_orient
+    weight: 2
+    data:
+      scan_exif: true

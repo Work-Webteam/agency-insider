@@ -1,7 +1,9 @@
 uuid: 0d3aa645-ac51-496d-a2c8-3080c67f512f
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - image_effects
 name: our_people
 label: 'Our People'
 effects:
@@ -29,3 +31,9 @@ effects:
       width: 150
       height: 150
       anchor: center-center
+  030315f8-d0c7-4a05-a248-dad2ab85bda3:
+    uuid: 030315f8-d0c7-4a05-a248-dad2ab85bda3
+    id: image_effects_auto_orient
+    weight: 4
+    data:
+      scan_exif: true

@@ -1,7 +1,9 @@
 uuid: 6b6744f0-eb61-4633-9285-f03ee210b2af
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - image_effects
 name: homepage_carousel
 label: 'Homepage carousel (650×800)'
 effects:
@@ -13,3 +15,9 @@ effects:
       width: 650
       height: 800
       anchor: center-center
+  8a704bc5-6cf5-40e8-ab4e-5824324a95f7:
+    uuid: 8a704bc5-6cf5-40e8-ab4e-5824324a95f7
+    id: image_effects_auto_orient
+    weight: 2
+    data:
+      scan_exif: true
