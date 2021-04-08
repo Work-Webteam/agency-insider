@@ -2477,3 +2477,20 @@ header#navbar-main.navbar {
 .block-superfish {
   width: auto;
 }
+
+/* For User Content Block */
+
+#block-views-block-content-block-1 {
+  margin-left: 10px;
+  margin-right: 10px;
+  vertical-align: top;
+  font-size: .9em;
+  padding: 15px;
+}
+#block-views-block-content-block-1 > div.content > div > div > div.view-content.row > div > table.table.cols-6.sticky-enabled.sticky-table {
+  background-color: #ececec;
+}
+
+#block-views-block-content-block-1 > div.content > div > div > div.view-content.row {
+  display: table;
+}

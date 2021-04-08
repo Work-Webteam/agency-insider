@@ -21,6 +21,7 @@ third_party_settings:
     unpublish_required: false
     unpublish_revision: false
     publish_past_date_created: false
+    show_message_after_update: true
 name: Post
 type: post
 description: 'Add a new Post.'

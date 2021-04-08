@@ -81,6 +81,7 @@ module:
   poll: 0
   postal_code: 0
   psa_updates: 0
+  publishcontent: 0
   quickedit: 0
   rabbit_hole: 0
   rdf: 0

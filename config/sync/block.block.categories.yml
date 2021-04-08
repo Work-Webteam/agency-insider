@@ -12,7 +12,7 @@ dependencies:
 id: categories
 theme: agency_theme
 region: sidebar_first
-weight: -13
+weight: -14
 provider: null
 plugin: 'menu_block:categories'
 settings:

@@ -496,7 +496,8 @@
         "drupal/maxlength": "^1.0@RC",
         "drupal/exif_orientation": "^1.1",
         "drupal/simple_image_rotate": "^2.1",
-        "drupal/image_effects": "^3.1"
+        "drupal/image_effects": "^3.1",
+        "drupal/publishcontent": "^1.2"
     },
     "require-dev": {
         "neronmoon/scriptsdev": "^0.1.0",

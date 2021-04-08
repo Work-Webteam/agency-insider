@@ -1,0 +1,42 @@
+uuid: db549453-1b5a-457f-9c94-8b49fb160dc3
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.content
+  module:
+    - system
+    - user
+    - views
+  theme:
+    - agency_theme
+id: views_block__content_block_1
+theme: agency_theme
+region: content
+weight: -3
+provider: null
+plugin: 'views_block:content-block_1'
+settings:
+  id: 'views_block:content-block_1'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+  context_mapping: {  }
+visibility:
+  request_path:
+    id: request_path
+    pages: '/user/*'
+    negate: false
+    context_mapping: {  }
+  user_role:
+    id: user_role
+    roles:
+      administrator: administrator
+      we: we
+      divistional_manager: divistional_manager
+      executive_blogger: executive_blogger
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
