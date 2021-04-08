@@ -11,6 +11,7 @@ permissions:
   - 'access files overview'
   - 'access taxonomy overview'
   - 'access toolbar'
+  - 'access user profiles'
   - 'add terms in division'
   - 'administer menu'
   - 'administer taxonomy'

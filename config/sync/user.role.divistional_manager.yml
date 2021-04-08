@@ -10,6 +10,7 @@ permissions:
   - 'access files overview'
   - 'access taxonomy overview'
   - 'access toolbar'
+  - 'access user profiles'
   - 'add terms in division'
   - 'create terms in division'
   - 'delete media'

@@ -8,11 +8,15 @@ weight: 5
 is_admin: null
 permissions:
   - 'access toolbar'
+  - 'access user profiles'
   - 'create post content'
+  - 'delete own post content'
   - 'edit own post content'
   - 'publish own node type post'
+  - 'revert post revisions'
   - 'rotate images'
   - 'unpublish own node type post'
   - 'use text format basic_html'
   - 'view own unpublished content'
+  - 'view post revisions'
   - 'view the administration theme'
