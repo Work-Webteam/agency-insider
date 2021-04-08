@@ -37,5 +37,6 @@ hidden:
   created: true
   field_media_folder: true
   path: true
+  replace_file: true
   status: true
   uid: true
