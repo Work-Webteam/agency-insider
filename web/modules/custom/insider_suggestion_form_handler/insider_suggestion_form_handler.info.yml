@@ -1,0 +1,5 @@
+name: 'Insider Suggestion Form Handler'
+description: 'Ensures that info submitted to the suggestion Webform is saved as anonymous.'
+package: 'Insider'
+type: module
+core: 8.x
