@@ -59,6 +59,7 @@ module:
   insider_datatables: 0
   insider_events: 0
   insider_post: 0
+  insider_suggestion_form_handler: 0
   layout_discovery: 0
   libraries: 0
   link: 0
