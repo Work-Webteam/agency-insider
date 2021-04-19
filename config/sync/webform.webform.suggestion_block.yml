@@ -119,7 +119,7 @@ settings:
   draft_pending_multiple_message: ''
   confirmation_type: page
   confirmation_title: ''
-  confirmation_message: "<span style=\"font-size:11pt\"><span style=\"line-height:107%\"><span style=\"font-family:Calibri,sans-serif\"><strong>Reactions successfully captured!</strong><br />\r\n<br />\r\nThanks for taking the time to offer your feedback. Learn more about <span style=\"color:red\">&lt;other <em>Catalyst</em> engagement opportunities.&gt;</span></span></span></span>"
+  confirmation_message: "<strong>Reactions successfully captured!</strong><br />\r\n<br />\r\nThanks for taking the time to offer your feedback. Learn more about <span style=\"color:red\">&lt;other <em>Catalyst</em> engagement opportunities</span>.<br />\r\n<br />\r\n<br />\r\n<a href=\"/\"><span class=\"btn btn-primary\" style=\"color:white\">Return Home</span></a>"
   confirmation_url: ''
   confirmation_attributes: {  }
   confirmation_back: false
