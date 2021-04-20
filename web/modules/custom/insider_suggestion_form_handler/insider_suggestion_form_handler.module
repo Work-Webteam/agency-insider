@@ -1,0 +1,25 @@
+<?php
+
+
+/**
+ * @file
+ * Contains insider_post.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function insider_suggestion_form_handler_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the insider_post module.
+    case 'help.page.insider_suggestion_form_handler':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Manages certain webforms if we want them to be posted anonymously.') . '</p>';
+      return $output;
+
+    default:
+  }
+}

@@ -35,8 +35,7 @@ class SaveAsAnonymousHandler extends WebformHandlerBase {
     // On submit, remove user association before we save -
     // so there is no record of who submitted this.
     $webform_submission->setOwnerId("0");
-    $webform_submission->save();
-
+    // $webform_submission->save();
     return TRUE;
   }
 
