@@ -16,7 +16,7 @@ class InsiderSuggestionFormHandlerLog extends BaseDbLog {
    * {@inheritdoc}
    */
   public function log($level, $message, array $context = array()) {
-    if ($context['channel'] !== 'webform' && strpos($message, 'created' !== TRUE)) {
+    if ($context['channel'] !== 'webform' && strpos($message, 'created') !== TRUE) {
       parent::log($level, $message, $context);
     }
   }
