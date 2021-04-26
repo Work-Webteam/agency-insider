@@ -23,3 +23,20 @@ function insider_suggestion_form_handler_help($route_name, RouteMatchInterface $
     default:
   }
 }
+
+
+/**
+ * Implements hook_form_alter().
+ */
+function insider_suggestion_form_handler_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  /* @var Drupal\Core\Entity\FieldableEntityInterface $entity */
+  $formObject = $form_state->getFormObject();
+  if ($formObject instanceof \Drupal\Core\Entity\EntityFormInterface) {
+    $entity = $formObject->getEntity();
+    if($entity->getEntityTypeId() == "webform_submission") {
+      ksm($entity->getEntityTypeId());
+      $form['#attached']['library'][] = 'insider_suggestion_form_handler/insider.text.format.fix';
+      ksm($form);
+    }
+  }
+}
