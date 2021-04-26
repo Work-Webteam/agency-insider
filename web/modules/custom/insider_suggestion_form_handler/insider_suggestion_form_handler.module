@@ -34,9 +34,7 @@ function insider_suggestion_form_handler_form_alter(&$form, \Drupal\Core\Form\Fo
   if ($formObject instanceof \Drupal\Core\Entity\EntityFormInterface) {
     $entity = $formObject->getEntity();
     if($entity->getEntityTypeId() == "webform_submission") {
-      ksm($entity->getEntityTypeId());
       $form['#attached']['library'][] = 'insider_suggestion_form_handler/insider.text.format.fix';
-      ksm($form);
     }
   }
 }
