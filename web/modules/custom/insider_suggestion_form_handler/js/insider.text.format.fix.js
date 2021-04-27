@@ -9,7 +9,7 @@
   'use strict';
 
   /**
-   * Filter webform autocomplete handler.
+   * Move description handler.
    *
    * @type {Drupal~behavior}
    */
