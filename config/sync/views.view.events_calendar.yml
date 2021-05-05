@@ -1132,8 +1132,8 @@ display:
           start: field_when
           end: field_when
           title: title
-          right_buttons: 'dayGridMonth,timeGridWeek,timeGridDay,listYear'
           left_buttons: 'prev,next today'
+          right_buttons: 'dayGridMonth,timeGridWeek,timeGridDay,listYear'
           default_view: dayGridMonth
           firstDay: '0'
           nav_links: 1
@@ -1146,6 +1146,7 @@ display:
           dialogWindow: 0
           openEntityInNewTab: 1
           createEventLink: 0
+          eventLimit: '2'
           tax_field: ''
           vocabularies: ''
           color_bundle:
@@ -1155,6 +1156,7 @@ display:
             post: '#3a87ad'
             simplenews_issue: '#3a87ad'
             team_member_model: '#3a87ad'
+            webform: '#3a87ad'
           rrule: ''
           duration: ''
           bundle_type: event

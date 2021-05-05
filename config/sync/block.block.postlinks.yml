@@ -25,9 +25,11 @@ settings:
   follow_parent: child
   level: 1
   depth: 1
-  expand: false
+  expand_all_items: false
   parent: 'post-links:'
   suggestion: post_links
+  label_type: block
+  label_link: false
 visibility:
   node_type:
     id: node_type

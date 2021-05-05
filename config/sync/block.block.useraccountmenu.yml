@@ -24,9 +24,11 @@ settings:
   follow_parent: child
   level: 1
   depth: 1
-  expand: false
+  expand_all_items: false
   parent: 'account:'
   suggestion: account
+  label_type: block
+  label_link: false
 visibility:
   user_role:
     id: user_role
