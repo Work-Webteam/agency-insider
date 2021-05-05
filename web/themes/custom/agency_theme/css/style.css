@@ -19,7 +19,8 @@ a {
 a:hover {
   color: #1663b4;
 }
-a:not([tabindex]):not([href]) {
+
+a:not([tabindex]):not([href]):not(.fc-day-number) {
   display: block;
   position: relative;
   top: -250px;
@@ -32,6 +33,7 @@ img {
   max-width: 100%;
   height: auto;
 }
+
 /**
  * General
  */
@@ -279,6 +281,16 @@ h1.js-quickedit-page-title,
 .taxonomy-term-division-form {
   padding:20px;
 }
+/* Calendar margins were causing weird gaps */
+div.js-drupal-fullcalendar table {
+  margin: 0px;
+}
+
+/* For some reason end date is hidden */
+#edit-field-when-0-end-value-date {
+  visibility: show;
+}
+
 /* Overriding well backgrounds */
 .region-sidebar-second {
   background-color: transparent;
