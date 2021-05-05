@@ -1,0 +1,9 @@
+insider.text.format.fix:
+  version: 1.x
+  js:
+    js/insider.text.format.fix.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - core/drupalSettings
+    - core/drupal
