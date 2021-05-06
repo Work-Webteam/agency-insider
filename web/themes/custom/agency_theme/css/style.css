@@ -286,7 +286,7 @@ div.js-drupal-fullcalendar table {
   margin: 0px;
 }
 
-/* For some reason end date is hidden */
+/* For some reason event end date is hidden */
 #edit-field-when-0-end-value-date {
   visibility: show;
 }
