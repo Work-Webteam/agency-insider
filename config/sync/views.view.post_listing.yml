@@ -13,8 +13,8 @@ dependencies:
     - taxonomy.vocabulary.post_category
   content:
     - 'taxonomy_term:post_category:24824316-19d3-4724-b9b1-8a48bbbc8fa6'
-    - 'taxonomy_term:post_category:3c6c4bcd-6b13-482a-a19b-e28d29361c7d'
     - 'taxonomy_term:post_category:65c78a32-1660-4ae5-8536-dc82f92b0907'
+    - 'taxonomy_term:post_category:69e689bd-89e2-44d5-a41f-9e23b77ca3bf'
     - 'taxonomy_term:post_category:70e260ba-fcde-44b1-87a0-3a2c63f62203'
   module:
     - flag
@@ -1480,6 +1480,7 @@ display:
           value:
             - 9
             - 17
+            - 28
           group: 1
           exposed: false
           expose:
