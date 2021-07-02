@@ -7119,17 +7119,17 @@
         },
         {
             "name": "drupal/state_machine",
-            "version": "1.3.0",
+            "version": "1.4.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/state_machine.git",
-                "reference": "8.x-1.3"
+                "reference": "8.x-1.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/state_machine-8.x-1.3.zip",
-                "reference": "8.x-1.3",
-                "shasum": "822ef31950aa2d1042eb3592cf9b981822a87a92"
+                "url": "https://ftp.drupal.org/files/projects/state_machine-8.x-1.4.zip",
+                "reference": "8.x-1.4",
+                "shasum": "6e07fe9e9a73a07cdd077a9f79f2ae26147bd5ce"
             },
             "require": {
                 "drupal/core": "^8.7.7 || ^9",
@@ -7138,8 +7138,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.3",
-                    "datestamp": "1624523934",
+                    "version": "8.x-1.4",
+                    "datestamp": "1625048408",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -7901,17 +7901,17 @@
         },
         {
             "name": "drupal/webform",
-            "version": "6.0.2",
+            "version": "6.0.4",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/webform.git",
-                "reference": "6.0.2"
+                "reference": "6.0.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/webform-6.0.2.zip",
-                "reference": "6.0.2",
-                "shasum": "a264554699736034b44fd960e2858d006029e025"
+                "url": "https://ftp.drupal.org/files/projects/webform-6.0.4.zip",
+                "reference": "6.0.4",
+                "shasum": "8b87ffb19f980e9d77957dfb2d784a1a68619d57"
             },
             "require": {
                 "drupal/core": "^8.8 || ^9"
@@ -7959,8 +7959,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "6.0.2",
-                    "datestamp": "1614794871",
+                    "version": "6.0.4",
+                    "datestamp": "1624461046",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -7968,7 +7968,7 @@
                 },
                 "drush": {
                     "services": {
-                        "drush.services.yml": "^9"
+                        "drush.services.yml": "^9 || ^10"
                     }
                 }
             },
@@ -7993,28 +7993,8 @@
                     "role": "Contributor"
                 },
                 {
-                    "name": "fenstrat",
-                    "homepage": "https://www.drupal.org/user/362649"
-                },
-                {
-                    "name": "jrockowitz",
-                    "homepage": "https://www.drupal.org/user/371407"
-                },
-                {
-                    "name": "podarok",
-                    "homepage": "https://www.drupal.org/user/116002"
-                },
-                {
                     "name": "quicksketch",
                     "homepage": "https://www.drupal.org/user/35821"
-                },
-                {
-                    "name": "sanchiz",
-                    "homepage": "https://www.drupal.org/user/1671246"
-                },
-                {
-                    "name": "tedbow",
-                    "homepage": "https://www.drupal.org/user/240860"
                 },
                 {
                     "name": "torotil",
